@@ -99,19 +99,11 @@
         </a>
       </nav>
       <div class="flex items-center gap-3">
-        <!-- Floating / Header Music Player with animated wave -->
-        <button id="music-btn" onclick="toggleMusic()" class="px-4 py-2 rounded-full border-2 border-[#e5b266] bg-[#26170d]/90 text-sm font-bold text-[#ffd68a] hover:bg-[#e5b266] hover:text-black transition-all flex items-center gap-2.5 shadow-lg group">
-          <span id="music-icon" class="text-base">⏸️</span>
-          <span id="music-text">播放中：Dusk at the Café</span>
-          <!-- Equalizer bar animation -->
-          <div id="music-bars" class="flex items-end gap-0.5 h-3.5 ml-1">
-            <span class="w-1 bg-[#ffd68a] group-hover:bg-black rounded-sm animate-pulse h-2"></span>
-            <span class="w-1 bg-[#ffd68a] group-hover:bg-black rounded-sm animate-pulse h-3.5" style="animation-delay: 0.2s"></span>
-            <span class="w-1 bg-[#ffd68a] group-hover:bg-black rounded-sm animate-pulse h-2.5" style="animation-delay: 0.4s"></span>
-          </div>
+        <button onclick="toggleMainAudio()" class="px-4 py-2 rounded-full border-2 border-[#e5b266] bg-[#24170d] text-sm font-bold text-[#ffd68a] hover:bg-[#e5b266] hover:text-black transition-all flex items-center gap-2 shadow-sm">
+          <span id="nav-audio-icon">🎵</span>
+          <span id="nav-audio-text">播放/暫停音樂</span>
         </button>
       </div>
-    </div>
   </header>
 
   <!-- Hero Section -->
@@ -912,7 +904,7 @@
 
     
   <!-- Leaflet Map Logic & Robust Audio Controller -->
-  <script src="audio_b64.js"></script>
+  
   <script>
     // ==========================================
     // 1. LEAFLET HIGH PRECISION INTERACTIVE MAP
@@ -1121,156 +1113,49 @@
       setTimeout(initTradeMap, 200);
     });
 
-    // ==========================================
-    // 2. ROBUST AUDIO PLAYER WITH FALLBACKS
-    // ==========================================
-    let bgAudio = null;
-    let isMusicPlaying = false;
+    
+    // --- Bulletproof Native Audio Controls ---
+    const audioEl = document.getElementById('main-audio');
 
-    function getAudioInstance() {
-      if (!bgAudio) {
-        bgAudio = document.getElementById('bg-audio');
-        if (!bgAudio) {
-          bgAudio = new Audio();
-          bgAudio.id = 'bg-audio';
-          bgAudio.loop = true;
-          document.body.appendChild(bgAudio);
-        }
-
-        // Set sources: first local file, fallback to base64 if needed
-        bgAudio.src = 'dusk-at-the-cafe.mp3';
-        bgAudio.onerror = function() {
-          console.warn('Local MP3 file failed, switching to base64 audio source...');
-          if (window.AUDIO_MP3_B64) {
-            bgAudio.src = window.AUDIO_MP3_B64;
-            bgAudio.play().then(() => updateMusicUI(true)).catch(e => console.error(e));
-          }
-        };
+    function toggleMainAudio() {
+      if (!audioEl) return;
+      if (audioEl.paused) {
+        audioEl.play().then(() => updateNavBtn(true)).catch(err => console.log(err));
+      } else {
+        audioEl.pause();
+        updateNavBtn(false);
       }
-      return bgAudio;
     }
 
-    function updateMusicUI(playing) {
-      isMusicPlaying = playing;
-      const headerIcon = document.getElementById('music-icon');
-      const headerText = document.getElementById('music-text');
-      const headerBars = document.getElementById('music-bars');
-      const stickyIcon = document.getElementById('sticky-icon');
-      const stickyBtn = document.getElementById('sticky-btn');
-      const stickyStatus = document.getElementById('sticky-status');
-
+    function updateNavBtn(playing) {
+      const icon = document.getElementById('nav-audio-icon');
+      const text = document.getElementById('nav-audio-text');
       if (playing) {
-        if (headerIcon) headerIcon.innerText = '⏸️';
-        if (headerText) headerText.innerText = '播放中：Dusk at the Café';
-        if (headerBars) headerBars.style.display = 'flex';
-        if (stickyIcon) stickyIcon.innerText = '⏸️';
-        if (stickyBtn) stickyBtn.innerText = '暫停';
-        if (stickyStatus) stickyStatus.innerText = '咖啡館黃昏樂章 • 播放中';
+        if (icon) icon.innerText = '⏸️';
+        if (text) text.innerText = '暫停：Dusk at the Café';
       } else {
-        if (headerIcon) headerIcon.innerText = '▶️';
-        if (headerText) headerText.innerText = '已暫停：Dusk at the Café';
-        if (headerBars) headerBars.style.display = 'none';
-        if (stickyIcon) stickyIcon.innerText = '▶️';
-        if (stickyBtn) stickyBtn.innerText = '播放';
-        if (stickyStatus) stickyStatus.innerText = '點擊播放黃昏樂章';
+        if (icon) icon.innerText = '▶️';
+        if (text) text.innerText = '播放：Dusk at the Café';
       }
     }
 
-    function toggleMusic() {
-      const audio = getAudioInstance();
-      if (audio.paused) {
-        audio.volume = 0.85;
-        audio.play().then(() => {
-          updateMusicUI(true);
-        }).catch(err => {
-          console.log('Play blocked by browser, trying base64 fallback:', err);
-          if (window.AUDIO_MP3_B64 && audio.src !== window.AUDIO_MP3_B64) {
-            audio.src = window.AUDIO_MP3_B64;
-            audio.play().then(() => updateMusicUI(true)).catch(e => console.error(e));
-          }
-        });
-      } else {
-        audio.pause();
-        updateMusicUI(false);
-      }
-    }
-
-    function userStartMusic() {
-      const audio = getAudioInstance();
-      audio.volume = 0.85;
-      audio.play().then(() => {
-        updateMusicUI(true);
-      }).catch(e => {
-        console.warn('User start error, using base64:', e);
-        if (window.AUDIO_MP3_B64) {
-          audio.src = window.AUDIO_MP3_B64;
-          audio.play().then(() => updateMusicUI(true)).catch(err => console.error(err));
+    if (audioEl) {
+      audioEl.addEventListener('play', () => updateNavBtn(true));
+      audioEl.addEventListener('pause', () => updateNavBtn(false));
+      
+      // Auto-play attempt on user click anywhere on page
+      const startAudioOnFirstClick = () => {
+        if (audioEl.paused) {
+          audioEl.play().catch(() => {});
         }
-      });
-      dismissAudioModal();
+        document.removeEventListener('click', startAudioOnFirstClick);
+      };
+      document.addEventListener('click', startAudioOnFirstClick, { once: true });
     }
-
-    function dismissAudioModal() {
-      const modal = document.getElementById('audio-consent-modal');
-      if (modal) {
-        modal.classList.add('opacity-0', 'pointer-events-none');
-        setTimeout(() => modal.remove(), 350);
-      }
-    }
-
-    // Try autoplay once page loads
-    window.addEventListener('DOMContentLoaded', () => {
-      const audio = getAudioInstance();
-      audio.volume = 0.85;
-      const promise = audio.play();
-      if (promise !== undefined) {
-        promise.then(() => {
-          updateMusicUI(true);
-          const modal = document.getElementById('audio-consent-modal');
-          if (modal) modal.style.display = 'none';
-        }).catch(() => {
-          updateMusicUI(false);
-        });
-      }
-    });
-
-    // Unmute on first interaction anywhere if modal was closed
-    const interactionHandler = () => {
-      const audio = getAudioInstance();
-      if (audio.paused && !document.getElementById('audio-consent-modal')) {
-        audio.play().then(() => updateMusicUI(true)).catch(() => {});
-      }
-      document.removeEventListener('click', interactionHandler);
-    };
-    document.addEventListener('click', interactionHandler);
 
   </script>
 
-  <!-- Audio Player: Dusk at the Café -->
-  <audio id="bg-audio" loop preload="auto" src="dusk-at-the-cafe.mp3" playsinline>
-    您的瀏覽器不支援音訊播放。
-  </audio>
-
-  <!-- Autoplay Prompt Modal if blocked -->
-  <div id="audio-consent-modal" class="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm transition-opacity duration-300">
-    <div class="max-w-md w-full mx-4 p-6 rounded-2xl bg-[#1d130a] border-2 border-[#e5b266] shadow-2xl text-center gold-glow">
-      <div class="text-4xl mb-3">☕ 🎷</div>
-      <h3 class="text-xl font-black text-white mb-2">特里埃斯特・午後咖啡時光</h3>
-      <p class="text-sm text-[#e8ded2] mb-6 leading-relaxed">
-        點擊開啟背景樂章《<strong class="text-[#ffd68a]">Dusk at the Café</strong>》，沉浸於亞得里亞海濱的咖啡香氣與文學沙龍。
-      </p>
-      <div class="flex items-center justify-center gap-3">
-        <button onclick="userStartMusic()" class="px-6 py-2.5 rounded-xl bg-gradient-to-r from-[#cf9444] to-[#f3bd68] text-black font-extrabold text-sm shadow-xl hover:brightness-110 active:scale-95 transition-all flex items-center gap-2">
-          <span>▶️ 開啟音樂並進入展覽</span>
-        </button>
-        <button onclick="dismissAudioModal()" class="px-4 py-2.5 rounded-xl bg-[#2a1b10] text-[#c0a88e] hover:text-white font-bold text-sm border border-[#4d3623] transition-colors">
-          靜音瀏覽
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Sticky Bottom Music Bar Widget -->
+  
   <div id="sticky-audio-bar" class="fixed bottom-6 right-6 z-50 flex items-center gap-3 px-4 py-2.5 rounded-2xl bg-[#1d130a]/95 border-2 border-[#e5b266]/70 shadow-2xl backdrop-blur-md gold-glow">
     <div class="relative w-8 h-8 rounded-full bg-[#382313] border border-[#e5b266] flex items-center justify-center cursor-pointer text-sm" onclick="toggleMusic()">
       <span id="sticky-icon">⏸️</span>
@@ -1282,6 +1167,28 @@
     <button onclick="toggleMusic()" id="sticky-btn" class="ml-2 px-3 py-1 rounded-lg bg-[#e5b266] text-black text-xs font-black hover:bg-[#ffd68a] transition-colors">
       暫停
     </button>
+  </div>
+
+
+  <!-- Premium Visible Music Player Bar (Native Audio Controls with Autoplay) -->
+  <div class="fixed bottom-6 right-6 z-50 p-4 rounded-2xl bg-[#1d130a]/95 border-2 border-[#e5b266] shadow-2xl backdrop-blur-md max-w-sm w-[92vw] sm:w-80 gold-glow">
+    <div class="flex items-center justify-between mb-2">
+      <div class="flex items-center gap-2">
+        <span class="text-xl">☕</span>
+        <div>
+          <div class="text-xs font-black text-[#ffd68a] tracking-wide">Dusk at the Café</div>
+          <div class="text-[10px] text-[#e0cfbb]">特里埃斯特沙龍黃昏配樂</div>
+        </div>
+      </div>
+      <span class="text-[10px] px-2 py-0.5 rounded bg-[#382313] text-[#ffd68a] border border-[#e5b266]/40 font-bold">MP3</span>
+    </div>
+    
+    <!-- Native Audio Element: 100% reliable across all browsers -->
+    <audio id="main-audio" controls loop autoplay class="w-full h-9 rounded-lg" style="accent-color: #e5b266;">
+      <source src="dusk-at-the-cafe.mp3" type="audio/mpeg">
+      <source src="Dusk%20at%20the%20Cafe%CC%81.mp3" type="audio/mpeg">
+      您的瀏覽器不支援音訊播放。
+    </audio>
   </div>
 
 </body>
