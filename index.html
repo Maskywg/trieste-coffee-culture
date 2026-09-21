@@ -1081,7 +1081,6 @@
       }
     }
 
-    // Attempt autoplay immediately on load
     function tryAutoplay() {
       if (!bgAudio) return;
       bgAudio.volume = 0.75;
@@ -1089,35 +1088,65 @@
       if (promise !== undefined) {
         promise.then(() => {
           updateMusicUI(true);
+          const modal = document.getElementById('audio-consent-modal');
+          if (modal) modal.style.display = 'none';
         }).catch(() => {
-          // If browser policy blocks autoplay without user interaction,
-          // listen for first user interaction (click/scroll/touch) to resume audio automatically
+          // If browser policy blocks autoplay, keep the modal visible
           updateMusicUI(false);
-          const resumeOnInteraction = () => {
-            bgAudio.play().then(() => {
-              updateMusicUI(true);
-              document.removeEventListener('click', resumeOnInteraction);
-              document.removeEventListener('keydown', resumeOnInteraction);
-              document.removeEventListener('touchstart', resumeOnInteraction);
-            }).catch(() => {});
-          };
-          document.addEventListener('click', resumeOnInteraction, { once: true });
-          document.addEventListener('keydown', resumeOnInteraction, { once: true });
-          document.addEventListener('touchstart', resumeOnInteraction, { once: true });
         });
       }
     }
 
+    function userStartMusic() {
+      if (bgAudio) {
+        bgAudio.volume = 0.8;
+        bgAudio.play().then(() => {
+          updateMusicUI(true);
+        }).catch(e => console.error(e));
+      }
+      dismissAudioModal();
+    }
+
+    function dismissAudioModal() {
+      const modal = document.getElementById('audio-consent-modal');
+      if (modal) {
+        modal.classList.add('opacity-0', 'pointer-events-none');
+        setTimeout(() => modal.remove(), 350);
+      }
+    }
+
     window.addEventListener('DOMContentLoaded', tryAutoplay);
-    // Also trigger on first load
-    setTimeout(tryAutoplay, 300);
+    // Any user click on document will start audio if still paused and modal dismissed
+    document.addEventListener('click', (e) => {
+      if (bgAudio && bgAudio.paused && !document.getElementById('audio-consent-modal')) {
+        // user clicked somewhere after dismissing
+      }
+    });
   </script>
 
   <!-- Audio Player: Dusk at the Café -->
-  <audio id="bg-audio" loop preload="auto">
-    <source src="dusk-at-the-cafe.mp3" type="audio/mpeg">
-    <source src="Dusk%20at%20the%20Cafe%CC%81.mp3" type="audio/mpeg">
+  <audio id="bg-audio" loop preload="auto" src="dusk-at-the-cafe.mp3" playsinline>
+    您的瀏覽器不支援音訊播放。
   </audio>
+
+  <!-- Autoplay Prompt Modal if blocked -->
+  <div id="audio-consent-modal" class="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm transition-opacity duration-300">
+    <div class="max-w-md w-full mx-4 p-6 rounded-2xl bg-[#1d130a] border-2 border-[#e5b266] shadow-2xl text-center gold-glow">
+      <div class="text-4xl mb-3">☕ 🎷</div>
+      <h3 class="text-xl font-black text-white mb-2">特里埃斯特・午後咖啡時光</h3>
+      <p class="text-sm text-[#e8ded2] mb-6 leading-relaxed">
+        點擊開啟背景樂章《<strong class="text-[#ffd68a]">Dusk at the Café</strong>》，沉浸於亞得里亞海濱的咖啡香氣與文學沙龍。
+      </p>
+      <div class="flex items-center justify-center gap-3">
+        <button onclick="userStartMusic()" class="px-6 py-2.5 rounded-xl bg-gradient-to-r from-[#cf9444] to-[#f3bd68] text-black font-extrabold text-sm shadow-xl hover:brightness-110 active:scale-95 transition-all flex items-center gap-2">
+          <span>▶️ 開啟音樂並進入展覽</span>
+        </button>
+        <button onclick="dismissAudioModal()" class="px-4 py-2.5 rounded-xl bg-[#2a1b10] text-[#c0a88e] hover:text-white font-bold text-sm border border-[#4d3623] transition-colors">
+          靜音瀏覽
+        </button>
+      </div>
+    </div>
+  </div>
 
   <!-- Sticky Bottom Music Bar Widget -->
   <div id="sticky-audio-bar" class="fixed bottom-6 right-6 z-50 flex items-center gap-3 px-4 py-2.5 rounded-2xl bg-[#1d130a]/95 border-2 border-[#e5b266]/70 shadow-2xl backdrop-blur-md gold-glow">
