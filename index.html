@@ -70,6 +70,9 @@
       background: #a47648;
     }
   </style>
+  <!-- Leaflet CSS & JS for Interactive High-Precision Cartography -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 </head>
 <body class="bg-[#0d0a08] text-[#f8f3ed] antialiased selection:bg-[#e5b266] selection:text-black relative">
 
@@ -364,185 +367,55 @@
       </div>
 
       
-<div class="my-12 p-6 sm:p-8 rounded-2xl bg-[#17100a] border-2 border-[#e5b266]/60 shadow-2xl relative overflow-hidden">
-  <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+
+<!-- Interactive High Precision Leaflet Map -->
+<div class="my-14 rounded-2xl bg-[#140e09] border-2 border-[#e5b266] shadow-2xl overflow-hidden gold-glow">
+  <!-- Map Header Bar -->
+  <div class="p-6 bg-[#1f150d] border-b border-[#3d2a1b] flex flex-col md:flex-row md:items-center justify-between gap-4">
     <div>
-      <span class="text-xs font-cinzel text-[#ffd68a] font-bold tracking-widest uppercase">Historical Trade Routes Map</span>
-      <h3 class="text-2xl sm:text-3xl font-black text-white mt-1">咖啡傳入歐洲與義大利歷史航線地圖</h3>
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#352213] border border-[#e5b266]/50 text-xs text-[#ffd68a] font-bold uppercase tracking-wider mb-2">
+        <span>🗺️ 互動地理深旅</span> • <span>高精度衛星航路</span>
+      </div>
+      <h3 class="text-2xl sm:text-3xl font-black text-white">咖啡傳入歐洲與義大利之航程地圖</h3>
+      <p class="text-xs sm:text-sm text-[#d8be9f] mt-1 font-medium">
+        支援平移、縮放查看真實海岸線與港口；點擊下方按鈕或地圖節點查看歷史典故。
+      </p>
     </div>
-    <div class="flex flex-wrap items-center gap-4 text-xs font-bold">
-      <span class="flex items-center gap-1.5 text-[#ff8080]"><span class="w-3 h-3 rounded-full bg-[#ff5555] inline-block"></span> 葉門/紅海航線</span>
-      <span class="flex items-center gap-1.5 text-[#66b3ff]"><span class="w-3 h-3 rounded-full bg-[#3399ff] inline-block"></span> 威尼斯海路（16世紀）</span>
-      <span class="flex items-center gap-1.5 text-[#ffd68a]"><span class="w-3 h-3 rounded-full bg-[#ffd68a] inline-block"></span> 特里埃斯特自由港樞紐（1719起）</span>
-    </div>
-  </div>
-
-  <div class="relative w-full overflow-x-auto">
-    <div class="min-w-[760px] w-full aspect-[16/9] max-h-[500px]">
-      <svg viewBox="0 0 960 540" class="w-full h-full rounded-xl bg-[#0a0705] border border-[#3d2a1b] shadow-inner select-none font-sans" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <radialGradient id="oceanGrad" cx="50%" cy="50%" r="70%">
-            <stop offset="0%" stop-color="#141a24"/>
-            <stop offset="100%" stop-color="#080c12"/>
-          </radialGradient>
-          <linearGradient id="landGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#241b14"/>
-            <stop offset="100%" stop-color="#19120c"/>
-          </linearGradient>
-          <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-            <feGaussianBlur stdDeviation="3" result="blur" />
-            <feComposite in="SourceGraphic" in2="blur" operator="over" />
-          </filter>
-          <marker id="arrowGold" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
-            <path d="M 0 0 L 8 4 L 0 8 z" fill="#ffd68a" />
-          </marker>
-          <marker id="arrowBlue" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
-            <path d="M 0 0 L 8 4 L 0 8 z" fill="#3399ff" />
-          </marker>
-          <marker id="arrowRed" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
-            <path d="M 0 0 L 8 4 L 0 8 z" fill="#ff5555" />
-          </marker>
-        </defs>
-
-        <!-- Base Ocean -->
-        <rect width="960" height="540" fill="url(#oceanGrad)"/>
-
-        <!-- Grid Lines Subtle -->
-        <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
-          <line x1="0" y1="135" x2="960" y2="135" />
-          <line x1="0" y1="270" x2="960" y2="270" />
-          <line x1="0" y1="405" x2="960" y2="405" />
-          <line x1="240" y1="0" x2="240" y2="540" />
-          <line x1="480" y1="0" x2="480" y2="540" />
-          <line x1="720" y1="0" x2="720" y2="540" />
-        </g>
-
-        <!-- Simplified Stylized Continents: Europe, Balkans, North Africa, Middle East -->
-        <!-- Europe / Central Europe -->
-        <path d="M 180,60 L 380,50 L 520,70 L 500,160 L 440,190 L 370,180 L 340,240 L 310,210 L 260,200 L 230,140 Z" fill="url(#landGrad)" stroke="#3d2a1b" stroke-width="2"/>
-        <!-- Italian Peninsula -->
-        <path d="M 330,220 L 370,225 L 390,290 L 440,360 L 420,380 L 380,330 L 340,280 L 325,240 Z" fill="#2d2016" stroke="#4d3521" stroke-width="2"/>
-        <!-- Balkans & Greece -->
-        <path d="M 430,210 L 510,190 L 560,230 L 520,320 L 480,340 L 460,280 L 430,240 Z" fill="url(#landGrad)" stroke="#3d2a1b" stroke-width="2"/>
-        <!-- Asia Minor (Turkey / Ottoman) -->
-        <path d="M 540,230 L 720,220 L 760,270 L 680,290 L 580,280 Z" fill="url(#landGrad)" stroke="#3d2a1b" stroke-width="2"/>
-        <!-- North Africa & Egypt -->
-        <path d="M 160,370 L 380,370 L 460,380 L 560,370 L 650,390 L 630,510 L 200,510 Z" fill="url(#landGrad)" stroke="#3d2a1b" stroke-width="2"/>
-        <!-- Arabian Peninsula / Yemen -->
-        <path d="M 680,370 L 850,360 L 890,480 L 790,520 L 720,460 Z" fill="#2d1f14" stroke="#4d3521" stroke-width="2"/>
-
-        <!-- Water Labels -->
-        <text x="320" y="340" fill="#2e4259" font-size="12" font-style="italic" font-weight="bold">TYRRHENIAN SEA</text>
-        <text x="400" y="270" fill="#3a5370" font-size="13" font-style="italic" font-weight="bold">ADRIATIC SEA</text>
-        <text x="470" y="375" fill="#3a5370" font-size="15" font-style="italic" font-weight="bold">MEDITERRANEAN SEA（地中海）</text>
-        <text x="730" y="440" fill="#2a3f57" font-size="12" font-style="italic" font-weight="bold">RED SEA（紅海）</text>
-
-        <!-- ROUTE 1: Origin Yemen Mocha -> Alexandria / Cairo (Red) -->
-        <path d="M 800,490 Q 750,440 680,380" fill="none" stroke="#ff5555" stroke-width="3" stroke-dasharray="6,4" marker-end="url(#arrowRed)"/>
-        
-        <!-- ROUTE 2: Alexandria -> Venice via Mediterranean (Blue) -->
-        <path d="M 670,380 Q 560,330 380,240" fill="none" stroke="#3399ff" stroke-width="3.5" stroke-dasharray="8,5" marker-end="url(#arrowBlue)"/>
-
-        <!-- ROUTE 3: Global / Ottoman / Americas -> Trieste Free Port (Gold) -->
-        <path d="M 670,375 Q 490,300 410,215" fill="none" stroke="#ffd68a" stroke-width="4" stroke-dasharray="8,4" marker-end="url(#arrowGold)" filter="url(#glow)"/>
-
-        <!-- ROUTE 4: Overland from Trieste to Vienna & Central Europe (Gold Solid) -->
-        <path d="M 405,210 Q 420,160 450,120" fill="none" stroke="#ffd68a" stroke-width="4" stroke-dasharray="4,3" marker-end="url(#arrowGold)"/>
-        <!-- Overland from Trieste to Prague/Munich -->
-        <path d="M 405,210 Q 380,150 370,110" fill="none" stroke="#ffd68a" stroke-width="3" stroke-dasharray="4,3" marker-end="url(#arrowGold)"/>
-
-        <!-- NODES & CITIES -->
-        
-        <!-- 1. Origin: Kaffa / Ethiopia & Yemen Mocha -->
-        <g transform="translate(800, 495)">
-          <circle r="7" fill="#ff5555" stroke="#ffffff" stroke-width="2"/>
-          <circle r="14" fill="#ff5555" fill-opacity="0.25" class="animate-ping"/>
-          <text x="14" y="5" fill="#ff9999" font-size="14" font-weight="900">葉門 摩卡港 (Mocha)</text>
-          <text x="14" y="20" fill="#f0c2c2" font-size="11">咖啡起源與早年中東出口中心</text>
-        </g>
-
-        <!-- 2. Cairo / Alexandria -->
-        <g transform="translate(670, 380)">
-          <circle r="6" fill="#ffaa33" stroke="#ffffff" stroke-width="1.5"/>
-          <text x="-15" y="-12" fill="#ffcc88" font-size="12" font-weight="bold">亞歷山大港 / 開羅</text>
-        </g>
-
-        <!-- 3. Venice -->
-        <g transform="translate(370, 235)">
-          <circle r="6" fill="#3399ff" stroke="#ffffff" stroke-width="1.5"/>
-          <text x="-80" y="5" fill="#80c1ff" font-size="13" font-weight="900">威尼斯 (16世紀)</text>
-          <text x="-120" y="20" fill="#b3d7ff" font-size="10">教宗克勉八世首度祝聖</text>
-        </g>
-
-        <!-- 4. Rome -->
-        <g transform="translate(370, 310)">
-          <circle r="5" fill="#d8be9f" stroke="#ffffff" stroke-width="1"/>
-          <text x="-45" y="4" fill="#d8be9f" font-size="12" font-weight="bold">羅馬</text>
-        </g>
-
-        <!-- 5. TRIESTE (Primary Highlight) -->
-        <g transform="translate(405, 210)">
-          <circle r="9" fill="#ffd68a" stroke="#ffffff" stroke-width="2.5" filter="url(#glow)"/>
-          <circle r="18" fill="#ffd68a" fill-opacity="0.3" class="animate-pulse"/>
-          <!-- Label Tag -->
-          <rect x="16" y="-22" width="165" height="42" rx="6" fill="#24170d" stroke="#ffd68a" stroke-width="1.5"/>
-          <text x="24" y="-5" fill="#ffd68a" font-size="15" font-weight="900">★ 特里埃斯特 (Trieste)</text>
-          <text x="24" y="12" fill="#ffffff" font-size="11" font-weight="bold">1719自由港・歐洲咖啡之都</text>
-        </g>
-
-        <!-- 6. Vienna (Destination Capital) -->
-        <g transform="translate(450, 115)">
-          <circle r="7" fill="#ffd68a" stroke="#ffffff" stroke-width="2"/>
-          <rect x="14" y="-14" width="125" height="28" rx="4" fill="#1e140d" stroke="#cfa878" stroke-width="1"/>
-          <text x="20" y="4" fill="#ffffff" font-size="12" font-weight="bold">維也納 (奧匈帝國首都)</text>
-        </g>
-
-        <!-- 7. Central Europe / Prague / Munich -->
-        <g transform="translate(370, 105)">
-          <circle r="5" fill="#e5b266" stroke="#ffffff" stroke-width="1"/>
-          <text x="-80" y="4" fill="#e0cfbb" font-size="12" font-weight="bold">中歐大市場</text>
-        </g>
-
-        <!-- 8. Constantinople / Istanbul -->
-        <g transform="translate(580, 240)">
-          <circle r="5" fill="#d8be9f" stroke="#ffffff" stroke-width="1"/>
-          <text x="12" y="4" fill="#d8be9f" font-size="12" font-weight="bold">伊斯坦堡 (鄂圖曼)</text>
-        </g>
-
-        <!-- Bottom Legend Box -->
-        <g transform="translate(30, 430)">
-          <rect width="320" height="85" rx="8" fill="#120c07" fill-opacity="0.9" stroke="#4a3421" stroke-width="1.5"/>
-          <text x="14" y="24" fill="#ffd68a" font-size="13" font-weight="bold">航路解讀：從威尼斯獨佔到特城大樞紐</text>
-          <text x="14" y="46" fill="#e8ded2" font-size="11">① 早期（16世紀）：經紅海與亞歷山大港運至威尼斯</text>
-          <text x="14" y="65" fill="#e8ded2" font-size="11">② 1719起：特城免稅自由港直供奧匈帝國與全中歐</text>
-        </g>
-      </svg>
+    
+    <!-- Route Filter Buttons -->
+    <div class="flex flex-wrap items-center gap-2">
+      <button onclick="focusMapRoute('all')" class="px-3.5 py-1.5 rounded-lg bg-[#2e1c10] hover:bg-[#e5b266] hover:text-black border border-[#523924] text-xs font-bold text-[#ffd68a] transition-all">全景航路</button>
+      <button onclick="focusMapRoute('trieste')" class="px-3.5 py-1.5 rounded-lg bg-[#2e1c10] hover:bg-[#ffd68a] hover:text-black border border-[#523924] text-xs font-bold text-[#ffd68a] transition-all">★ 特里埃斯特樞紐</button>
+      <button onclick="focusMapRoute('venice')" class="px-3.5 py-1.5 rounded-lg bg-[#2e1c10] hover:bg-[#66b3ff] hover:text-black border border-[#523924] text-xs font-bold text-[#99ccff] transition-all">威尼斯海路</button>
+      <button onclick="focusMapRoute('yemen')" class="px-3.5 py-1.5 rounded-lg bg-[#2e1c10] hover:bg-[#ff8080] hover:text-black border border-[#523924] text-xs font-bold text-[#ff9999] transition-all">葉門摩卡起源</button>
     </div>
   </div>
-  <p class="text-xs text-[#d8be9f] text-center mt-3 font-medium">
-    💡 地圖說明：特里埃斯特佔據亞得里亞海最頂端的獨特縱深，作為奧匈帝國直通世界的唯一大港，將咖啡豆源源不絕輸往維也納與全歐。
-  </p>
+
+  <!-- Map Canvas Container -->
+  <div class="relative w-full h-[520px] sm:h-[580px] bg-[#0c0d12]">
+    <div id="coffee-trade-map" class="w-full h-full z-10"></div>
+    
+    <!-- Legend overlay on map -->
+    <div class="absolute bottom-5 left-5 z-20 p-3.5 rounded-xl bg-[#120c08]/90 border border-[#e5b266]/60 backdrop-blur-md text-xs space-y-2 shadow-2xl max-w-xs sm:max-w-sm pointer-events-auto">
+      <div class="font-bold text-white flex items-center gap-2 border-b border-[#382618] pb-1.5">
+        <span>🧭 航線與歷史階段圖例</span>
+      </div>
+      <div class="flex items-center gap-2 text-[#ff9999]">
+        <span class="w-3.5 h-1 bg-[#ff4d4d] rounded-full inline-block"></span>
+        <span class="font-medium">紅海起源線：衣索比亞 ➜ 葉門摩卡 ➜ 埃及</span>
+      </div>
+      <div class="flex items-center gap-2 text-[#80c1ff]">
+        <span class="w-3.5 h-1 bg-[#3399ff] rounded-full inline-block"></span>
+        <span class="font-medium">威尼斯海路（16c）：首度傳入義大利教宗祝聖</span>
+      </div>
+      <div class="flex items-center gap-2 text-[#ffd68a]">
+        <span class="w-3.5 h-1.5 bg-[#ffd68a] rounded-full inline-block shadow-sm"></span>
+        <span class="font-bold">特里埃斯特大動脈（1719起）：直通維也納全歐</span>
+      </div>
+    </div>
+  </div>
 </div>
 
-      <!-- Timeline Cards -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-        
-        <!-- Step 1: Yemen & Venice -->
-        <div class="p-7 rounded-2xl bg-[#1b130c] border border-[#47311e] relative flex flex-col justify-between hover:border-[#e5b266] transition-colors shadow-lg">
-          <div>
-            <div class="w-14 h-14 rounded-xl bg-[#332012] text-[#ffd68a] flex items-center justify-center font-black text-xl mb-6 border border-[#e5b266]/40">
-              16c
-            </div>
-            <span class="text-xs text-[#ffd68a] uppercase tracking-wider font-cinzel font-bold">起源與海路傳入</span>
-            <h3 class="text-2xl font-black text-white mt-1 mb-3">伊斯蘭「黑色靈藥」抵達威尼斯</h3>
-            <p class="text-card-bright text-justify">
-              咖啡起源於衣索比亞，經葉門摩卡港與鄂圖曼帝國傳播。16 世紀末威尼斯商人最早自近東運回義大利，起初作為昂貴稀有的藥劑。
-            </p>
-          </div>
-          <div class="mt-6 pt-4 border-t border-[#382618] text-sm text-[#ffd68a] font-medium bg-[#130b06] p-3 rounded-lg">
-            📍 典故：教宗克勉八世喝完驚呼：「這撒旦的飲料太美味了，我們應該為它施洗，讓它成為真正的基督徒飲料！」
-          </div>
-        </div>
 
         <!-- Step 2: 1719 Charles VI & Free Port -->
         <div class="p-7 rounded-2xl bg-[#1e140d] border-2 border-[#e5b266] relative flex flex-col justify-between gold-glow shadow-xl">
@@ -1037,9 +910,245 @@
       barRes.innerHTML = `<strong>你說：</strong>${phrase}<br><span class="text-[#ffe6b3] font-bold">咖啡師：${randomResponse}</span>`;
     }
 
-    // --- Dusk at the Café MP3 Music Controller with Autoplay ---
-    const bgAudio = document.getElementById('bg-audio');
+    
+  <!-- Leaflet Map Logic & Robust Audio Controller -->
+  <script src="audio_b64.js"></script>
+  <script>
+    // ==========================================
+    // 1. LEAFLET HIGH PRECISION INTERACTIVE MAP
+    // ==========================================
+    let map = null;
+    let mapMarkers = {};
+
+    function initTradeMap() {
+      const mapContainer = document.getElementById('coffee-trade-map');
+      if (!mapContainer) return;
+
+      // Dark, elegant vintage CartoDB tiles
+      map = L.map('coffee-trade-map', {
+        center: [34.0, 24.0],
+        zoom: 4,
+        minZoom: 3,
+        maxZoom: 9,
+        scrollWheelZoom: false
+      });
+
+      L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
+        subdomains: 'abcd',
+        maxZoom: 19
+      }).addTo(map);
+
+      // Add custom styled city markers
+      const locations = [
+        {
+          id: 'trieste',
+          name: '★ 特里埃斯特 (Trieste)',
+          coords: [45.6495, 13.7768],
+          color: '#d48817',
+          size: 14,
+          popup: `<div class="p-2 text-slate-900 font-sans">
+            <h4 class="font-bold text-base text-amber-700">★ 特里埃斯特 (Trieste)</h4>
+            <p class="text-xs text-slate-600 font-medium">1719 自由港 • 歐洲咖啡之都</p>
+            <p class="text-xs mt-1.5 leading-relaxed">哈布斯堡帝國唯一南方深水港，直通維也納。擁有生豆免稅深加工與拍賣特權，今日仍吞吐義大利逾三分之一生豆，illy 咖啡發源地。</p>
+          </div>`
+        },
+        {
+          id: 'vienna',
+          name: '維也納 (Vienna)',
+          coords: [48.2082, 16.3738],
+          color: '#a86208',
+          size: 10,
+          popup: `<div class="p-2 text-slate-900 font-sans">
+            <h4 class="font-bold text-sm text-amber-800">維也納 (Vienna)</h4>
+            <p class="text-xs text-slate-600 font-medium">奧匈帝國首都 • 終端消費核心</p>
+            <p class="text-xs mt-1 leading-relaxed">特里埃斯特鐵路翻越阿爾卑斯山直通維也納，哺育了舉世聞名的維也納咖啡館文化。</p>
+          </div>`
+        },
+        {
+          id: 'venice',
+          name: '威尼斯 (Venice)',
+          coords: [45.4408, 12.3155],
+          color: '#0284c7',
+          size: 10,
+          popup: `<div class="p-2 text-slate-900 font-sans">
+            <h4 class="font-bold text-sm text-sky-700">威尼斯 (Venice)</h4>
+            <p class="text-xs text-slate-600 font-medium">16 世紀傳入地 • 教宗祝聖</p>
+            <p class="text-xs mt-1 leading-relaxed">威尼斯商人最早自近東將咖啡載回義大利。教宗克勉八世喝完在此為其施洗。</p>
+          </div>`
+        },
+        {
+          id: 'alexandria',
+          name: '亞歷山大港 (Alexandria)',
+          coords: [31.2001, 29.9187],
+          color: '#e11d48',
+          size: 9,
+          popup: `<div class="p-2 text-slate-900 font-sans">
+            <h4 class="font-bold text-sm text-rose-700">亞歷山大港 (Alexandria)</h4>
+            <p class="text-xs text-slate-600 font-medium">地中海轉運咽喉</p>
+            <p class="text-xs mt-1 leading-relaxed">紅海駱駝商隊將葉門咖啡生豆運至此處裝船，橫渡地中海銷往歐洲。</p>
+          </div>`
+        },
+        {
+          id: 'mocha',
+          name: '葉門 摩卡港 (Mocha)',
+          coords: [13.3186, 43.2458],
+          color: '#be123c',
+          size: 12,
+          popup: `<div class="p-2 text-slate-900 font-sans">
+            <h4 class="font-bold text-sm text-rose-800">葉門 摩卡港 (Al Mokha)</h4>
+            <p class="text-xs text-slate-600 font-medium">咖啡全球貿易發源地</p>
+            <p class="text-xs mt-1 leading-relaxed">15~17 世紀壟斷全球咖啡豆出口，「摩卡」因而成為頂級咖啡豆代名詞。</p>
+          </div>`
+        },
+        {
+          id: 'kaffa',
+          name: '衣索比亞 卡法 (Kaffa)',
+          coords: [7.2833, 36.2167],
+          color: '#9f1239',
+          size: 9,
+          popup: `<div class="p-2 text-slate-900 font-sans">
+            <h4 class="font-bold text-sm text-rose-900">衣索比亞・卡法森林</h4>
+            <p class="text-xs text-slate-600 font-medium">阿拉比卡野生原產地</p>
+            <p class="text-xs mt-1 leading-relaxed">牧羊人柯迪（Kaldi）發現跳舞羊的傳說之地，咖啡（Coffee）詞源由來。</p>
+          </div>`
+        },
+        {
+          id: 'istanbul',
+          name: '伊斯坦堡 (Istanbul)',
+          coords: [41.0082, 28.9784],
+          color: '#78350f',
+          size: 9,
+          popup: `<div class="p-2 text-slate-900 font-sans">
+            <h4 class="font-bold text-sm text-amber-900">伊斯坦堡 (君士坦丁堡)</h4>
+            <p class="text-xs text-slate-600 font-medium">鄂圖曼帝國首都</p>
+            <p class="text-xs mt-1 leading-relaxed">1554 年開設世界最早的一批公共咖啡館（Kaveh Kanes）。</p>
+          </div>`
+        }
+      ];
+
+      locations.forEach(loc => {
+        const marker = L.circleMarker(loc.coords, {
+          radius: loc.size,
+          fillColor: loc.color,
+          color: '#ffffff',
+          weight: 2,
+          opacity: 1,
+          fillOpacity: 0.95
+        }).addTo(map);
+
+        marker.bindPopup(loc.popup);
+        mapMarkers[loc.id] = { marker, coords: loc.coords };
+      });
+
+      // Trade Routes with curved polylines
+      // Route 1: Kaffa -> Mocha -> Alexandria (Red)
+      const redRoute = [
+        [7.2833, 36.2167],
+        [13.3186, 43.2458],
+        [20.0, 39.0],
+        [27.5, 34.5],
+        [31.2001, 29.9187]
+      ];
+      L.polyline(redRoute, {
+        color: '#e11d48',
+        weight: 3.5,
+        opacity: 0.85,
+        dashArray: '6, 6'
+      }).addTo(map);
+
+      // Route 2: Alexandria -> Venice (Blue)
+      const blueRoute = [
+        [31.2001, 29.9187],
+        [34.5, 23.5],
+        [36.8, 17.5],
+        [40.5, 18.5],
+        [45.4408, 12.3155]
+      ];
+      L.polyline(blueRoute, {
+        color: '#0284c7',
+        weight: 3.5,
+        opacity: 0.85,
+        dashArray: '8, 6'
+      }).addTo(map);
+
+      // Route 3: Mediterranean & Global -> Trieste (Golden Giant Route)
+      const goldRoute = [
+        [31.2001, 29.9187],
+        [35.0, 21.0],
+        [39.0, 19.5],
+        [43.0, 15.0],
+        [45.6495, 13.7768]
+      ];
+      L.polyline(goldRoute, {
+        color: '#d48817',
+        weight: 5,
+        opacity: 0.95
+      }).addTo(map);
+
+      // Route 4: Trieste -> Vienna Rail route
+      const overlandRoute = [
+        [45.6495, 13.7768],
+        [46.2, 14.5],
+        [47.07, 15.44],
+        [48.2082, 16.3738]
+      ];
+      L.polyline(overlandRoute, {
+        color: '#b45309',
+        weight: 4,
+        dashArray: '5, 5',
+        opacity: 0.9
+      }).addTo(map);
+    }
+
+    function focusMapRoute(target) {
+      if (!map) return;
+      if (target === 'all') {
+        map.flyTo([33.0, 25.0], 4, { duration: 1.5 });
+      } else if (target === 'trieste') {
+        map.flyTo([46.2, 14.5], 6, { duration: 1.5 });
+        if (mapMarkers['trieste']) mapMarkers['trieste'].marker.openPopup();
+      } else if (target === 'venice') {
+        map.flyTo([45.44, 12.31], 6, { duration: 1.5 });
+        if (mapMarkers['venice']) mapMarkers['venice'].marker.openPopup();
+      } else if (target === 'yemen') {
+        map.flyTo([13.31, 43.24], 6, { duration: 1.5 });
+        if (mapMarkers['mocha']) mapMarkers['mocha'].marker.openPopup();
+      }
+    }
+
+    window.addEventListener('load', () => {
+      setTimeout(initTradeMap, 200);
+    });
+
+    // ==========================================
+    // 2. ROBUST AUDIO PLAYER WITH FALLBACKS
+    // ==========================================
+    let bgAudio = null;
     let isMusicPlaying = false;
+
+    function getAudioInstance() {
+      if (!bgAudio) {
+        bgAudio = document.getElementById('bg-audio');
+        if (!bgAudio) {
+          bgAudio = new Audio();
+          bgAudio.id = 'bg-audio';
+          bgAudio.loop = true;
+          document.body.appendChild(bgAudio);
+        }
+
+        // Set sources: first local file, fallback to base64 if needed
+        bgAudio.src = 'dusk-at-the-cafe.mp3';
+        bgAudio.onerror = function() {
+          console.warn('Local MP3 file failed, switching to base64 audio source...');
+          if (window.AUDIO_MP3_B64) {
+            bgAudio.src = window.AUDIO_MP3_B64;
+            bgAudio.play().then(() => updateMusicUI(true)).catch(e => console.error(e));
+          }
+        };
+      }
+      return bgAudio;
+    }
 
     function updateMusicUI(playing) {
       isMusicPlaying = playing;
@@ -1068,42 +1177,36 @@
     }
 
     function toggleMusic() {
-      if (!bgAudio) return;
-      if (bgAudio.paused) {
-        bgAudio.play().then(() => {
+      const audio = getAudioInstance();
+      if (audio.paused) {
+        audio.volume = 0.85;
+        audio.play().then(() => {
           updateMusicUI(true);
         }).catch(err => {
-          console.log('Play blocked by browser:', err);
+          console.log('Play blocked by browser, trying base64 fallback:', err);
+          if (window.AUDIO_MP3_B64 && audio.src !== window.AUDIO_MP3_B64) {
+            audio.src = window.AUDIO_MP3_B64;
+            audio.play().then(() => updateMusicUI(true)).catch(e => console.error(e));
+          }
         });
       } else {
-        bgAudio.pause();
+        audio.pause();
         updateMusicUI(false);
       }
     }
 
-    function tryAutoplay() {
-      if (!bgAudio) return;
-      bgAudio.volume = 0.75;
-      const promise = bgAudio.play();
-      if (promise !== undefined) {
-        promise.then(() => {
-          updateMusicUI(true);
-          const modal = document.getElementById('audio-consent-modal');
-          if (modal) modal.style.display = 'none';
-        }).catch(() => {
-          // If browser policy blocks autoplay, keep the modal visible
-          updateMusicUI(false);
-        });
-      }
-    }
-
     function userStartMusic() {
-      if (bgAudio) {
-        bgAudio.volume = 0.8;
-        bgAudio.play().then(() => {
-          updateMusicUI(true);
-        }).catch(e => console.error(e));
-      }
+      const audio = getAudioInstance();
+      audio.volume = 0.85;
+      audio.play().then(() => {
+        updateMusicUI(true);
+      }).catch(e => {
+        console.warn('User start error, using base64:', e);
+        if (window.AUDIO_MP3_B64) {
+          audio.src = window.AUDIO_MP3_B64;
+          audio.play().then(() => updateMusicUI(true)).catch(err => console.error(err));
+        }
+      });
       dismissAudioModal();
     }
 
@@ -1115,13 +1218,32 @@
       }
     }
 
-    window.addEventListener('DOMContentLoaded', tryAutoplay);
-    // Any user click on document will start audio if still paused and modal dismissed
-    document.addEventListener('click', (e) => {
-      if (bgAudio && bgAudio.paused && !document.getElementById('audio-consent-modal')) {
-        // user clicked somewhere after dismissing
+    // Try autoplay once page loads
+    window.addEventListener('DOMContentLoaded', () => {
+      const audio = getAudioInstance();
+      audio.volume = 0.85;
+      const promise = audio.play();
+      if (promise !== undefined) {
+        promise.then(() => {
+          updateMusicUI(true);
+          const modal = document.getElementById('audio-consent-modal');
+          if (modal) modal.style.display = 'none';
+        }).catch(() => {
+          updateMusicUI(false);
+        });
       }
     });
+
+    // Unmute on first interaction anywhere if modal was closed
+    const interactionHandler = () => {
+      const audio = getAudioInstance();
+      if (audio.paused && !document.getElementById('audio-consent-modal')) {
+        audio.play().then(() => updateMusicUI(true)).catch(() => {});
+      }
+      document.removeEventListener('click', interactionHandler);
+    };
+    document.addEventListener('click', interactionHandler);
+
   </script>
 
   <!-- Audio Player: Dusk at the Café -->
