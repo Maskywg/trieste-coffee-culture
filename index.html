@@ -716,20 +716,90 @@
 
       </div>
 
-      <!-- Live Order Simulator -->
-      <div class="mt-14 p-7 rounded-2xl bg-[#20150d] border-2 border-[#543b25] text-center max-w-2xl mx-auto shadow-xl">
-        <h4 class="text-lg font-bold text-white mb-3">模擬吧台點單：你想在特里埃斯特喝什麼？</h4>
-        <div class="flex flex-wrap gap-2.5 justify-center my-5">
-          <button onclick="simulateOrder('Un Capo in B, per favore!（請給我一杯小玻璃杯瑪琪朵！）')" class="px-4 py-2 rounded-lg bg-[#332012] border border-[#e5b266] text-sm font-bold text-[#ffd68a] hover:bg-[#e5b266] hover:text-black transition-all shadow-sm">Capo in B</button>
-          <button onclick="simulateOrder('Un Nero in B!（一杯小玻璃杯純黑濃縮！）')" class="px-4 py-2 rounded-lg bg-[#332012] border border-[#e5b266] text-sm font-bold text-[#ffd68a] hover:bg-[#e5b266] hover:text-black transition-all shadow-sm">Nero in B</button>
-          <button onclick="simulateOrder('Un Capo tanta schiuma!（請給我奶泡豐富的 Capo！）')" class="px-4 py-2 rounded-lg bg-[#332012] border border-[#e5b266] text-sm font-bold text-[#ffd68a] hover:bg-[#e5b266] hover:text-black transition-all shadow-sm">Capo con schiuma</button>
-          <button onclick="simulateOrder('Un Goccia, grazie!（一杯純黑濃縮點入一滴牛奶！）')" class="px-4 py-2 rounded-lg bg-[#332012] border border-[#e5b266] text-sm font-bold text-[#ffd68a] hover:bg-[#e5b266] hover:text-black transition-all shadow-sm">Goccia</button>
+      <!-- Live Order Simulator with Hyperrealistic Coffee Photos -->
+      <div class="mt-16 p-6 sm:p-9 rounded-2xl bg-[#1d130a] border-2 border-[#e5b266] shadow-2xl gold-glow">
+        <div class="text-center max-w-xl mx-auto mb-8">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#332012] border border-[#e5b266]/50 text-xs text-[#ffd68a] font-bold uppercase tracking-wider mb-2">
+            <span>🛎️ 吧台互動實境</span> • <span>超寫實特城咖啡</span>
+          </div>
+          <h4 class="text-2xl sm:text-3xl font-black text-white">點單出杯：點選你想喝的特里埃斯特咖啡</h4>
+          <p class="text-xs sm:text-sm text-[#d8be9f] mt-1.5 font-medium">
+            點擊下方任一名稱，吧台即刻為您現萃出杯，並展示特里埃斯特獨家盛裝杯器與分層細節！
+          </p>
         </div>
-        <div id="barista-response" class="p-4 rounded-xl bg-[#110a05] border border-[#47301c] text-sm font-medium text-[#ffd68a] min-h-[46px] flex items-center justify-center italic">
-          點擊上方按鈕，向吧台咖啡師點單...
-        </div>
-      </div>
 
+        <!-- Coffee Selection Buttons -->
+        <div class="flex flex-wrap gap-3 justify-center mb-8">
+          <button onclick="orderCoffee('capo_in_b')" id="btn-capo_in_b" class="coffee-order-btn px-4 py-2.5 rounded-xl bg-[#2e1c10] border-2 border-[#e5b266] text-sm font-bold text-[#ffd68a] hover:bg-[#e5b266] hover:text-black transition-all shadow-md flex items-center gap-2">
+            <span>👑</span> Capo in B（特城首選）
+          </button>
+          <button onclick="orderCoffee('nero_in_b')" id="btn-nero_in_b" class="coffee-order-btn px-4 py-2.5 rounded-xl bg-[#22150c] border border-[#523924] text-sm font-bold text-[#e0cfbb] hover:border-[#e5b266] hover:text-[#ffd68a] transition-all shadow-md flex items-center gap-2">
+            <span>🥃</span> Nero in B（玻璃杯黑濃縮）
+          </button>
+          <button onclick="orderCoffee('capo_schiuma')" id="btn-capo_schiuma" class="coffee-order-btn px-4 py-2.5 rounded-xl bg-[#22150c] border border-[#523924] text-sm font-bold text-[#e0cfbb] hover:border-[#e5b266] hover:text-[#ffd68a] transition-all shadow-md flex items-center gap-2">
+            <span>🥛</span> Capo tanta schiuma（厚奶泡）
+          </button>
+          <button onclick="orderCoffee('goccia')" id="btn-goccia" class="coffee-order-btn px-4 py-2.5 rounded-xl bg-[#22150c] border border-[#523924] text-sm font-bold text-[#e0cfbb] hover:border-[#e5b266] hover:text-[#ffd68a] transition-all shadow-md flex items-center gap-2">
+            <span>💧</span> Goccia（點一滴牛奶）
+          </button>
+          <button onclick="orderCoffee('cappuccino_latte')" id="btn-cappuccino_latte" class="coffee-order-btn px-4 py-2.5 rounded-xl bg-[#22150c] border border-[#523924] text-sm font-bold text-[#e0cfbb] hover:border-[#e5b266] hover:text-[#ffd68a] transition-all shadow-md flex items-center gap-2">
+            <span>☕</span> Cappuccino（特城大拿鐵）
+          </button>
+        </div>
+
+        <!-- Serving Showcase Stage (Photo + Tasting Notes) -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center bg-[#130b06] border border-[#422c19] rounded-2xl p-5 sm:p-7 shadow-inner">
+          
+          <!-- Photo Container with Steam effect -->
+          <div class="md:col-span-6 relative flex items-center justify-center">
+            <div class="w-full max-w-[340px] aspect-square rounded-2xl overflow-hidden border-2 border-[#e5b266]/70 shadow-2xl relative group bg-black">
+              <img id="served-coffee-img" src="coffee_assets/capo_in_b.jpg" alt="Capo in B" class="w-full h-full object-cover transition-opacity duration-300">
+              
+              <!-- Subtle steam rising animation on photo -->
+              <div class="absolute inset-x-0 bottom-0 top-1/2 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
+              <div class="absolute top-3 right-3 px-3 py-1 rounded-full bg-black/75 backdrop-blur text-xs font-cinzel font-bold text-[#ffd68a] border border-[#e5b266]/40">
+                <span id="coffee-badge">TRIESTE SPECIALTY</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Description & Barista Dialogue -->
+          <div class="md:col-span-6 space-y-4 text-left">
+            <div>
+              <span id="served-italian-title" class="text-xs font-cinzel text-[#ffd68a] font-bold tracking-widest block uppercase">Capo in Bicchiere</span>
+              <h3 id="served-name" class="text-2xl sm:text-3xl font-black text-white mt-1">Capo in B（小玻璃杯特製瑪琪朵）</h3>
+            </div>
+
+            <!-- Dialogue Speech Bubble -->
+            <div class="p-4 rounded-xl bg-[#20140c] border border-[#523924] shadow-sm">
+              <div class="flex items-center gap-2 mb-1.5 text-xs text-[#ffd68a] font-bold">
+                <span class="text-base">🧑‍🍳</span> 咖啡師吧台現遞：
+              </div>
+              <p id="served-barista-quote" class="text-sm text-[#f5ecd9] italic leading-relaxed">
+                「Subito! 剛萃取的黃金油脂與綿密奶泡在小玻璃杯中呈現完美分層，請握住微溫的杯壁細細品嚐。」
+              </p>
+            </div>
+
+            <!-- Details list -->
+            <div class="space-y-2 text-xs text-[#d8be9f]">
+              <div class="flex items-start gap-2">
+                <strong class="text-white shrink-0">盛裝器皿：</strong>
+                <span id="served-vessel">多角切面透明耐熱小玻璃杯（Bicchiere）</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <strong class="text-white shrink-0">風味結構：</strong>
+                <span id="served-flavor">深焙黑巧克力的醇厚底蘊，融匯一杓絲絨般溫潤奶泡，微甜不膩。</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <strong class="text-white shrink-0">文化特質：</strong>
+                <span id="served-culture">特里埃斯特市民每天必點 2~3 杯的城市靈魂，點單率超過全城 60%！</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
     </div>
   </section>
 
@@ -1143,6 +1213,97 @@
     });
 
     
+    
+    // --- Interactive Barista Coffee Showcase Logic ---
+    const coffeeData = {
+      'capo_in_b': {
+        img: 'coffee_assets/capo_in_b.jpg',
+        badge: 'TRIESTE ICONIC',
+        italian: 'Capo in Bicchiere',
+        name: 'Capo in B（小玻璃杯特製瑪琪朵）',
+        quote: '「Subito! 剛萃取的黃金油脂與綿密奶泡在小玻璃杯中呈現完美分層，請握住微溫的杯壁細細品嚐。」',
+        vessel: '多角切面透明耐熱小玻璃杯（Bicchiere）',
+        flavor: '深焙黑巧克力的醇厚底蘊，融匯一杓絲絨般溫潤奶泡，微甜順口。',
+        culture: '特里埃斯特市民每天必點 2~3 杯的城市靈魂，點單率超過全城 60%！'
+      },
+      'nero_in_b': {
+        img: 'coffee_assets/nero_in_b.jpg',
+        badge: 'PURE ESPRESSO',
+        italian: 'Nero in Bicchiere',
+        name: 'Nero in B（小玻璃杯純黑濃縮）',
+        quote: '「Ecco a Lei! 金黃赭紅的榛果色 Crema 油脂正浮在純黑酒液之上，杯緣的極致觸感是特城老饕的最愛。」',
+        vessel: '小八角透明玻璃杯（Bicchiere）',
+        flavor: '極濃郁的深焙堅果與焦糖香氣，微苦回甘，果酸清冽而收斂。',
+        culture: '特城文人最鍾愛的清醒劑，喬伊斯當年坐在紅橋畔寫作時的案頭必備。'
+      },
+      'capo_schiuma': {
+        img: 'coffee_assets/capo_schiuma.jpg',
+        badge: 'VELVET FOAM',
+        italian: 'Capo tanta schiuma',
+        name: 'Capo tanta schiuma（豐厚奶泡瑪琪朵）',
+        quote: '「Con piacere! 為您打發出如雲朵般隆起的極厚綿密奶泡，表層再灑上薄薄微焦可可粉。」',
+        vessel: '古典陶瓷碟盤上的特製玻璃矮杯',
+        flavor: '第一口是無比細緻的奶香奶霜，隨後湧上濃烈的義式特配濃縮。',
+        culture: '寒冬布拉烈風呼嘯時，躲入歷史老咖啡館暖手與甜嘴的溫暖首選。'
+      },
+      'goccia': {
+        img: 'coffee_assets/goccia.jpg',
+        badge: 'SINGLE DROP',
+        italian: 'Un Goccia (Caffè Gocciato)',
+        name: 'Goccia（純黑濃縮點入一滴牛奶）',
+        quote: '「Perfetto! 正中央精準滴入一滴溫潤牛奶，瞬間柔化了高溫濃縮的銳利稜角。」',
+        vessel: '義大利傳統厚壁白瓷濃縮杯（Tazza di ceramica）',
+        flavor: '既保留純黑咖啡純粹剛烈的穿透力，又在舌尖點綴了一絲絲乳香柔韻。',
+        culture: '不想被奶味搶戲、卻又想圓潤口感的老派咖啡客最深沉的默契密碼。'
+      },
+      'cappuccino_latte': {
+        img: 'coffee_assets/cappuccino_latte.jpg',
+        badge: 'TRIESTE DIALECT',
+        italian: 'Cappuccino Triestino (Caffellatte)',
+        name: 'Cappuccino（特里埃斯特式大拿鐵）',
+        quote: '「Attenzione! 在特里埃斯特點 Cappuccino，端上來的可是一大杯分層鮮奶咖啡（Caffellatte）喔！」',
+        vessel: '帶把手高身耐熱玻璃杯',
+        flavor: '大量溫熱蒸氣牛奶與義式濃縮的完美交融，乳香飽滿圓潤。',
+        culture: '特里埃斯特獨樹一格的語言幽默，也是外地遊客最常驚訝發現的在地特色。'
+      }
+    };
+
+    function orderCoffee(key) {
+      const data = coffeeData[key];
+      if (!data) return;
+
+      // Update button active states
+      document.querySelectorAll('.coffee-order-btn').forEach(btn => {
+        btn.classList.remove('border-[#e5b266]', 'bg-[#2e1c10]', 'text-[#ffd68a]');
+        btn.classList.add('border-[#523924]', 'bg-[#22150c]', 'text-[#e0cfbb]');
+      });
+      const activeBtn = document.getElementById('btn-' + key);
+      if (activeBtn) {
+        activeBtn.classList.add('border-[#e5b266]', 'bg-[#2e1c10]', 'text-[#ffd68a]');
+        activeBtn.classList.remove('border-[#523924]', 'bg-[#22150c]', 'text-[#e0cfbb]');
+      }
+
+      // Smooth photo fade transition
+      const imgEl = document.getElementById('served-coffee-img');
+      if (imgEl) {
+        imgEl.style.opacity = '0.2';
+        setTimeout(() => {
+          imgEl.src = data.img;
+          imgEl.alt = data.name;
+          imgEl.style.opacity = '1';
+        }, 150);
+      }
+
+      // Update texts
+      document.getElementById('coffee-badge').innerText = data.badge;
+      document.getElementById('served-italian-title').innerText = data.italian;
+      document.getElementById('served-name').innerText = data.name;
+      document.getElementById('served-barista-quote').innerText = data.quote;
+      document.getElementById('served-vessel').innerText = data.vessel;
+      document.getElementById('served-flavor').innerText = data.flavor;
+      document.getElementById('served-culture').innerText = data.culture;
+    }
+
     // --- Bulletproof Native Audio Controls ---
     const audioEl = document.getElementById('main-audio');
 
