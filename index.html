@@ -97,6 +97,27 @@
 </head>
 <body class="bg-[#0d0a08] text-[#f8f3ed] antialiased selection:bg-[#e5b266] selection:text-black relative">
 
+<!-- Premium Visible Music Player Bar (Native Audio Controls with Autoplay) -->
+  <div class="fixed bottom-6 right-6 z-50 p-4 rounded-2xl bg-[#1d130a]/95 border-2 border-[#e5b266] shadow-2xl backdrop-blur-md max-w-sm w-[92vw] sm:w-80 gold-glow">
+    <div class="flex items-center justify-between mb-2">
+      <div class="flex items-center gap-2">
+        <span class="text-xl">☕</span>
+        <div>
+          <div class="text-xs font-black text-[#ffd68a] tracking-wide">Dusk at the Café</div>
+          <div class="text-[10px] text-[#e0cfbb]">特里埃斯特沙龍黃昏配樂</div>
+        </div>
+      </div>
+      <span class="text-[10px] px-2 py-0.5 rounded bg-[#382313] text-[#ffd68a] border border-[#e5b266]/40 font-bold">MP3</span>
+    </div>
+    
+    <!-- Native Audio Element: 100% reliable across all browsers -->
+    <audio id="main-audio" controls loop autoplay class="w-full h-9 rounded-lg" style="accent-color: #e5b266;">
+      <source src="dusk-at-the-cafe.mp3" type="audio/mpeg">
+      <source src="Dusk%20at%20the%20Cafe%CC%81.mp3" type="audio/mpeg">
+      您的瀏覽器不支援音訊播放。
+    </audio>
+  </div>
+
   <canvas id="ambient-canvas"></canvas>
 
   <!-- Navigation Bar -->
@@ -1304,15 +1325,26 @@
       document.getElementById('served-culture').innerText = data.culture;
     }
 
+    
     // --- Bulletproof Native Audio Controls ---
-    const audioEl = document.getElementById('main-audio');
+    let audioEl = null;
+
+    function getAudioEl() {
+      if (!audioEl) {
+        audioEl = document.getElementById('main-audio');
+      }
+      return audioEl;
+    }
 
     function toggleMainAudio() {
-      if (!audioEl) return;
-      if (audioEl.paused) {
-        audioEl.play().then(() => updateNavBtn(true)).catch(err => console.log(err));
+      const audio = getAudioEl();
+      if (!audio) return;
+      if (audio.paused) {
+        audio.play().then(() => updateNavBtn(true)).catch(err => {
+          console.warn('Audio play request was blocked:', err);
+        });
       } else {
-        audioEl.pause();
+        audio.pause();
         updateNavBtn(false);
       }
     }
@@ -1329,57 +1361,53 @@
       }
     }
 
-    if (audioEl) {
-      audioEl.addEventListener('play', () => updateNavBtn(true));
-      audioEl.addEventListener('pause', () => updateNavBtn(false));
-      
-      // Auto-play attempt on user click anywhere on page
-      const startAudioOnFirstClick = () => {
-        if (audioEl.paused) {
-          audioEl.play().catch(() => {});
-        }
-        document.removeEventListener('click', startAudioOnFirstClick);
-      };
-      document.addEventListener('click', startAudioOnFirstClick, { once: true });
+    function initAudioListeners() {
+      const audio = getAudioEl();
+      if (!audio) return;
+
+      audio.addEventListener('play', () => updateNavBtn(true));
+      audio.addEventListener('pause', () => updateNavBtn(false));
+      audio.addEventListener('ended', () => updateNavBtn(false));
+
+      // Attempt initial autoplay
+      audio.volume = 0.85;
+      const playPromise = audio.play();
+      if (playPromise !== undefined) {
+        playPromise.then(() => {
+          updateNavBtn(true);
+        }).catch(() => {
+          updateNavBtn(false);
+          // Browser Autoplay Policy: Automatically start audio on very first user click anywhere
+          const unlockAudio = () => {
+            if (audio.paused) {
+              audio.play().then(() => updateNavBtn(true)).catch(() => {});
+            }
+            document.removeEventListener('click', unlockAudio);
+            document.removeEventListener('touchstart', unlockAudio);
+          };
+          document.addEventListener('click', unlockAudio, { once: true });
+          document.addEventListener('touchstart', unlockAudio, { once: true });
+        });
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initAudioListeners);
+    } else {
+      initAudioListeners();
     }
 
   </script>
 
   
-  <div id="sticky-audio-bar" class="fixed bottom-6 right-6 z-50 flex items-center gap-3 px-4 py-2.5 rounded-2xl bg-[#1d130a]/95 border-2 border-[#e5b266]/70 shadow-2xl backdrop-blur-md gold-glow">
-    <div class="relative w-8 h-8 rounded-full bg-[#382313] border border-[#e5b266] flex items-center justify-center cursor-pointer text-sm" onclick="toggleMusic()">
-      <span id="sticky-icon">⏸️</span>
-    </div>
-    <div class="cursor-pointer" onclick="toggleMusic()">
-      <div class="text-xs font-black text-[#ffd68a] leading-none">Dusk at the Café</div>
-      <div id="sticky-status" class="text-[10px] text-[#e8ded2] mt-1 font-medium">咖啡館黃昏樂章 • 播放中</div>
-    </div>
+  
     <button onclick="toggleMusic()" id="sticky-btn" class="ml-2 px-3 py-1 rounded-lg bg-[#e5b266] text-black text-xs font-black hover:bg-[#ffd68a] transition-colors">
       暫停
     </button>
   </div>
 
 
-  <!-- Premium Visible Music Player Bar (Native Audio Controls with Autoplay) -->
-  <div class="fixed bottom-6 right-6 z-50 p-4 rounded-2xl bg-[#1d130a]/95 border-2 border-[#e5b266] shadow-2xl backdrop-blur-md max-w-sm w-[92vw] sm:w-80 gold-glow">
-    <div class="flex items-center justify-between mb-2">
-      <div class="flex items-center gap-2">
-        <span class="text-xl">☕</span>
-        <div>
-          <div class="text-xs font-black text-[#ffd68a] tracking-wide">Dusk at the Café</div>
-          <div class="text-[10px] text-[#e0cfbb]">特里埃斯特沙龍黃昏配樂</div>
-        </div>
-      </div>
-      <span class="text-[10px] px-2 py-0.5 rounded bg-[#382313] text-[#ffd68a] border border-[#e5b266]/40 font-bold">MP3</span>
-    </div>
-    
-    <!-- Native Audio Element: 100% reliable across all browsers -->
-    <audio id="main-audio" controls loop autoplay class="w-full h-9 rounded-lg" style="accent-color: #e5b266;">
-      <source src="dusk-at-the-cafe.mp3" type="audio/mpeg">
-      <source src="Dusk%20at%20the%20Cafe%CC%81.mp3" type="audio/mpeg">
-      您的瀏覽器不支援音訊播放。
-    </audio>
-  </div>
+  
 
 </body>
 </html>
