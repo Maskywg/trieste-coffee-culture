@@ -96,9 +96,16 @@
         </a>
       </nav>
       <div class="flex items-center gap-3">
-        <button id="soundtrack-btn" onclick="toggleCafeAmbience()" class="px-4 py-2 rounded-full border border-[#e5b266] bg-[#24170d] text-sm font-bold text-[#ffd68a] hover:bg-[#e5b266] hover:text-black transition-all flex items-center gap-2 shadow-sm">
-          <span id="soundtrack-icon">🎵</span>
-          <span id="soundtrack-text">咖啡館氛圍音效</span>
+        <!-- Floating / Header Music Player with animated wave -->
+        <button id="music-btn" onclick="toggleMusic()" class="px-4 py-2 rounded-full border-2 border-[#e5b266] bg-[#26170d]/90 text-sm font-bold text-[#ffd68a] hover:bg-[#e5b266] hover:text-black transition-all flex items-center gap-2.5 shadow-lg group">
+          <span id="music-icon" class="text-base">⏸️</span>
+          <span id="music-text">播放中：Dusk at the Café</span>
+          <!-- Equalizer bar animation -->
+          <div id="music-bars" class="flex items-end gap-0.5 h-3.5 ml-1">
+            <span class="w-1 bg-[#ffd68a] group-hover:bg-black rounded-sm animate-pulse h-2"></span>
+            <span class="w-1 bg-[#ffd68a] group-hover:bg-black rounded-sm animate-pulse h-3.5" style="animation-delay: 0.2s"></span>
+            <span class="w-1 bg-[#ffd68a] group-hover:bg-black rounded-sm animate-pulse h-2.5" style="animation-delay: 0.4s"></span>
+          </div>
         </button>
       </div>
     </div>
@@ -1030,81 +1037,101 @@
       barRes.innerHTML = `<strong>你說：</strong>${phrase}<br><span class="text-[#ffe6b3] font-bold">咖啡師：${randomResponse}</span>`;
     }
 
-    // --- Web Audio Synthesizer for Warm Ambient Cafe Sounds ---
-    let audioCtx = null;
-    let isPlayingAudio = false;
-    let ambientNodes = [];
+    // --- Dusk at the Café MP3 Music Controller with Autoplay ---
+    const bgAudio = document.getElementById('bg-audio');
+    let isMusicPlaying = false;
 
-    function toggleCafeAmbience() {
-      const btnText = document.getElementById('soundtrack-text');
-      const btnIcon = document.getElementById('soundtrack-icon');
+    function updateMusicUI(playing) {
+      isMusicPlaying = playing;
+      const headerIcon = document.getElementById('music-icon');
+      const headerText = document.getElementById('music-text');
+      const headerBars = document.getElementById('music-bars');
+      const stickyIcon = document.getElementById('sticky-icon');
+      const stickyBtn = document.getElementById('sticky-btn');
+      const stickyStatus = document.getElementById('sticky-status');
 
-      if (isPlayingAudio) {
-        stopCafeAmbience();
-        btnText.innerText = '咖啡館氛圍音效';
-        btnIcon.innerText = '🎵';
-        isPlayingAudio = false;
-        return;
-      }
-
-      try {
-        if (!audioCtx) {
-          audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-        }
-        if (audioCtx.state === 'suspended') {
-          audioCtx.resume();
-        }
-
-        const bufferSize = audioCtx.sampleRate * 2;
-        const noiseBuffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
-        const output = noiseBuffer.getChannelData(0);
-        let lastOut = 0.0;
-        for (let i = 0; i < bufferSize; i++) {
-          const white = Math.random() * 2 - 1;
-          output[i] = (lastOut + (0.02 * white)) / 1.02;
-          lastOut = output[i];
-          output[i] *= 3.5;
-        }
-
-        const whiteNoise = audioCtx.createBufferSource();
-        whiteNoise.buffer = noiseBuffer;
-        whiteNoise.loop = true;
-
-        const filter = audioCtx.createBiquadFilter();
-        filter.type = 'bandpass';
-        filter.frequency.value = 380;
-        filter.Q.value = 1.2;
-
-        const gainNode = audioCtx.createGain();
-        gainNode.gain.setValueAtTime(0.01, audioCtx.currentTime);
-        gainNode.gain.linearRampToValueAtTime(0.12, audioCtx.currentTime + 2.5);
-
-        whiteNoise.connect(filter);
-        filter.connect(gainNode);
-        gainNode.connect(audioCtx.destination);
-
-        whiteNoise.start();
-        ambientNodes = [whiteNoise, gainNode];
-
-        isPlayingAudio = true;
-        btnText.innerText = '暫停氛圍聲音';
-        btnIcon.innerText = '⏸️';
-      } catch (e) {
-        console.error('Audio init error:', e);
+      if (playing) {
+        if (headerIcon) headerIcon.innerText = '⏸️';
+        if (headerText) headerText.innerText = '播放中：Dusk at the Café';
+        if (headerBars) headerBars.style.display = 'flex';
+        if (stickyIcon) stickyIcon.innerText = '⏸️';
+        if (stickyBtn) stickyBtn.innerText = '暫停';
+        if (stickyStatus) stickyStatus.innerText = '咖啡館黃昏樂章 • 播放中';
+      } else {
+        if (headerIcon) headerIcon.innerText = '▶️';
+        if (headerText) headerText.innerText = '已暫停：Dusk at the Café';
+        if (headerBars) headerBars.style.display = 'none';
+        if (stickyIcon) stickyIcon.innerText = '▶️';
+        if (stickyBtn) stickyBtn.innerText = '播放';
+        if (stickyStatus) stickyStatus.innerText = '點擊播放黃昏樂章';
       }
     }
 
-    function stopCafeAmbience() {
-      if (ambientNodes.length > 0) {
-        try {
-          ambientNodes[1].gain.linearRampToValueAtTime(0.001, audioCtx.currentTime + 0.8);
-          setTimeout(() => {
-            ambientNodes[0].stop();
-            ambientNodes = [];
-          }, 800);
-        } catch (e) {}
+    function toggleMusic() {
+      if (!bgAudio) return;
+      if (bgAudio.paused) {
+        bgAudio.play().then(() => {
+          updateMusicUI(true);
+        }).catch(err => {
+          console.log('Play blocked by browser:', err);
+        });
+      } else {
+        bgAudio.pause();
+        updateMusicUI(false);
       }
     }
+
+    // Attempt autoplay immediately on load
+    function tryAutoplay() {
+      if (!bgAudio) return;
+      bgAudio.volume = 0.75;
+      const promise = bgAudio.play();
+      if (promise !== undefined) {
+        promise.then(() => {
+          updateMusicUI(true);
+        }).catch(() => {
+          // If browser policy blocks autoplay without user interaction,
+          // listen for first user interaction (click/scroll/touch) to resume audio automatically
+          updateMusicUI(false);
+          const resumeOnInteraction = () => {
+            bgAudio.play().then(() => {
+              updateMusicUI(true);
+              document.removeEventListener('click', resumeOnInteraction);
+              document.removeEventListener('keydown', resumeOnInteraction);
+              document.removeEventListener('touchstart', resumeOnInteraction);
+            }).catch(() => {});
+          };
+          document.addEventListener('click', resumeOnInteraction, { once: true });
+          document.addEventListener('keydown', resumeOnInteraction, { once: true });
+          document.addEventListener('touchstart', resumeOnInteraction, { once: true });
+        });
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', tryAutoplay);
+    // Also trigger on first load
+    setTimeout(tryAutoplay, 300);
   </script>
+
+  <!-- Audio Player: Dusk at the Café -->
+  <audio id="bg-audio" loop preload="auto">
+    <source src="dusk-at-the-cafe.mp3" type="audio/mpeg">
+    <source src="Dusk%20at%20the%20Cafe%CC%81.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Sticky Bottom Music Bar Widget -->
+  <div id="sticky-audio-bar" class="fixed bottom-6 right-6 z-50 flex items-center gap-3 px-4 py-2.5 rounded-2xl bg-[#1d130a]/95 border-2 border-[#e5b266]/70 shadow-2xl backdrop-blur-md gold-glow">
+    <div class="relative w-8 h-8 rounded-full bg-[#382313] border border-[#e5b266] flex items-center justify-center cursor-pointer text-sm" onclick="toggleMusic()">
+      <span id="sticky-icon">⏸️</span>
+    </div>
+    <div class="cursor-pointer" onclick="toggleMusic()">
+      <div class="text-xs font-black text-[#ffd68a] leading-none">Dusk at the Café</div>
+      <div id="sticky-status" class="text-[10px] text-[#e8ded2] mt-1 font-medium">咖啡館黃昏樂章 • 播放中</div>
+    </div>
+    <button onclick="toggleMusic()" id="sticky-btn" class="ml-2 px-3 py-1 rounded-lg bg-[#e5b266] text-black text-xs font-black hover:bg-[#ffd68a] transition-colors">
+      暫停
+    </button>
+  </div>
+
 </body>
 </html>
