@@ -8,7 +8,7 @@
   <!-- Open Graph / Meta -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Ivy 旅拍紀實・特里埃斯特的時光切片 | 極東義大利數位策展">
-  <meta property="og:description" content="跟隨 Ivy 的鏡頭，穿梭亞得里亞海咽喉。58張實地旅拍、考據歷史典故、哈布斯堡紅色門牌、鐘樓機械人Michez與Jachez、怒吼布拉風與蒙特格里薩邊境巨構。">
+  <meta property="og:description" content="跟隨 Ivy 的鏡頭，穿梭亞得里亞海咽喉。64張實地旅拍、考據歷史典故、哈布斯堡紅色門牌、鐘樓機械人Michez與Jachez、手沖咖啡課Urban Caffè、怒吼布拉風與蒙特格里薩邊境巨構。">
   <meta property="og:image" content="ivy_photos/825268343_29660886653501902_8969009369078396386_n.jpg">
   
   <script src="https://cdn.tailwindcss.com"></script>
@@ -110,7 +110,7 @@
           <span>🌬️</span> Bora波拉風策展專網 ↗
         </a>
         <span class="hidden md:inline-block text-xs font-bold text-[#e5b266] bg-[#2a1d12] px-3.5 py-1.5 rounded-full border border-[#e5b266]/40">
-          📸 58 張實地旅拍考據
+          📸 64 張實地旅拍考據
         </span>
         <button onclick="toggleAudio()" class="px-3.5 py-1.5 rounded-full border border-[#e5b266] bg-[#24170d] text-xs font-bold text-[#ffd68a] hover:bg-[#e5b266] hover:text-black transition-all flex items-center gap-1.5">
           <span id="audio-btn-icon">🎵</span>
@@ -145,13 +145,18 @@
           <span>🏛️</span> 策展序言：邊境之城的歷史光影考據
         </h3>
         <p>
-          這份攝影專題收錄了 <strong>Ivy 實際走訪特里埃斯特（Trieste）</strong> 所留下的 <strong>58 張珍貴旅拍照片</strong>。
+          這份攝影專題收錄了 <strong>Ivy 實際走訪特里埃斯特（Trieste）</strong> 所留下的 <strong>64 張珍貴旅拍照片</strong>。
           特里埃斯特曾是哈布斯堡奧匈帝國唯一的繁榮出海口與中世紀自由港，整個中歐的咖啡豆與東方香料皆在此靠岸，流通的通用貨幣上鑄著被譽為「歐洲丈母娘」的<strong>瑪麗亞·泰瑞莎女皇（Maria Theresa）</strong>頭像。
         </p>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2 text-xs sm:text-sm text-[#dec3a6]">
           <div class="p-3.5 rounded-xl bg-[#22160d] border border-[#523927]">
             <strong class="text-[#ffd68a] block mb-1">🔔 鐘樓敲鐘人與古城堡：</strong>
             聖儒斯定城堡（Castello di San Giusto）內珍藏著19世紀原本安置在統一廣場市政廳頂端的兩尊自動敲鐘機器人雕像——<strong>Michez（麥克茲）與 Jachez（雅克茲）</strong>，以及刻著「NATA 1750」的龐大鐘樓機芯。
+          </div>
+          <div class="p-3.5 rounded-xl bg-[#241a0f] border border-[#4a3620]">
+            <strong class="text-[#d9a86c] block mb-1">🫘 手沖咖啡課・Urban Caffè：</strong>
+            特里埃斯特是 illy 的發源地，本該喝一杯 illy 或本地特有、咖啡加巧克力的<strong>維也納咖啡</strong>，但 Ivy 找了間主打手沖淺焙的
+            <strong>Urban Caffè</strong>，點了一支肯亞單品、一壺衣索比亞，喝到的其實是淺中焙，卻已經比 espresso 好喝太多。
           </div>
           <div class="p-3.5 rounded-xl bg-[#142322] border border-[#234d49]">
             <strong class="text-[#80ffe8] flex items-center justify-between mb-1">
@@ -179,28 +184,31 @@
       <div class="flex items-center justify-between gap-4 overflow-x-auto pb-2 scrollbar-none">
         <div class="flex items-center gap-2 flex-nowrap" id="filter-container">
           <button onclick="filterPhotos('all')" class="filter-btn active px-4 py-2 rounded-xl border border-[#523927] bg-[#22160d] text-xs sm:text-sm whitespace-nowrap transition-all">
-            🌟 全部旅拍 (58)
+            🌟 全部旅拍 (<span class="count" data-chapter="all">0</span>)
           </button>
           <button onclick="filterPhotos('castello')" class="filter-btn px-4 py-2 rounded-xl border border-[#523927] bg-[#22160d] text-xs sm:text-sm text-[#e0cfbb] hover:border-[#e5b266] whitespace-nowrap transition-all">
-            🏰 聖儒斯定城堡與敲鐘人 (15)
-          </button>
-          <button onclick="filterPhotos('literature')" class="filter-btn px-4 py-2 rounded-xl border border-[#523927] bg-[#22160d] text-xs sm:text-sm text-[#e0cfbb] hover:border-[#e5b266] whitespace-nowrap transition-all">
-            ⛪ 雙聖殿與文學大運河 (14)
-          </button>
-          <button onclick="filterPhotos('montegrisa')" class="filter-btn px-4 py-2 rounded-xl border border-[#523927] bg-[#22160d] text-xs sm:text-sm text-[#e0cfbb] hover:border-[#e5b266] whitespace-nowrap transition-all">
-            🔺 邊境巨構蒙特格里薩 (11)
+            🏰 聖儒斯定城堡與敲鐘人 (<span class="count" data-chapter="castello">0</span>)
           </button>
           <button onclick="filterPhotos('habsburg')" class="filter-btn px-4 py-2 rounded-xl border border-[#523927] bg-[#22160d] text-xs sm:text-sm text-[#e0cfbb] hover:border-[#e5b266] whitespace-nowrap transition-all">
-            🏛️ 哈布斯堡紅色門牌 (11)
+            🏛️ 帝國門牌與老城街廓 (<span class="count" data-chapter="habsburg">0</span>)
+          </button>
+          <button onclick="filterPhotos('literature')" class="filter-btn px-4 py-2 rounded-xl border border-[#523927] bg-[#22160d] text-xs sm:text-sm text-[#e0cfbb] hover:border-[#e5b266] whitespace-nowrap transition-all">
+            ⛪ 雙聖殿與運河老街 (<span class="count" data-chapter="literature">0</span>)
           </button>
           <button onclick="filterPhotos('cafes')" class="filter-btn px-4 py-2 rounded-xl border border-[#523927] bg-[#22160d] text-xs sm:text-sm text-[#e0cfbb] hover:border-[#e5b266] whitespace-nowrap transition-all">
-            ☕ 百年沙龍與咖啡甜點 (8)
+            ☕ 百年沙龍與咖啡甜點 (<span class="count" data-chapter="cafes">0</span>)
+          </button>
+          <button onclick="filterPhotos('coffee')" class="filter-btn px-4 py-2 rounded-xl border border-[#4a3620] bg-[#241a0f] text-xs sm:text-sm text-[#d9a86c] hover:border-[#e5b266] whitespace-nowrap transition-all">
+            🫘 手沖咖啡課・Urban Caffè (<span class="count" data-chapter="coffee">0</span>)
           </button>
           <button onclick="filterPhotos('bora')" class="filter-btn px-4 py-2 rounded-xl border border-[#234d49] bg-[#142322] text-xs sm:text-sm text-[#80ffe8] hover:border-[#80ffe8] whitespace-nowrap transition-all">
-            💨 布拉風與甜瓜飲水機 (2)
+            💨 布拉風與甜瓜飲水機 (<span class="count" data-chapter="bora">0</span>)
           </button>
           <button onclick="filterPhotos('freeport')" class="filter-btn px-4 py-2 rounded-xl border border-[#523927] bg-[#22160d] text-xs sm:text-sm text-[#e0cfbb] hover:border-[#e5b266] whitespace-nowrap transition-all">
-            ⚓ 自由領地歷史印記 (2)
+            ⚓ 自由港與瑪麗亞泰瑞莎 (<span class="count" data-chapter="freeport">0</span>)
+          </button>
+          <button onclick="filterPhotos('montegrisa')" class="filter-btn px-4 py-2 rounded-xl border border-[#523927] bg-[#22160d] text-xs sm:text-sm text-[#e0cfbb] hover:border-[#e5b266] whitespace-nowrap transition-all">
+            🔺 邊境巨構蒙特格里薩 (<span class="count" data-chapter="montegrisa">0</span>)
           </button>
         </div>
       </div>
@@ -607,6 +615,17 @@
   },
   {
     "id": 26,
+    "filename": "828363957_29662189696704931_8123029946513509921_n.jpg",
+    "chapter": "habsburg",
+    "chapter_name": "帝國門牌與老城街廓",
+    "title": "街角面具噴泉・老城飲水設施",
+    "title_it": "Fontana con Mascherone nella Città Vecchia",
+    "fact": "老城廣場一角的青銅面具噴泉，泉水自雕像口中湧出，落入圓形水池，是老城街頭常見的公共飲水造景。",
+    "poetic": "青銅面具終年不語，只讓水聲代替它訴說故事，見證著廣場上來來往往的旅人與居民。",
+    "path": "ivy_photos/828363957_29662189696704931_8123029946513509921_n.jpg"
+  },
+  {
+    "id": 27,
     "filename": "825268157_29660880853502482_6518991068475015129_n.jpg",
     "chapter": "literature",
     "chapter_name": "雙聖殿與運河老街",
@@ -617,7 +636,7 @@
     "path": "ivy_photos/825268157_29660880853502482_6518991068475015129_n.jpg"
   },
   {
-    "id": 27,
+    "id": 28,
     "filename": "825268162_29660886246835276_2884383243799367140_n.jpg",
     "chapter": "literature",
     "chapter_name": "雙聖殿與運河老街",
@@ -628,7 +647,7 @@
     "path": "ivy_photos/825268162_29660886246835276_2884383243799367140_n.jpg"
   },
   {
-    "id": 28,
+    "id": 29,
     "filename": "825268168_29660883673502200_3128118360590076558_n.jpg",
     "chapter": "literature",
     "chapter_name": "雙聖殿與運河老街",
@@ -639,7 +658,7 @@
     "path": "ivy_photos/825268168_29660883673502200_3128118360590076558_n.jpg"
   },
   {
-    "id": 29,
+    "id": 30,
     "filename": "825909903_29660885966835304_5114250214552634996_n.jpg",
     "chapter": "literature",
     "chapter_name": "雙聖殿與運河老街",
@@ -650,7 +669,7 @@
     "path": "ivy_photos/825909903_29660885966835304_5114250214552634996_n.jpg"
   },
   {
-    "id": 30,
+    "id": 31,
     "filename": "825268495_29660886433501924_5370745172379679574_n.jpg",
     "chapter": "literature",
     "chapter_name": "雙聖殿與運河老街",
@@ -661,7 +680,7 @@
     "path": "ivy_photos/825268495_29660886433501924_5370745172379679574_n.jpg"
   },
   {
-    "id": 31,
+    "id": 32,
     "filename": "829711086_29660884170168817_6565889580225520782_n.jpg",
     "chapter": "literature",
     "chapter_name": "雙聖殿與運河老街",
@@ -672,7 +691,7 @@
     "path": "ivy_photos/829711086_29660884170168817_6565889580225520782_n.jpg"
   },
   {
-    "id": 32,
+    "id": 33,
     "filename": "825268214_29660884326835468_7065973465657424444_n.jpg",
     "chapter": "literature",
     "chapter_name": "雙聖殿與運河老街",
@@ -683,7 +702,7 @@
     "path": "ivy_photos/825268214_29660884326835468_7065973465657424444_n.jpg"
   },
   {
-    "id": 33,
+    "id": 34,
     "filename": "825268474_29660884603502107_4259074506344466216_n.jpg",
     "chapter": "literature",
     "chapter_name": "雙聖殿與運河老街",
@@ -694,7 +713,7 @@
     "path": "ivy_photos/825268474_29660884603502107_4259074506344466216_n.jpg"
   },
   {
-    "id": 34,
+    "id": 35,
     "filename": "825268489_29660885633502004_6863702305171418563_n.jpg",
     "chapter": "literature",
     "chapter_name": "雙聖殿與運河老街",
@@ -705,7 +724,7 @@
     "path": "ivy_photos/825268489_29660885633502004_6863702305171418563_n.jpg"
   },
   {
-    "id": 35,
+    "id": 36,
     "filename": "825268234_29660880860169148_7370961659237975541_n.jpg",
     "chapter": "literature",
     "chapter_name": "雙聖殿與運河老街",
@@ -716,7 +735,7 @@
     "path": "ivy_photos/825268234_29660880860169148_7370961659237975541_n.jpg"
   },
   {
-    "id": 36,
+    "id": 37,
     "filename": "825268298_29660880080169226_7598825165565124912_n.jpg",
     "chapter": "literature",
     "chapter_name": "雙聖殿與運河老街",
@@ -727,7 +746,7 @@
     "path": "ivy_photos/825268298_29660880080169226_7598825165565124912_n.jpg"
   },
   {
-    "id": 37,
+    "id": 38,
     "filename": "825268241_29660882903502277_2813542208151777359_n.jpg",
     "chapter": "literature",
     "chapter_name": "雙聖殿與運河老街",
@@ -738,7 +757,7 @@
     "path": "ivy_photos/825268241_29660882903502277_2813542208151777359_n.jpg"
   },
   {
-    "id": 38,
+    "id": 39,
     "filename": "825268469_29660885323502035_5251095677022138606_n.jpg",
     "chapter": "literature",
     "chapter_name": "雙聖殿與運河老街",
@@ -749,7 +768,7 @@
     "path": "ivy_photos/825268469_29660885323502035_5251095677022138606_n.jpg"
   },
   {
-    "id": 39,
+    "id": 40,
     "filename": "825268353_29660888396835061_6585406867588701604_n.jpg",
     "chapter": "literature",
     "chapter_name": "雙聖殿與運河老街",
@@ -760,7 +779,7 @@
     "path": "ivy_photos/825268353_29660888396835061_6585406867588701604_n.jpg"
   },
   {
-    "id": 40,
+    "id": 41,
     "filename": "825353169_29660887706835130_7416546038463224688_n.jpg",
     "chapter": "literature",
     "chapter_name": "雙聖殿與運河老街",
@@ -771,7 +790,7 @@
     "path": "ivy_photos/825353169_29660887706835130_7416546038463224688_n.jpg"
   },
   {
-    "id": 41,
+    "id": 42,
     "filename": "825268475_29660885680168666_8274982780959622476_n.jpg",
     "chapter": "literature",
     "chapter_name": "雙聖殿與運河老街",
@@ -782,7 +801,7 @@
     "path": "ivy_photos/825268475_29660885680168666_8274982780959622476_n.jpg"
   },
   {
-    "id": 42,
+    "id": 43,
     "filename": "827510306_29660884406835460_6401284475489727889_n.jpg",
     "chapter": "literature",
     "chapter_name": "雙聖殿與運河老街",
@@ -793,7 +812,7 @@
     "path": "ivy_photos/827510306_29660884406835460_6401284475489727889_n.jpg"
   },
   {
-    "id": 43,
+    "id": 44,
     "filename": "825268123_29660881966835704_1154059438245505916_n.jpg",
     "chapter": "cafes",
     "chapter_name": "百年沙龍與咖啡甜點",
@@ -804,7 +823,7 @@
     "path": "ivy_photos/825268123_29660881966835704_1154059438245505916_n.jpg"
   },
   {
-    "id": 44,
+    "id": 45,
     "filename": "825268373_29660886600168574_6770595938757011963_n.jpg",
     "chapter": "cafes",
     "chapter_name": "百年沙龍與咖啡甜點",
@@ -815,7 +834,7 @@
     "path": "ivy_photos/825268373_29660886600168574_6770595938757011963_n.jpg"
   },
   {
-    "id": 45,
+    "id": 46,
     "filename": "825268432_29660886206835280_6798351171193056732_n.jpg",
     "chapter": "cafes",
     "chapter_name": "百年沙龍與咖啡甜點",
@@ -826,7 +845,7 @@
     "path": "ivy_photos/825268432_29660886206835280_6798351171193056732_n.jpg"
   },
   {
-    "id": 46,
+    "id": 47,
     "filename": "825268294_29660881140169120_4059363019677375823_n.jpg",
     "chapter": "cafes",
     "chapter_name": "百年沙龍與咖啡甜點",
@@ -837,7 +856,7 @@
     "path": "ivy_photos/825268294_29660881140169120_4059363019677375823_n.jpg"
   },
   {
-    "id": 47,
+    "id": 48,
     "filename": "827281873_29660880073502560_1698319457446454503_n.jpg",
     "chapter": "cafes",
     "chapter_name": "百年沙龍與咖啡甜點",
@@ -848,7 +867,7 @@
     "path": "ivy_photos/827281873_29660880073502560_1698319457446454503_n.jpg"
   },
   {
-    "id": 48,
+    "id": 49,
     "filename": "827774021_29660879740169260_5060361546725893029_n.jpg",
     "chapter": "cafes",
     "chapter_name": "百年沙龍與咖啡甜點",
@@ -859,7 +878,7 @@
     "path": "ivy_photos/827774021_29660879740169260_5060361546725893029_n.jpg"
   },
   {
-    "id": 49,
+    "id": 50,
     "filename": "828280530_29660882253502342_8491619730506851037_n.jpg",
     "chapter": "cafes",
     "chapter_name": "百年沙龍與咖啡甜點",
@@ -870,7 +889,62 @@
     "path": "ivy_photos/828280530_29660882253502342_8491619730506851037_n.jpg"
   },
   {
-    "id": 50,
+    "id": 51,
+    "filename": "825268156_29662190226704878_3565665210106473855_n.jpg",
+    "chapter": "coffee",
+    "chapter_name": "手沖咖啡課・Urban Caffè",
+    "title": "轉角咖啡館・Urban Caffè 門面",
+    "title_it": "Urban Caffè - Facciata all'Angolo",
+    "fact": "Urban Caffè 是特里埃斯特一間主打手沖與精品咖啡的自家烘豆咖啡館，店面位於老城街角的轉角建築，灰色遮陽棚下設有戶外高腳座位，招牌就掛在轉角立面上。",
+    "poetic": "特里埃斯特雖是 illy 的發源地，街角這間小店卻想帶旅人喝一杯不一樣的咖啡。",
+    "path": "ivy_photos/825268156_29662190226704878_3565665210106473855_n.jpg"
+  },
+  {
+    "id": 52,
+    "filename": "825268107_29662189296704971_6567354489668188563_n.jpg",
+    "chapter": "coffee",
+    "chapter_name": "手沖咖啡課・Urban Caffè",
+    "title": "手沖吧台・磨豆機與產區看板",
+    "title_it": "Bancone e Macinacaffè di Urban Caffè",
+    "fact": "店內吧台一字排開多台專業磨豆機，牆上黑板寫著單品咖啡菜單，一旁電視螢幕輪播著當日產區的豆種介紹，如「巴西·伊帕內瑪（Brasile Ipanema）」。",
+    "poetic": "找了間標榜手沖淺焙的咖啡店——照理這裡該喝一杯 illy，或試試本地特有、咖啡混著巧克力的維也納咖啡，但我們還是想喝手沖淺焙。",
+    "path": "ivy_photos/825268107_29662189296704971_6567354489668188563_n.jpg"
+  },
+  {
+    "id": 53,
+    "filename": "825353314_29662189976704903_803543883795367394_n.jpg",
+    "chapter": "coffee",
+    "chapter_name": "手沖咖啡課・Urban Caffè",
+    "title": "沖煮方式選單・V60、Chemex、愛樂壓",
+    "title_it": "Menu dei Metodi di Estrazione",
+    "fact": "櫥窗玻璃上貼著各式手沖器具圖示——Espresso、Moka、V60、冷萃、愛樂壓、Chemex，並標榜「Espresso & Slow Coffee」，窗台上方還堆疊著幾袋原豆麻布袋。",
+    "poetic": "菜單上列出的不只是義式濃縮，還有一整套慢速咖啡的哲學，這正是我們此行想找的滋味。",
+    "path": "ivy_photos/825353314_29662189976704903_803543883795367394_n.jpg"
+  },
+  {
+    "id": 54,
+    "filename": "825329276_29662245106699390_5684735097907575356_n.jpg",
+    "chapter": "coffee",
+    "chapter_name": "手沖咖啡課・Urban Caffè",
+    "title": "肯亞與衣索比亞・淺中焙的驚喜",
+    "title_it": "Kenya e Etiopia - Caffè Filtro",
+    "fact": "點了一支肯亞單品、一壺衣索比亞，玻璃手沖壺裡的咖啡液色澤清亮。喝起來其實算淺中焙，而非原先設想的淺焙，但比 espresso 順口許多。",
+    "poetic": "壺裡的咖啡不算真正的淺焙，卻已經是這趟旅程裡最溫柔的一口。",
+    "path": "ivy_photos/825329276_29662245106699390_5684735097907575356_n.jpg"
+  },
+  {
+    "id": 55,
+    "filename": "825268510_29662189290038305_6693218137984782389_n.jpg",
+    "chapter": "coffee",
+    "chapter_name": "手沖咖啡課・Urban Caffè",
+    "title": "窗邊高腳座・眺望街角廣場",
+    "title_it": "Posti a Sedere vicino alla Vetrata",
+    "fact": "店內窗邊設有高腳桌椅，透過大片玻璃窗可以望見對街的行道樹與露天座位，是店內最受歡迎的臨窗位置。",
+    "poetic": "捧著一杯手沖咖啡坐在窗邊，看街角的電車與行人來來去去，這是特里埃斯特咖啡館最日常的風景。",
+    "path": "ivy_photos/825268510_29662189290038305_6693218137984782389_n.jpg"
+  },
+  {
+    "id": 56,
     "filename": "825268184_29660886380168596_2710458473679409682_n.jpg",
     "chapter": "bora",
     "chapter_name": "布拉風與甜瓜飲水機",
@@ -881,7 +955,7 @@
     "path": "ivy_photos/825268184_29660886380168596_2710458473679409682_n.jpg"
   },
   {
-    "id": 51,
+    "id": 57,
     "filename": "828412983_29660881433502424_8672869224354400504_n.jpg",
     "chapter": "bora",
     "chapter_name": "布拉風與甜瓜飲水機",
@@ -892,40 +966,7 @@
     "path": "ivy_photos/828412983_29660881433502424_8672869224354400504_n.jpg"
   },
   {
-    "id": 52,
-    "filename": "828939223_29660879363502631_5143717465260847983_n.jpg",
-    "chapter": "montegrisa",
-    "chapter_name": "邊境巨構蒙特格里薩",
-    "title": "蒙特格里薩聖母堂・喀斯特山頭上的清水混凝土巨構",
-    "title_it": "Santuario di Monte Grisa sull'Altopiano Carsico",
-    "fact": "蒙特格里薩國家朝聖所（Santuario di Monte Grisa）坐落於特里埃斯特北方的喀斯特高原上，通體採用清水混凝土興建，造型如巨型幾何金字塔。教堂身後不遠處，就是斯洛維尼亞的國界。",
-    "poetic": "宛如一艘停泊在山巔的方舟，鋒利的幾何稜角直指蒼穹。它站在邊境線上，一面是義大利，一面是斯洛維尼亞。",
-    "path": "ivy_photos/828939223_29660879363502631_5143717465260847983_n.jpg"
-  },
-  {
-    "id": 53,
-    "filename": "826989481_29660888053501762_4850500161151402316_n.jpg",
-    "chapter": "montegrisa",
-    "chapter_name": "邊境巨構蒙特格里薩",
-    "title": "蒙特格里薩・鑄鐵柵門與誓詞碑銘",
-    "title_it": "Cancello in Ferro e Iscrizione Storica a Monte Grisa",
-    "fact": "朝聖所內一道鑄鐵柵門，門扇上鑄有羊與鹿的浮雕，柵門後方牆面銘刻著拉丁文誓詞碑文「…TEMPORIBVS ACERBIS TESTIMONIVM…」，紀念興建這座聖殿背後的祈願。",
-    "poetic": "鑄鐵柵門後，銘文靜靜訴說著戰爭年代裡一份對和平的虔誠發願，寂靜中迴盪著跨越邊境的祈求。",
-    "path": "ivy_photos/826989481_29660888053501762_4850500161151402316_n.jpg"
-  },
-  {
-    "id": 54,
-    "filename": "825340733_29660873156836585_5889062842273856005_n.jpg",
-    "chapter": "montegrisa",
-    "chapter_name": "邊境巨構蒙特格里薩",
-    "title": "喀斯特高原遠眺・特里埃斯特灣全景",
-    "title_it": "Veduta del Golfo di Trieste dall'Altopiano Carsico",
-    "fact": "從通往蒙特格里薩的喀斯特高原上回望，整座特里埃斯特灣、防波堤與紅頂老城盡收眼底，是這條邊境朝聖路線上最開闊的一段視野。",
-    "poetic": "海天一色，碧波浩渺。從高原上回望，整座城市的歷史與繁華都縮成了眼底的一抹蔚藍。",
-    "path": "ivy_photos/825340733_29660873156836585_5889062842273856005_n.jpg"
-  },
-  {
-    "id": 55,
+    "id": 58,
     "filename": "825266816_29661357583454809_1878958357790470250_n.jpg",
     "chapter": "freeport",
     "chapter_name": "自由港與瑪麗亞泰瑞莎",
@@ -936,7 +977,7 @@
     "path": "ivy_photos/825266816_29661357583454809_1878958357790470250_n.jpg"
   },
   {
-    "id": 56,
+    "id": 59,
     "filename": "825268332_29660883930168841_9175412770641311132_n.jpg",
     "chapter": "freeport",
     "chapter_name": "自由港與瑪麗亞泰瑞莎",
@@ -947,7 +988,7 @@
     "path": "ivy_photos/825268332_29660883930168841_9175412770641311132_n.jpg"
   },
   {
-    "id": 57,
+    "id": 60,
     "filename": "828859543_29660887896835111_4893944921926985871_n.jpg",
     "chapter": "freeport",
     "chapter_name": "自由港與瑪麗亞泰瑞莎",
@@ -958,7 +999,7 @@
     "path": "ivy_photos/828859543_29660887896835111_4893944921926985871_n.jpg"
   },
   {
-    "id": 58,
+    "id": 61,
     "filename": "829319781_29660881563502411_8406236013170173612_n.jpg",
     "chapter": "freeport",
     "chapter_name": "自由港與瑪麗亞泰瑞莎",
@@ -967,8 +1008,54 @@
     "fact": "同一棟建築上「FREE TERRITORY OF TRIESTE」布條的近拍，可清楚看見英國、美國國旗與自由領地旗幟並列，字句直白地表達了本土居民對昔日自由港中立地位的懷念。",
     "poetic": "英美的旗幟與自由領地的紋章並列牆上，字句直白而懷舊，是這座邊境城市對昔日世界性大港最深的追憶。",
     "path": "ivy_photos/829319781_29660881563502411_8406236013170173612_n.jpg"
+  },
+  {
+    "id": 62,
+    "filename": "828939223_29660879363502631_5143717465260847983_n.jpg",
+    "chapter": "montegrisa",
+    "chapter_name": "邊境巨構蒙特格里薩",
+    "title": "蒙特格里薩聖母堂・喀斯特山頭上的清水混凝土巨構",
+    "title_it": "Santuario di Monte Grisa sull'Altopiano Carsico",
+    "fact": "蒙特格里薩國家朝聖所（Santuario di Monte Grisa）坐落於特里埃斯特北方的喀斯特高原上，通體採用清水混凝土興建，造型如巨型幾何金字塔。教堂身後不遠處，就是斯洛維尼亞的國界。",
+    "poetic": "宛如一艘停泊在山巔的方舟，鋒利的幾何稜角直指蒼穹。它站在邊境線上，一面是義大利，一面是斯洛維尼亞。",
+    "path": "ivy_photos/828939223_29660879363502631_5143717465260847983_n.jpg"
+  },
+  {
+    "id": 63,
+    "filename": "826989481_29660888053501762_4850500161151402316_n.jpg",
+    "chapter": "montegrisa",
+    "chapter_name": "邊境巨構蒙特格里薩",
+    "title": "蒙特格里薩・鑄鐵柵門與誓詞碑銘",
+    "title_it": "Cancello in Ferro e Iscrizione Storica a Monte Grisa",
+    "fact": "朝聖所內一道鑄鐵柵門，門扇上鑄有羊與鹿的浮雕，柵門後方牆面銘刻著拉丁文誓詞碑文「…TEMPORIBVS ACERBIS TESTIMONIVM…」，紀念興建這座聖殿背後的祈願。",
+    "poetic": "鑄鐵柵門後，銘文靜靜訴說著戰爭年代裡一份對和平的虔誠發願，寂靜中迴盪著跨越邊境的祈求。",
+    "path": "ivy_photos/826989481_29660888053501762_4850500161151402316_n.jpg"
+  },
+  {
+    "id": 64,
+    "filename": "825340733_29660873156836585_5889062842273856005_n.jpg",
+    "chapter": "montegrisa",
+    "chapter_name": "邊境巨構蒙特格里薩",
+    "title": "喀斯特高原遠眺・特里埃斯特灣全景",
+    "title_it": "Veduta del Golfo di Trieste dall'Altopiano Carsico",
+    "fact": "從通往蒙特格里薩的喀斯特高原上回望，整座特里埃斯特灣、防波堤與紅頂老城盡收眼底，是這條邊境朝聖路線上最開闊的一段視野。",
+    "poetic": "海天一色，碧波浩渺。從高原上回望，整座城市的歷史與繁華都縮成了眼底的一抹蔚藍。",
+    "path": "ivy_photos/825340733_29660873156836585_5889062842273856005_n.jpg"
   }
 ];
+    const chapterOrder = ["castello", "habsburg", "literature", "cafes", "coffee", "bora", "freeport", "montegrisa"];
+    const chapterIntro = {
+  "castello": "一早順著石階爬上聖儒斯定山，兩千年前的羅馬遺跡與哈布斯堡時期的要塞層層疊在同一座山頭，城堡博物館裡的敲鐘機器人靜靜等著旅人到訪。",
+  "habsburg": "沿著山坡走下老城，深紅色的哈布斯堡門牌、雙蛇之屋的鍛鐵陽台、統一廣場的市政鐘樓，一一在巷弄轉角浮現。",
+  "literature": "大運河的水面映著天光，一端是天主教聖安多尼堂的六柱立面，另一端是塞爾維亞東正教堂的碧藍穹頂，中間站著薩巴與鄧南遮的銅像。",
+  "cafes": "特里埃斯特人均咖啡消費量是全義大利之冠，薩赫咖啡、La Bomboniera、提拉米蘇看板，一路吃喝下來，才真正走進這座城市的日常節奏。",
+  "coffee": "找了間有手沖淺焙的咖啡店。這裡是 illy 的發源地，照理該試試 illy，或本地特有、咖啡加巧克力的維也納咖啡，但我們還是想喝手沖淺焙——點了一支肯亞、一壺衣索比亞，喝到的其實是淺中焙，卻已經比 espresso 好喝太多。",
+  "bora": "特里埃斯特最著名的，其實是那陣從喀斯特高原直撲海岸的布拉風，連街頭的飲水機都得裝上擋風板。",
+  "freeport": "這座城市曾是哈布斯堡帝國唯一的自由港，貿易通用的銀幣上鑄著瑪麗亞·泰瑞莎女皇的側臉，戰後又一度成為英美託管的自由領地。",
+  "montegrisa": "行程的最後，車行喀斯特高原，直到看見那座清水混凝土的巨型聖殿——蒙特格里薩，教堂身後不遠，就是斯洛維尼亞的國界。"
+};
+    const chapterEmoji = {"castello": "🏰", "habsburg": "🏛️", "literature": "⛪", "cafes": "☕", "coffee": "🫘", "bora": "💨", "freeport": "⚓", "montegrisa": "🔺"};
+
     
     let currentFilter = 'all';
     let currentIndex = 0;
@@ -984,7 +1071,24 @@
         ? photosData 
         : photosData.filter(p => p.chapter === currentFilter);
 
+      let lastChapter = null;
+
       filteredList.forEach((photo, idx) => {
+        if (currentFilter === 'all' && photo.chapter !== lastChapter) {
+          lastChapter = photo.chapter;
+          const header = document.createElement('div');
+          header.className = 'md:col-span-2 lg:col-span-3 flex flex-col gap-2 pt-6 pb-2 first:pt-0';
+          header.innerHTML = `
+            <div class="flex items-center gap-3">
+              <span class="text-2xl">${chapterEmoji[photo.chapter] || '📍'}</span>
+              <h2 class="font-cinzel text-lg sm:text-xl font-bold text-[#ffd68a]">${photo.chapter_name}</h2>
+              <div class="flex-1 h-px bg-gradient-to-r from-[#523927] to-transparent"></div>
+            </div>
+            <p class="text-xs sm:text-sm text-[#c9b393] leading-relaxed max-w-3xl">${chapterIntro[photo.chapter] || ''}</p>
+          `;
+          grid.appendChild(header);
+        }
+
         const card = document.createElement('div');
         card.className = 'photo-card bg-[#18110a] border border-[#422e1e] rounded-2xl overflow-hidden flex flex-col justify-between shadow-xl';
         
@@ -994,6 +1098,7 @@
           montegrisa: 'bg-[#3b2b4a] text-[#e0b0ff] border-[#b072d6]/40',
           habsburg: 'bg-[#521b1b] text-[#ffb0b0] border-[#d9534f]/40',
           cafes: 'bg-[#3d2e14] text-[#ffe194] border-[#e5b266]/40',
+          coffee: 'bg-[#3a2814] text-[#d9a86c] border-[#a9713a]/40',
           bora: 'bg-[#1a3835] text-[#80ffe8] border-[#38ada9]/40',
           freeport: 'bg-[#2b3038] text-[#c9d1d9] border-[#8b949e]/40'
         };
@@ -1057,6 +1162,14 @@
           </div>
         `;
         grid.appendChild(card);
+      });
+    }
+
+    // Update the (N) counts shown on each filter button
+    function updateFilterCounts() {
+      document.querySelectorAll('.count[data-chapter]').forEach(el => {
+        const ch = el.getAttribute('data-chapter');
+        el.textContent = ch === 'all' ? photosData.length : photosData.filter(p => p.chapter === ch).length;
       });
     }
 
@@ -1174,6 +1287,7 @@
 
     // Initial render
     window.addEventListener('DOMContentLoaded', () => {
+      updateFilterCounts();
       renderGallery();
     });
   </script>
