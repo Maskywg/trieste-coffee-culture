@@ -2,7 +2,7 @@
 <html lang="zh-TW" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Ivy 旅拍紀實・特里埃斯特的時光切片 | 極東義大利數位策展</title>
 
   <!-- Open Graph / Meta -->
@@ -238,7 +238,7 @@
   </main>
 
   <!-- Fullscreen Modal / Lightbox -->
-  <div id="lightbox-modal" class="fixed inset-0 z-50 bg-[#1c1712]/97 backdrop-blur-xl hidden flex flex-col justify-between p-4 sm:p-6 select-none" tabindex="-1">
+  <div id="lightbox-modal" class="fixed inset-0 z-50 bg-[#1c1712]/97 backdrop-blur-xl hidden flex flex-col justify-between p-4 sm:p-6 select-none" tabindex="-1" onclick="if(event.target===this) closeModal()">
     <!-- Top Bar -->
     <div class="flex items-center justify-between text-[#e8dcc4] border-b border-[#3d3226] pb-3 font-sans-ui">
       <div class="flex items-center gap-3">
