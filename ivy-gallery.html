@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ivy 旅拍紀實・特里埃斯特的時光切片 | 極東義大利數位策展</title>
+  
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Ivy 旅拍紀實・特里埃斯特的時光切片 | 極東義大利數位策展">
+  <meta property="og:description" content="跟隨 Ivy 的鏡頭，穿梭亞得里亞海咽喉。63張實地旅拍、考據歷史典故、哈布斯堡紅色門牌、鐘樓機械人Michez與Jachez、怒吼布拉風與蒙特格里薩邊境巨構。">
+  <meta property="og:image" content="ivy旅拍照片/825268343_29660886653501902_8969009369078396386_n.jpg">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Noto+Sans+TC:wght@400;500;700;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --font-body: 'Noto Sans TC', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    body {
+      font-family: var(--font-body);
+      background-color: #0d0a08;
+      color: #f8f3ed;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+    }
+    .font-cinzel { font-family: 'Cinzel', serif; }
+    .font-playfair { font-family: 'Playfair Display', serif; }
+    
+    .gold-glow {
+      box-shadow: 0 0 35px -5px rgba(229, 178, 102, 0.35);
+    }
+    .border-gold {
+      border-color: rgba(229, 178, 102, 0.45);
+    }
+    
+    .photo-card {
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .photo-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.8), 0 0 25px -5px rgba(229, 178, 102, 0.25);
+    }
+    
+    .filter-btn.active {
+      background: linear-gradient(135deg, #e5b266 0%, #b88636 100%);
+      color: #000000;
+      font-weight: 800;
+      border-color: #ffd68a;
+      box-shadow: 0 4px 15px rgba(229, 178, 102, 0.35);
+    }
+    
+    /* Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #140f0b;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #735334;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #a47648;
+    }
+  </style>
+</head>
+<body class="bg-[#0d0a08] text-[#f8f3ed] selection:bg-[#e5b266] selection:text-black relative">
+
+  <!-- Audio Player Floating Bar -->
+  <div class="fixed bottom-6 right-6 z-50 p-4 rounded-2xl bg-[#1d130a]/95 border-2 border-[#e5b266] shadow-2xl backdrop-blur-md max-w-sm w-[92vw] sm:w-80 gold-glow">
+    <div class="flex items-center justify-between mb-2">
+      <div class="flex items-center gap-2">
+        <span class="text-xl">☕</span>
+        <div>
+          <div class="text-xs font-black text-[#ffd68a] tracking-wide">Dusk at the Café</div>
+          <div class="text-[10px] text-[#e0cfbb]">特里埃斯特沙龍黃昏配樂</div>
+        </div>
+      </div>
+      <span class="text-[10px] px-2 py-0.5 rounded bg-[#382313] text-[#ffd68a] border border-[#e5b266]/40 font-bold">Ivy旅拍伴奏</span>
+    </div>
+    <audio id="gallery-audio" controls loop autoplay class="w-full h-9 rounded-lg" style="accent-color: #e5b266;">
+      <source src="dusk-at-the-cafe.mp3" type="audio/mpeg">
+      <source src="Dusk%20at%20the%20Cafe%CC%81.mp3" type="audio/mpeg">
+      您的瀏覽器不支援音訊播放。
+    </audio>
+  </div>
+
+  <!-- Top Sticky Navigation -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-[#120d09]/95 backdrop-blur-md border-b border-[#3d2b1c] shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <a href="index.html" class="flex items-center gap-3 text-[#ffd68a] hover:text-white transition-colors group">
+          <span class="text-2xl group-hover:-translate-x-1 transition-transform">←</span>
+          <div>
+            <span class="font-cinzel text-lg sm:text-xl font-black tracking-widest text-[#fff4e0] block leading-none">TRIESTE</span>
+            <span class="text-[10px] sm:text-xs text-[#d8be9f] font-bold tracking-wider font-sans uppercase mt-0.5 block">返回特里埃斯特主展頁</span>
+          </div>
+        </a>
+      </div>
+      
+      <div class="flex items-center gap-3">
+        <span class="hidden md:inline-block text-xs font-bold text-[#e5b266] bg-[#2a1d12] px-3.5 py-1.5 rounded-full border border-[#e5b266]/40">
+          📸 63 張實地旅拍考據
+        </span>
+        <button onclick="toggleAudio()" class="px-3.5 py-1.5 rounded-full border border-[#e5b266] bg-[#24170d] text-xs font-bold text-[#ffd68a] hover:bg-[#e5b266] hover:text-black transition-all flex items-center gap-1.5">
+          <span id="audio-btn-icon">🎵</span>
+          <span id="audio-btn-text">音樂開關</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative pt-32 pb-20 overflow-hidden border-b border-[#3d2b1c]">
+    <!-- Background overlay with subtle blur -->
+    <div class="absolute inset-0 z-0 opacity-20 bg-cover bg-center" style="background-image: url('ivy旅拍照片/825268343_29660886653501902_8969009369078396386_n.jpg');"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-[#0d0a08]/90 via-[#0d0a08]/80 to-[#0d0a08]"></div>
+
+    <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#26180e] border border-[#e5b266]/50 text-[#ffd68a] text-xs font-bold uppercase tracking-widest mb-6 gold-glow">
+        <span>✨</span> 特里埃斯特實地深度旅拍策展 <span>✨</span>
+      </div>
+      
+      <h1 class="font-cinzel text-3xl sm:text-5xl md:text-6xl font-black tracking-wide text-[#fff6e5] leading-tight mb-6">
+        Ivy 旅拍紀實・特里埃斯特的時光切片
+      </h1>
+      
+      <p class="font-playfair italic text-lg sm:text-2xl text-[#e5b266] mb-8 font-bold">
+        「在狂風吹拂的邊境，遇見哈布斯堡的夕照與咖啡的靈魂。」
+      </p>
+
+      <!-- Curatorial introduction -->
+      <div class="bg-[#19110a]/90 border border-[#4a3525] rounded-3xl p-6 sm:p-8 text-left text-[#edd9c2] leading-relaxed text-sm sm:text-base space-y-4 shadow-2xl">
+        <h3 class="font-cinzel text-base sm:text-lg font-bold text-[#ffd68a] flex items-center gap-2 border-b border-[#3d2b1c] pb-3">
+          <span>🏛️</span> 策展序言：邊境之城的歷史光影考據
+        </h3>
+        <p>
+          這份攝影專題收錄了 <strong>Ivy 實際走訪特里埃斯特（Trieste）</strong> 所留下的 <strong>63 張珍貴旅拍照片</strong>。
+          特里埃斯特曾是哈布斯堡奧匈帝國唯一的繁榮出海口與中世紀自由港，整個中歐的咖啡豆與東方香料皆在此靠岸，流通的通用貨幣上鑄著被譽為「歐洲丈母娘」的<strong>瑪麗亞·泰瑞莎女皇（Maria Theresa）</strong>頭像。
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2 text-xs sm:text-sm text-[#dec3a6]">
+          <div class="p-3.5 rounded-xl bg-[#22160d] border border-[#523927]">
+            <strong class="text-[#ffd68a] block mb-1">🔔 鐘樓敲鐘人與古城堡：</strong>
+            聖儒斯定城堡（Castello di San Giusto）內珍藏著19世紀原本安置在統一廣場市政廳頂端的兩尊自動敲鐘機器人雕像——<strong>Michez（麥克茲）與 Jachez（雅克茲）</strong>，以及刻著「NATA 1750」的龐大鐘樓機芯。
+          </div>
+          <div class="p-3.5 rounded-xl bg-[#22160d] border border-[#523927]">
+            <strong class="text-[#ffd68a] block mb-1">💨 怒吼的布拉風 (Bora)：</strong>
+            從喀斯特高原俯衝而下的極速寒風（陣風常超時速200公里），造就了晴天的「白色Bora」與雨天的「黑色Bora」。街頭被稱為<strong>「Il Melone 特里埃斯特甜瓜」</strong>的飲水機甚至必須特製金屬擋風板！
+          </div>
+          <div class="p-3.5 rounded-xl bg-[#22160d] border border-[#523927]">
+            <strong class="text-[#ffd68a] block mb-1">🔺 邊境混凝土巨構：</strong>
+            矗立在山巔的<strong>蒙特格里薩聖母堂（Santuario di Monte Grisa）</strong>以粗獷三角形蜂巢幾何結構傲視海灣，教堂身後便是斯洛維尼亞邊境，是冷戰東西陣營對峙前線的和平燈塔。
+          </div>
+          <div class="p-3.5 rounded-xl bg-[#22160d] border border-[#523927]">
+            <strong class="text-[#ffd68a] block mb-1">🔴 紅色門牌與宗教並立：</strong>
+            老城牆上烙印著奧匈帝國特有的<strong>深紅色行政門牌</strong>；大運河畔宏偉的新古典天主教聖安多尼堂與藍頂金箔的<strong>塞爾維亞東正教堂</strong>相鄰並立，見證自由港的多元共融。
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filter & Controls Section -->
+  <section class="sticky top-20 z-40 bg-[#120d09]/95 backdrop-blur-md border-b border-[#3d2b1c] py-4 shadow-xl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="flex items-center justify-between gap-4 overflow-x-auto pb-2 scrollbar-none">
+        <div class="flex items-center gap-2 flex-nowrap" id="filter-container">
+          <button onclick="filterPhotos('all')" class="filter-btn active px-4 py-2 rounded-xl border border-[#523927] bg-[#22160d] text-xs sm:text-sm whitespace-nowrap transition-all">
+            🌟 全部旅拍 (63)
+          </button>
+          <button onclick="filterPhotos('castello')" class="filter-btn px-4 py-2 rounded-xl border border-[#523927] bg-[#22160d] text-xs sm:text-sm text-[#e0cfbb] hover:border-[#e5b266] whitespace-nowrap transition-all">
+            🏰 聖儒斯定城堡與敲鐘人 (17)
+          </button>
+          <button onclick="filterPhotos('literature')" class="filter-btn px-4 py-2 rounded-xl border border-[#523927] bg-[#22160d] text-xs sm:text-sm text-[#e0cfbb] hover:border-[#e5b266] whitespace-nowrap transition-all">
+            ⛪ 雙聖殿與文學大運河 (13)
+          </button>
+          <button onclick="filterPhotos('montegrisa')" class="filter-btn px-4 py-2 rounded-xl border border-[#523927] bg-[#22160d] text-xs sm:text-sm text-[#e0cfbb] hover:border-[#e5b266] whitespace-nowrap transition-all">
+            🔺 邊境巨構蒙特格里薩 (11)
+          </button>
+          <button onclick="filterPhotos('habsburg')" class="filter-btn px-4 py-2 rounded-xl border border-[#523927] bg-[#22160d] text-xs sm:text-sm text-[#e0cfbb] hover:border-[#e5b266] whitespace-nowrap transition-all">
+            🏛️ 哈布斯堡紅色門牌 (10)
+          </button>
+          <button onclick="filterPhotos('cafes')" class="filter-btn px-4 py-2 rounded-xl border border-[#523927] bg-[#22160d] text-xs sm:text-sm text-[#e0cfbb] hover:border-[#e5b266] whitespace-nowrap transition-all">
+            ☕ 百年沙龍與咖啡甜點 (8)
+          </button>
+          <button onclick="filterPhotos('bora')" class="filter-btn px-4 py-2 rounded-xl border border-[#523927] bg-[#22160d] text-xs sm:text-sm text-[#e0cfbb] hover:border-[#e5b266] whitespace-nowrap transition-all">
+            💨 布拉風與甜瓜飲水機 (2)
+          </button>
+          <button onclick="filterPhotos('freeport')" class="filter-btn px-4 py-2 rounded-xl border border-[#523927] bg-[#22160d] text-xs sm:text-sm text-[#e0cfbb] hover:border-[#e5b266] whitespace-nowrap transition-all">
+            ⚓ 自由領地歷史印記 (2)
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Photo Gallery Grid -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 py-12">
+    <div id="gallery-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Photos will be dynamically rendered here by JavaScript -->
+    </div>
+  </main>
+
+  <!-- Fullscreen Modal / Lightbox -->
+  <div id="lightbox-modal" class="fixed inset-0 z-50 bg-black/95 backdrop-blur-xl hidden flex flex-col justify-between p-4 sm:p-6 select-none" tabindex="-1">
+    <!-- Top Bar -->
+    <div class="flex items-center justify-between text-[#e5b266] border-b border-[#332215] pb-3">
+      <div class="flex items-center gap-3">
+        <span class="text-xs px-3 py-1 rounded-full bg-[#26170d] border border-[#e5b266]/50 font-bold" id="modal-counter">
+          01 / 63
+        </span>
+        <span class="text-xs text-[#d8be9f] font-mono" id="modal-chapter-badge">
+          CHAPTER
+        </span>
+      </div>
+      <div class="flex items-center gap-4">
+        <button onclick="zoomModalImage()" class="text-sm px-3 py-1 rounded bg-[#24170d] border border-[#523927] text-[#ffd68a] hover:bg-[#e5b266] hover:text-black transition-all">
+          🔍 縮放
+        </button>
+        <button onclick="closeModal()" class="text-2xl text-[#ffd68a] hover:text-white transition-colors p-1">
+          ✕
+        </button>
+      </div>
+    </div>
+
+    <!-- Center Stage -->
+    <div class="relative flex-1 flex flex-col lg:flex-row items-center justify-center gap-6 my-4 overflow-hidden">
+      <!-- Previous Button -->
+      <button onclick="prevPhoto()" class="absolute left-2 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-black/70 border border-[#e5b266]/50 text-[#ffd68a] hover:bg-[#e5b266] hover:text-black flex items-center justify-center text-xl transition-all shadow-xl">
+        ❮
+      </button>
+
+      <!-- Image Display Container -->
+      <div class="w-full lg:w-3/5 h-full max-h-[70vh] lg:max-h-[80vh] flex items-center justify-center overflow-hidden rounded-2xl bg-[#090705] border border-[#332215]">
+        <img id="modal-img" src="" alt="" class="max-w-full max-h-full object-contain transition-transform duration-300">
+      </div>
+
+      <!-- Caption & Fact Panel -->
+      <div class="w-full lg:w-2/5 h-auto max-h-[70vh] overflow-y-auto bg-[#160f0a] border border-[#422e1e] rounded-2xl p-6 text-left flex flex-col justify-between space-y-4 shadow-2xl">
+        <div>
+          <div class="text-[11px] font-bold text-[#e5b266] tracking-wider uppercase mb-1" id="modal-title-it">
+            TITOLO ITALIANO
+          </div>
+          <h2 class="text-xl sm:text-2xl font-bold text-[#fff5e3] mb-3 leading-snug" id="modal-title">
+            照片標題
+          </h2>
+
+          <div class="space-y-4 pt-2">
+            <!-- Historical Facts -->
+            <div class="p-4 rounded-xl bg-[#22160d] border-l-4 border-[#e5b266] border-y border-r border-[#3d2a1b]">
+              <div class="text-xs font-bold text-[#ffd68a] flex items-center gap-1.5 mb-1.5">
+                <span>📜</span> 歷史文獻與事實考據
+              </div>
+              <p class="text-xs sm:text-sm text-[#eedcc9] leading-relaxed" id="modal-fact">
+                考據內容...
+              </p>
+            </div>
+
+            <!-- Poetic Commentary -->
+            <div class="p-4 rounded-xl bg-[#1c120a] border-l-4 border-[#946c3b] border-y border-r border-[#382313]">
+              <div class="text-xs font-bold text-[#e5b266] flex items-center gap-1.5 mb-1.5">
+                <span>✍️</span> Ivy 旅拍感性旁白
+              </div>
+              <p class="text-xs sm:text-sm text-[#d4c0ab] italic leading-relaxed" id="modal-poetic">
+                感性旁白...
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-3 border-t border-[#332215] flex items-center justify-between text-[11px] text-[#a89279]">
+          <span id="modal-filename">filename.jpg</span>
+          <span>鍵盤 ← → 鍵切換，ESC 關閉</span>
+        </div>
+      </div>
+
+      <!-- Next Button -->
+      <button onclick="nextPhoto()" class="absolute right-2 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-black/70 border border-[#e5b266]/50 text-[#ffd68a] hover:bg-[#e5b266] hover:text-black flex items-center justify-center text-xl transition-all shadow-xl">
+        ❯
+      </button>
+    </div>
+
+    <!-- Bottom Thumbnail Strip -->
+    <div class="h-16 w-full flex items-center gap-2 overflow-x-auto py-1 border-t border-[#332215] scrollbar-none" id="modal-thumbnails">
+      <!-- Thumbnails inserted dynamically -->
+    </div>
+  </div>
+
+  <!-- Curated Footer Section -->
+  <footer class="bg-[#0b0806] border-t border-[#3d2b1c] py-16 text-center">
+    <div class="max-w-4xl mx-auto px-4 space-y-6">
+      <span class="text-4xl">☕</span>
+      <h2 class="font-cinzel text-2xl sm:text-3xl font-bold text-[#fff3de]">
+        極東義大利・特里埃斯特 (Trieste)
+      </h2>
+      <p class="text-sm text-[#d1bbaa] max-w-2xl mx-auto leading-relaxed">
+        從哈布斯堡的金色大運河，到喀斯特山巔的蒙特格里薩粗獷幾何；
+        在每一杯特里的 Capo in B 裡，品嚐歐洲最深沉濃郁的邊境靈魂。
+      </p>
+      <div class="pt-4 flex flex-wrap items-center justify-center gap-4">
+        <a href="index.html" class="px-6 py-3 rounded-full bg-gradient-to-r from-[#e5b266] to-[#b88636] text-black font-black text-sm tracking-wider hover:brightness-110 shadow-lg transition-all flex items-center gap-2">
+          <span>←</span> 返回特里埃斯特主網頁
+        </a>
+        <a href="index.html#scent-experience" class="px-6 py-3 rounded-full bg-[#24170d] border border-[#e5b266] text-[#ffd68a] font-bold text-sm hover:bg-[#e5b266] hover:text-black transition-all">
+          ✨ 探索咖啡香氣配方
+        </a>
+      </div>
+      <div class="pt-8 text-xs text-[#7d6855]">
+        數位策展深旅系列 ｜ 特里埃斯特 (Trieste) 篇 ｜ Ivy 旅拍專題特輯
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    const photosData = [{"id": 1, "filename": "825266816_29661357583454809_1878958357790470250_n.jpg", "chapter": "castello", "chapter_name": "聖儒斯定城堡與敲鐘人", "title": "聖儒斯定山頂的凝望・青銅雕像與晴空", "title_it": "Statua e Panorama dal Colle di San Giusto", "fact": "聖儒斯定山（Colle di San Giusto）是特里埃斯特的歷史發源地，早在古羅馬時代便是名為 Tergeste 的堡壘要塞。山頂立有歷代歷史英雄與紀念雕像，背景襯著亞得里亞海無垠的藍天。", "poetic": "陽光在青銅的肌理上流淌，他靜靜佇立在山巔，替這座流轉於帝國與風暴間的城市，守望了數百個晴朗與孤寂的午後。"}, {"id": 2, "filename": "825267924_29660883300168904_7742806439811948533_n.jpg", "chapter": "castello", "chapter_name": "聖儒斯定城堡與敲鐘人", "title": "古城堡門廊與守護者石雕", "title_it": "Portale e Sculture del Castello di San Giusto", "fact": "聖儒斯定城堡（Castello di San Giusto）建於1470年至1630年間，由哈布斯堡王朝威尼斯與奧地利軍事工程師歷經百餘年擴建，城堡拱門與石牆融合了哥德式與文藝復興防禦工事特徵。", "poetic": "古老石拱下的斑駁雕像，彷彿穿越了幾百年的烽火與海風，在陰影中默默迎接著每一位踏足邊境的旅人。"}, {"id": 3, "filename": "825267949_29660885916835309_8048400389663776258_n.jpg", "chapter": "habsburg", "chapter_name": "帝國血脈與紅色門牌", "title": "哈布斯堡紅色門牌・庫克納塔廣場 6 號", "title_it": "Targa Asburgica Civico 6414 - Piazzetta Tor Cucherna", "fact": "特里埃斯特老城區（Città Vecchia）保留著奧匈帝國哈布斯堡時期特有的深紅色鐵鑄/琺瑯門牌，上方標記著帝國行政編號「Civ. 6414」及中世紀庫克納塔（Tor Cucherna，城牆遺構）廣場6號。", "poetic": "那一抹褪不去的紅，是哈布斯堡王朝烙印在石牆上的永恆指紋。時光已過百年，信差已逝，而紅牌依然為歷史指引著歸途。"}, {"id": 4, "filename": "825268036_29660884670168767_1350903887507912673_n.jpg", "chapter": "castello", "chapter_name": "聖儒斯定城堡與敲鐘人", "title": "城堡中庭與歷史石階步道", "title_it": "Cortile delle Milizie nel Castello", "fact": "聖儒斯定城堡內部的「民兵中庭」（Cortile delle Milizie）四周環繞著石造城垛與瞭望台，今日常作為夏季露天音樂會與戲劇表演的露天歷史劇場。", "poetic": "踏上磨光的石階，腳步聲在厚重城牆間輕輕迴盪。這裡曾有衛兵的巡視與號角，如今只剩下微風吹拂過樹梢的溫柔沙沙聲。"}, {"id": 5, "filename": "825268046_29660879176835983_583968251856442830_n.jpg", "chapter": "castello", "chapter_name": "聖儒斯定城堡與敲鐘人", "title": "城堡城垛拱廊與俯瞰海灣視野", "title_it": "Camminamento di Ronda e Arcate sul Golfo", "fact": "從城堡巡邏步道（Camminamento di Ronda）向外眺望，可俯瞰整個特里埃斯特市區、大運河出口及亞得里亞海灣，是歷代統治者掌控海上商路的戰略要點。", "poetic": "倚著粗獷的石拱放眼望去，城鎮的橘紅屋瓦與深邃的碧海在天際線相遇，歷史的壯闊在此刻化作眼底的一片寧靜。"}, {"id": 6, "filename": "825268123_29660881966835704_1154059438245505916_n.jpg", "chapter": "cafes", "chapter_name": "百年沙龍與咖啡甜點", "title": "維也納薩赫咖啡 Trieste 分店・金色窗櫺", "title_it": "Caffè Sacher Trieste - Atmosfera Viennese", "fact": "2023年維也納著名奢華名店 Caffè Sacher 正式於特里埃斯特開設海外旗艦店（位於 Via Dante Alighieri），延續特城與維也納哈布斯堡王朝數百年的中歐甜點與咖啡血脈緣分。", "poetic": "玻璃上倒映著特里的街景，門內飄出醇厚的黑巧克力香與奶泡氣息。維也納的尊貴與海港的浪漫，在這一杯咖啡裡融為一體。"}, {"id": 7, "filename": "825268131_29660887110168523_4228890007283625531_n.jpg", "chapter": "literature", "chapter_name": "大運河與文學聖殿", "title": "廣場歷史雕像・藍天下的古典容顏", "title_it": "Monumento Storico e Cielo di Trieste", "fact": "特里埃斯特市內擁有數十座建於18至19世紀的紀念雕像與古典噴泉，呈現新古典主義、巴洛克與新文藝復興的多元雕塑風采。", "poetic": "雕像仰望著晴空，神情堅定而沈默。海風吹拂了百年，未曾吹褪石雕上銘刻的驕傲與優雅。"}, {"id": 8, "filename": "825268148_29660883946835506_3998653191740997363_n.jpg", "chapter": "habsburg", "chapter_name": "帝國血脈與紅色門牌", "title": "聖拉扎羅街「雙蛇之屋」・建築師波波利尼宅邸", "title_it": "Via S. Lazzaro 15 - Casa delle Bisse (Arch. Bobolini, 1770)", "fact": "位於特里埃斯特新城區（Borgo Teresiano）Via San Lazzaro 15號的著名古建築「Casa delle Bisse」（雙蛇之屋），由建築師 Antonio Bobolini 於1770年設計，立面飾有精美的古典鍛鐵陽台與蛇紋浮雕象徵長壽與商業繁榮。", "poetic": "1770年的陽台鐵花依舊細緻，紅色的街牌守著幽靜的街角。兩百多年前商賈與仕女走過的門廊，今天依然流淌著悠遠的典雅。"}, {"id": 9, "filename": "825268157_29660880853502482_6518991068475015129_n.jpg", "chapter": "cafes", "chapter_name": "百年沙龍與咖啡甜點", "title": "露天咖啡座隨影・午後悠閒的一隅", "title_it": "Tavolini all'Aperto e Relax nei Caffè", "fact": "特里埃斯特市民人均咖啡消費量是義大利全國平均的兩倍。在街頭點一杯 Capo in B（玻璃杯小卡布），在遮陽傘下靜讀報紙或暢談，是日常最不可或缺的靈魂儀式。", "poetic": "陽光穿透傘布灑下斑駁光影，杯中咖啡散發著濃郁堅果香。特里的時間走得特別慢，彷彿專門為發呆與沉思而留白。"}, {"id": 10, "filename": "825268162_29660886246835276_2884383243799367140_n.jpg", "chapter": "literature", "chapter_name": "大運河與文學聖殿", "title": "街頭紀念雕像的深邃剪影", "title_it": "Dettaglio Scultoreo nel Borgo Storico", "fact": "特里埃斯特是文學家與思想家的庇護所。喬伊斯、斯韋沃、薩巴、里爾克都曾在此漫步，街頭隨處可見紀念文學家與哲人的雕塑銘碑。", "poetic": "他在微風中側首沉思，彷彿正在字裡行間捕捉那句尚未寫就的絕美詩句。"}, {"id": 11, "filename": "825268168_29660883673502200_3128118360590076558_n.jpg", "chapter": "literature", "chapter_name": "大運河與文學聖殿", "title": "鄧南遮紀念雕像・「武裝船首，揚帆航向世界」", "title_it": "Statua di Gabriele D'Annunzio (1863-1938) - \"Arma la prora\"", "fact": "位於 Piazza Hortis 旁的著名義大利詩人、作家加布里埃爾·鄧南遮（Gabriele D'Annunzio, 1863-1938）青銅長椅雕像，底座鐫刻其經典悲劇詩作《La Nave》（船）名句：「Arma la prora e salpa verso il Mondo」（武裝船首，揚帆航向世界）。", "poetic": "坐在長椅上的詩人翹著腿、手執書卷，那句豪邁的『揚帆航向世界』，讓每位行經此處的旅人心中都泛起出海的雄心。"}, {"id": 12, "filename": "825268176_29660879773502590_7488822004382720393_n.jpg", "chapter": "literature", "chapter_name": "大運河與文學聖殿", "title": "鄧南遮雕像特寫・長椅上的文學沈思", "title_it": "Primo Piano della Statua di D'Annunzio", "fact": "這尊雕像由雕塑家 Alessandro Verdi 創作，展現鄧南遮身著西裝、輕鬆坐在公共長椅上閱卷沉思的姿態，遊客與市民常並肩坐在他身旁合影留念。", "poetic": "青銅鑄造的身軀依然帶著思緒的溫度。坐在他身旁，彷彿能聽見翻動書頁時與海風交融的低語。"}, {"id": 13, "filename": "825268184_29660886380168596_2710458473679409682_n.jpg", "chapter": "habsburg", "chapter_name": "帝國血脈與紅色門牌", "title": "歷史街區花壇與綠意點綴", "title_it": "Scorcio Fiorito nel Quartiere Storico", "fact": "特里埃斯特老城區在哈布斯堡時代由女皇瑪麗亞·泰瑞莎規劃出棋盤狀街道（Borgo Teresiano），街道兩旁整齊點綴著典雅的景觀盆栽與綠植。", "poetic": "古老石板路邊的一抹翠綠與鮮花，給這座滿是歷史沉澱的厚重城市，添上了幾分輕盈的生活詩意。"}, {"id": 14, "filename": "825268214_29660884326835468_7065973465657424444_n.jpg", "chapter": "literature", "chapter_name": "大運河與文學聖殿", "title": "塞爾維亞東正教堂・碧藍穹頂與拜占庭金飾", "title_it": "Cupola del Tempio Serbo-Ortodosso di San Spiridione", "fact": "塞爾維亞正教會聖斯皮里狄翁堂（Tempio Serbo-Ortodosso di San Spiridione）於1869年由建築師 Carlo Maciachini 設計落成，其壯麗的九座拜占庭式碧藍圓頂與外牆金色鑲嵌畫，展現特里埃斯特作為自由港對多元宗教民族的高度包容。", "poetic": "藍天襯托下的蔚藍穹頂，宛如亞得里亞海凝結的寶石。金色馬賽克在日光下熠熠生輝，訴說著東方教會在西方海港的安詳落腳。"}, {"id": 15, "filename": "825268234_29660880860169148_7370961659237975541_n.jpg", "chapter": "literature", "chapter_name": "大運河與文學聖殿", "title": "聖斯皮里狄翁堂內部・金碧輝煌的聖像屏風", "title_it": "Iconostasi e Affreschi di San Spiridione", "fact": "聖斯皮里狄翁堂內部飾有俄羅斯莫斯科畫派繪製的大型聖像屏風（Iconostasi）與整幅覆蓋著24K金箔的拜占庭馬賽克壁畫，是南歐最富麗堂皇的東正教聖殿之一。", "poetic": "步入教堂，光線穿透金箔穹頂灑落，幽暗中燭光搖曳。那一幅幅莊嚴的聖像，彷彿超越了時空的藩籬，洗滌了旅人的心塵。"}, {"id": 16, "filename": "825268235_29660884893502078_4308289871475579471_n.jpg", "chapter": "literature", "chapter_name": "大運河與文學聖殿", "title": "聖殿大理石壁龕與雕飾細節", "title_it": "Dettagli Architettonici e Nicchie in Marmo", "fact": "教堂採用產自卡拉拉的大理石與威尼斯手工玻璃馬賽克，將拜占庭拜占庭-拜占庭復興風格與倫巴底新古典工藝完美結合。", "poetic": "每一道大理石刻痕都刻劃著對至高的虔敬，冰冷石材在信仰與藝術的澆灌下，化作了永恆的讚美詩。"}, {"id": 17, "filename": "825268241_29660882903502277_2813542208151777359_n.jpg", "chapter": "literature", "chapter_name": "大運河與文學聖殿", "title": "聖堂彩繪玻璃與幽微天光", "title_it": "Vetrate Istoriate e Riflessi di Luce", "fact": "殿內高窗彩繪玻璃在午後投射出深邃的藍紫與金紅光暈，營造出東正教神秘神聖的靈修氛圍。", "poetic": "陽光穿透彩色玻璃，在古老的地面鋪上一張絢麗光毯。塵世的喧囂在這一刻完全隱沒。"}, {"id": 18, "filename": "825268245_29660888486835052_4487137365738001125_n.jpg", "chapter": "literature", "chapter_name": "大運河與文學聖殿", "title": "聖斯皮里狄翁堂鐘樓立面全景", "title_it": "Facciata e Campanile del Tempio Serbo-Ortodosso", "fact": "教堂正面面向特里埃斯特大運河，四座高聳的角塔鐘樓環抱中央主穹頂，呈現典雅均衡的新拜占庭建築比例。", "poetic": "鐘樓直插晴空，巍峨立於運河畔。它與隔壁的天主教堂鐘聲互應，交織成特里埃斯特最動人的信仰和聲。"}, {"id": 19, "filename": "825268294_29660881140169120_4059363019677375823_n.jpg", "chapter": "cafes", "chapter_name": "百年沙龍與咖啡甜點", "title": "巷弄人氣餐廳 Miscusi・現代特城滋味", "title_it": "Ristorante Miscusi - Sapori e Convivialità", "fact": "特里埃斯特老城區聚集了多元傳統與現代意式餐廳，手工新鮮現做義大利麵（Superpasta）與當地特產海鮮、亞得里亞海白酒成為饕客最愛。", "poetic": "餐盤間熱氣氤氳，橄欖油與羅勒香氣四溢。在充滿歡聲笑語的餐廳裡，感受義大利人對食物最熾熱的熱愛。"}, {"id": 20, "filename": "825268294_29660884936835407_4479999497651746439_n.jpg", "chapter": "castello", "chapter_name": "聖儒斯定城堡與敲鐘人", "title": "聖儒斯定城堡・歷史機械鐘樓人像（Michez / Jachez）", "title_it": "Automi Michez e Jachez - Castello di San Giusto", "fact": "安置在聖儒斯定城堡內的這尊19世紀青銅/鋅合金機械自動敲鐘人（Michez 麥克茲），原置於統一廣場市政廳鐘樓，每逢整點自動揮動鐵槌敲響大鐘。", "poetic": "他曾站在特里埃斯特的心臟頂端，為整座城市的生老病死、日出日落報時。退隱城堡深處後，依舊帶著令人肅然起敬的威嚴。"}, {"id": 21, "filename": "825268298_29660880080169226_7598825165565124912_n.jpg", "chapter": "literature", "chapter_name": "大運河與文學聖殿", "title": "聖安多尼堂天頂壁畫・天使聖詠", "title_it": "Affreschi della Chiesa di Sant'Antonio Taumaturgo", "fact": "大運河盡頭的新古典主義天主教聖安多尼堂（Sant'Antonio Taumaturgo），天花板飾有19世紀威尼斯派畫家 Sebastiano Santi 等人的大幅宗教濕壁畫。", "poetic": "抬頭仰望，穹頂上的天使彷彿正從金雲間降臨，溫柔的目光穿越了百年，撫慰著每一個仰望的靈魂。"}, {"id": 22, "filename": "825268320_29660885190168715_855921693731922586_n.jpg", "chapter": "castello", "chapter_name": "聖儒斯定城堡與敲鐘人", "title": "敲鐘機械人 Jachez（雅克茲）立像", "title_it": "Automa Jachez - Museo del Castello di San Giusto", "fact": "另一尊敲鐘機器人名為 Jachez（雅克茲）。Michez 與 Jachez 這對兄弟雕像是特里埃斯特市民集體記憶中最親切的城市象徵，名字源自特城斯拉夫方言與義大利語的親暱縮寫。", "poetic": "他和兄弟 Michez 一起，用鋼鐵手臂敲響了統一廣場數十年的清晨與深夜。那是特里埃斯特最真實的歷史心跳。"}, {"id": 23, "filename": "825268332_29660883930168841_9175412770641311132_n.jpg", "chapter": "montegrisa", "chapter_name": "邊境巨構蒙特格里薩", "title": "蒙特格里薩聖母堂・喀斯特山崖上的粗獷幾何三角", "title_it": "Santuario Nazionale di Monte Grisa - Geometrie Brutaliste", "fact": "蒙特格里薩國家朝聖所（Santuario Nazionale a Maria Madre e Regina di Monte Grisa）坐落於特里埃斯特喀斯特高原山巔（海拔330公尺），1966年由建築師 Antonio Guacci 設計，通體採用三角形模組鋼筋混凝土建成，結構大膽前衛。", "poetic": "像是一艘擱淺在山巔的巨型幾何方舟，尖銳的三角稜角直指蒼穹，在懸崖之上傲然對抗著來自內陸的狂暴布拉風。"}, {"id": 24, "filename": "825268343_29660886653501902_8969009369078396386_n.jpg", "chapter": "montegrisa", "chapter_name": "邊境巨構蒙特格里薩", "title": "蒙特格里薩立面・粗獷混凝土與蜂巢菱格窗", "title_it": "Facciata e Struttura Modulare di Monte Grisa", "fact": "教堂立面由等邊三角形混凝土構件交織成獨特的蜂巢菱形窗格，象徵字母『M』（聖母瑪利亞 Maria）與三位一體神聖符號，後方山丘即為斯洛維尼亞國境線。", "poetic": "粗糙的混凝土沒有多餘的粉飾，純粹的幾何線條在藍天映襯下展現出冷峻而神聖的力量感。這裡，是冷戰鐵幕邊緣的和平燈塔。"}, {"id": 25, "filename": "825268353_29660888396835061_6585406867588701604_n.jpg", "chapter": "montegrisa", "chapter_name": "邊境巨構蒙特格里薩", "title": "蒙特格里薩聖殿內部・宏偉三角空間與祭壇", "title_it": "Interno del Santuario di Monte Grisa - Navata e Altare", "fact": "教堂內部上下分為兩層，上層主堂挑高逾40米，陽光透過無數三角形菱形蜂巢窗格灑入，形成極富未來感與神聖感的立體光影交織。", "poetic": "站在這座巨大的幾何殿堂中，光線從頭頂傾瀉而下，空靈的寂靜讓人屏息。鋼筋與光影在此處完成了最深邃的神聖對話。"}, {"id": 26, "filename": "825268373_29660886600168574_6770595938757011963_n.jpg", "chapter": "cafes", "chapter_name": "百年沙龍與咖啡甜點", "title": "Caffè Sacher 外觀與綠植街景", "title_it": "Ingresso del Caffè Sacher Trieste", "fact": "薩赫咖啡 Trieste 店選址於市中心著名的歷史建築內，外觀保留典雅的拱形門窗與精美店招，成為連接奧地利維也納與義大利特里埃斯特的新地標。", "poetic": "推開門的那一剎那，彷彿能聽見圓舞曲的旋律。歷史的邊界在此消融，留下的只有唇齒間香醇綿密的滋味。"}, {"id": 27, "filename": "825268432_29660886206835280_6798351171193056732_n.jpg", "chapter": "cafes", "chapter_name": "百年沙龍與咖啡甜點", "title": "提拉米蘇之源・義大利經典手作甜點牌", "title_it": "Tiramisù - Una storia italiana dal 1960", "fact": "義大利弗留利-威尼斯朱利亞大區（FVG，特里埃斯特所在大區）與威尼託大區是提拉米蘇（Tiramisù）的官方認證發源地。標牌展示了經典原味、開心果、榛果、焦糖海鹽等風味傳承。", "poetic": "手指餅乾浸潤著濃縮咖啡與馬斯卡彭乳酪的甜美，這道風靡全球的甜點，最正統的滋味始終藏在這片靠近大海的大區裡。"}, {"id": 28, "filename": "825268440_29660882560168978_1086684828729349516_n.jpg", "chapter": "literature", "chapter_name": "大運河與文學聖殿", "title": "教堂祭壇聖像畫與華麗拱門", "title_it": "Altare e Icone Sacre nel Borgo Teresiano", "fact": "特城教堂內部融合了巴洛克與拜占庭裝飾元素，鍍金裝飾與細膩油畫展現出港口富商家族對宗教藝術的慷慨贊助。", "poetic": "金碧輝煌的拱門後，是數百年來水手與商賈在出海前祈求平安的虔誠祈禱。"}, {"id": 29, "filename": "825268469_29660885323502035_5251095677022138606_n.jpg", "chapter": "castello", "chapter_name": "聖儒斯定城堡與敲鐘人", "title": "城堡露天觀景台與亞得里亞海波光", "title_it": "Bastioni del Castello e Vista sul Mare", "fact": "聖儒斯定城堡由三個角形堡壘（Bastione Rotondo, Bastione Fiorito, Bastione Pomis）構成，居高臨下可一覽無遺亞得里亞海北部灣流。", "poetic": "靠在溫熱的石牆上眺望，蔚藍的海面上白帆點點。遠方的地平線，是自由港繁華夢想起航的地方。"}, {"id": 30, "filename": "825268474_29660884603502107_4259074506344466216_n.jpg", "chapter": "montegrisa", "chapter_name": "邊境巨構蒙特格里薩", "title": "蒙特格里薩山頂步道與步道欄杆", "title_it": "Camminamento Panoramico di Monte Grisa", "fact": "朝聖所周邊設有環山景觀步道，設有堅固的金屬安全護欄以抵禦喀斯特山頂極速肆虐的布拉強風（Bora）。", "poetic": "山頂的風從不曾停歇，吹動著衣角，也吹散了旅途的疲憊。沿著步道前行，每一步都踏在天地壯闊的節奏上。"}, {"id": 31, "filename": "825268475_29660885680168666_8274982780959622476_n.jpg", "chapter": "montegrisa", "chapter_name": "邊境巨構蒙特格里薩", "title": "蒙特格里薩地下聖堂・三角混凝土穹頂與吊燈", "title_it": "Cripta Inferiore del Santuario di Monte Grisa", "fact": "蒙特格里薩下層地下堂（Cripta）呈低矮莊嚴的三角幾何交錯格局，牆面銘刻著1945年特里埃斯特主教發願建造朝聖所的誓詞歷史碑銘。", "poetic": "地下的空間沉靜如夜，幾何光束自縫隙切入。這裡封存著冷戰最前線那份祈求浩劫消弭的深沉誓願。"}, {"id": 32, "filename": "825268489_29660885633502004_6863702305171418563_n.jpg", "chapter": "montegrisa", "chapter_name": "邊境巨構蒙特格里薩", "title": "蒙特格里薩朝聖所全景・斯洛維尼亞邊界守望", "title_it": "Veduta Completa del Santuario di Monte Grisa", "fact": "教堂主體巍然聳立於喀斯特山脊頂端，背倚斯洛維尼亞喀斯特高原，前俯特里埃斯特全港，是南歐戰後最壯觀的現代宗教建築地標。", "poetic": "它像一座堅不可摧的石雕皇冠，高高加冕在喀斯特山頭。山的那一邊就是斯洛維尼亞，地理的邊界在這裡化為虔敬的共融。"}, {"id": 33, "filename": "825268495_29660886433501924_5370745172379679574_n.jpg", "chapter": "literature", "chapter_name": "大運河與文學聖殿", "title": "天主教聖安多尼堂正立面・新古典六根宏偉石柱", "title_it": "Chiesa di Sant'Antonio Taumaturgo (Divo Antonio)", "fact": "位於大運河盡頭的 Sant'Antonio Taumaturgo（聖安多尼堂）建於1825-1849年，由新古典主義大師 Pietro Nobile 設計，正面仿古羅馬萬神殿擁有六根巨大的愛奧尼亞式石柱與三角形山牆。", "poetic": "雄偉的古典廊柱倒映在大運河碧水之中，莊嚴而優雅。當午後陽光灑在門楣上，整座廣場都沉浸在一種聖潔的靜謐裡。"}, {"id": 34, "filename": "825268519_29660887450168489_4478023399401586944_n.jpg", "chapter": "literature", "chapter_name": "大運河與文學聖殿", "title": "大運河紅橋旁・詹姆斯·喬伊斯雕像", "title_it": "Statua di James Joyce sul Canale Grande (Ponte Rosso)", "fact": "愛爾蘭大文豪詹姆斯·喬伊斯（James Joyce）於1904至1920年間旅居特里埃斯特十餘年，在此完成了《青年藝術家的畫像》並構思了世紀巨著《尤利西斯》。大運河紅橋（Ponte Rosso）上的銅像由雕塑家 Nino Spagnoli 於2004年立像紀念。", "poetic": "夾著手杖的喬伊斯正快步穿過紅橋。他曾說『我的靈魂留在特里埃斯特』，海風掠過橋頭，彷彿尤利西斯的吟詠仍在波光中迴響。"}, {"id": 35, "filename": "825268514_29661357236788177_132581821589237639_n.jpg", "chapter": "castello", "chapter_name": "聖儒斯定城堡與敲鐘人", "title": "城堡外圍護城石牆與綠林坡道", "title_it": "Mura di Cinta e Salita al Castello", "fact": "通往聖儒斯定城堡的斜坡步道沿途保留了古羅馬集會場（Foro Romano）殘柱與中世紀防禦外牆，林木蔥鬱，是特城居民晨昏散步的首選勝地。", "poetic": "漫步在樹影斑駁的城牆邊，古老的石磚散發著歲月的清香。每一步，都是與這座兩千年古城溫柔對話的痕跡。"}, {"id": 36, "filename": "825268610_29661357503454817_1208356178658386238_n.jpg", "chapter": "castello", "chapter_name": "聖儒斯定城堡與敲鐘人", "title": "聖儒斯定山頂紀念廣場雕塑", "title_it": "Monumento ai Caduti sul Colle di San Giusto", "fact": "山頂廣場上立有一戰陣亡將士紀念雕像群（Monumento ai Caduti），由著名雕塑家 Attilio Selva 於1935年雕刻完成，展現五位健壯戰士扶持護佑祖國的雄偉姿態。", "poetic": "健美的身軀在山風中昂首挺立，青銅凝結了昔日的壯烈與豪情，在蔚藍晴空下化作守護和平的永恆哨兵。"}, {"id": 37, "filename": "825328383_29661357243454843_1369296991250458897_n.jpg", "chapter": "habsburg", "chapter_name": "帝國血脈與紅色門牌", "title": "特里埃斯特街角復古鑄鐵街燈", "title_it": "Lampione Storico in Ferro Battuto", "fact": "特里埃斯特保留了大量奧匈帝國晚期與19世紀末期製造的鑄鐵工藝街燈，造型優雅細膩，見證了特城早期採用瓦斯燈與電氣化照明的自由港輝煌歲月。", "poetic": "孤獨佇立在晴空下的老路燈，每當夜幕低垂，便會亮起溫暖的橘黃光芒，替每一位夜歸的旅人點亮回家的石板路。"}, {"id": 38, "filename": "825340733_29660873156836585_5889062842273856005_n.jpg", "chapter": "montegrisa", "chapter_name": "邊境巨構蒙特格里薩", "title": "特里埃斯特全景全景・亞得里亞海咽喉與喀斯特高原", "title_it": "Panorama Mozzafiato del Golfo di Trieste", "fact": "從蒙特格里薩山頂向西南方向俯瞰，整座特里埃斯特海灣、舊自由港防波堤、米拉馬雷城堡岬角與伊斯特拉半島海岸線一覽無餘，是極東義大利最震撼的全景視角。", "poetic": "海天一色，無邊無際。在山巔極目遠眺，整座城市的悲歡離合都縮成了眼底的一抹蔚藍。這就是特里埃斯特，孤獨而絕美的世界盡頭。"}, {"id": 39, "filename": "825352872_29660883680168866_3063210773687329233_n.jpg", "chapter": "habsburg", "chapter_name": "帝國血脈與紅色門牌", "title": "老城古老石窗櫺與綠百葉窗", "title_it": "Finestre con Scuri e Architettura Tradizionale", "fact": "特城老街住宅廣泛採用耐風抗鹽的實木百葉窗（Scuri），在布拉狂風呼嘯的冬季可完全閉鎖保溫，夏季則能阻擋烈日通風。", "poetic": "斑駁的綠百葉窗半開半掩，窗台上的微風悄悄探入。屋裡藏著多少代人的老故事，只有這堵石牆最清楚。"}, {"id": 40, "filename": "825352911_29660879490169285_3584940179234782326_n.jpg", "chapter": "habsburg", "chapter_name": "帝國血脈與紅色門牌", "title": "熱鬧街區步行道・精品街角的古典立面", "title_it": "Corso Italia e Scorcio dello Shopping", "fact": "特里埃斯特的商業心臟 Corso Italia 與 Via San Nicolò 是著名的優雅步行街，兩側林立著19世紀折衷主義與新藝術風格建築。", "poetic": "漫步在光潔的石板街上，櫥窗倒映著藍天與古典雕花。悠閒的行人步調，正是海港城市最迷人的慢活節奏。"}, {"id": 41, "filename": "825352919_29660886870168547_3760145400650793831_n.jpg", "chapter": "habsburg", "chapter_name": "帝國血脈與紅色門牌", "title": "紅磚老牆與拱形石砌窗孔", "title_it": "Mura in Mattoni e Archeggiature Storiche", "fact": "老城區的古老磚石結構展現了文藝復興與中世紀防禦民居的厚重砌築工藝，能承受沿海潮濕鹽霧與百年歲月侵蝕。", "poetic": "每一塊紅磚都經過烈火的淬鍊，歷經風霜依舊堅實溫暖。它們是這座城市最沉默也最忠誠的基石。"}, {"id": 42, "filename": "825353084_29660886893501878_939148702933323219_n.jpg", "chapter": "castello", "chapter_name": "聖儒斯定城堡與敲鐘人", "title": "城堡通往後山古道的幽靜石拱", "title_it": "Passaggio ad Arco nel Castello di San Giusto", "fact": "城堡後方設有直通山下舊港與羅馬劇院的秘密坑道與石階步道，古代用於緊急撤退與兵力調動。", "poetic": "穿過幽深的石拱，前方豁然開朗。綠樹與遠山在光影交界處迎候，彷彿一步踏入了時光的幽靜隧道。"}, {"id": 43, "filename": "825353109_29660884123502155_985794369644262819_n.jpg", "chapter": "habsburg", "chapter_name": "帝國血脈與紅色門牌", "title": "老街屋頂山牆與優雅煙囪", "title_it": "Tetti e Comignoli Tradizionali Triestini", "fact": "特里埃斯特傳統民居的屋頂煙囪與斜頂設計需考慮布拉風導流，外型古樸而實用，構成特城錯落有致的天際線輪廓。", "poetic": "磚紅色的屋瓦層層疊疊，煙囪在藍天畫布上勾勒出童話般的剪影。那是千家萬戶最溫暖的煙火人間。"}, {"id": 44, "filename": "825353169_29660887706835130_7416546038463224688_n.jpg", "chapter": "montegrisa", "chapter_name": "邊境巨構蒙特格里薩", "title": "蒙特格里薩朝聖所吊燈與混凝土交錯穹頂", "title_it": "Lampadario e Soffitto Geometrico a Monte Grisa", "fact": "朝聖所內部懸掛的現代金屬造型吊燈與清水混凝土三角形幾何肋樑結構相呼應，營造出20世紀中葉極具開創性的宗教空間美學。", "poetic": "冰冷的鋼筋混凝土在幾何秩序中昇華，一盞盞懸掛的吊燈宛如夜空中的繁星，照亮了祈禱者內心深處的安寧。"}, {"id": 45, "filename": "825353187_29660882326835668_2266239327982007334_n.jpg", "chapter": "habsburg", "chapter_name": "帝國血脈與紅色門牌", "title": "塔樓街 3 號・哈布斯堡紅色街名牌與典雅小館", "title_it": "Targa Civica Asburgica - Via delle Torri 3", "fact": "位於特里埃斯特老城 Via delle Torri 3號的哈布斯堡紅色街牌，周圍匯聚了百年咖啡小館與在地熟食小鋪（Buffet），是品嚐特城傳統煮豬肉三明治（Porcina）與咖啡的經典街區。", "poetic": "紅色的木框門廊、老舊的銅牌、街角飄來的咖啡香。特里埃斯特的時光，就凝固在這一條條靜謐的小巷深處。"}, {"id": 46, "filename": "825909903_29660885966835304_5114250214552634996_n.jpg", "chapter": "bora", "chapter_name": "狂風布拉與甜瓜飲水機", "title": "山崖觀景台邊緣防風鐵欄與壯闊海天", "title_it": "Ringhiere Frangivento e Panorama Costiero", "fact": "特里埃斯特沿海岬角與高地步道均設有抗強風的特殊重型鐵欄與避風錨固點，保護行人與遊客在白色布拉風（Bora Chiara）吹拂時的安全。", "poetic": "雙手扶著冰涼的鐵欄，迎著亞得里亞海吹來的微風。天地在此刻如此遼闊，讓人忍不住想大聲對著大海歌唱。"}, {"id": 47, "filename": "826272053_29660880366835864_1971535174442779682_n.jpg", "chapter": "montegrisa", "chapter_name": "邊境巨構蒙特格里薩", "title": "蒙特格里薩山頂十字架與蔚藍晴空", "title_it": "Croce Monumentale sul Monte Grisa", "fact": "朝聖所外圍廣場立有一座高聳的金屬十字架，象徵守望東西方和平、跨越意識形態對立的信仰燈塔。", "poetic": "十字架直直刺入萬里無雲的晴空，在喀斯特高原的強風中屹立不搖。它守護著山腳下的海港，也守護著每一個渴望和平的願望。"}, {"id": 48, "filename": "826989481_29660888053501762_4850500161151402316_n.jpg", "chapter": "castello", "chapter_name": "聖儒斯定城堡與敲鐘人", "title": "羅馬石刻露天碑林・帝國千年銘文", "title_it": "Lapidario Tergestino nel Castello di San Giusto", "fact": "聖儒斯定城堡地下與中庭設有著名的特里埃斯特羅馬石刻館（Lapidario Tergestino），保存著公元前1世紀至公元4世紀羅馬古城 Tergeste 的石棺、墓碑與榮譽銘文。", "poetic": "手指輕輕摩挲著兩千年前羅馬石匠鑿下的拉丁文字，歲月雖已風化了石面，但那些屬於帝國與榮耀的記憶，依然刻骨銘心。"}, {"id": 49, "filename": "827281873_29660880073502560_1698319457446454503_n.jpg", "chapter": "cafes", "chapter_name": "百年沙龍與咖啡甜點", "title": "百年甜點櫥窗・普齊茶點與傳統點心", "title_it": "Pasticceria Tradizionale Triestina - Putizza e Presnitz", "fact": "特里埃斯特特色甜點深受中歐與哈布斯堡傳統影響，著名的普齊蛋糕（Putizza，內夾胡桃果乾）與普雷斯尼茨（Presnitz，獻給茜茜公主的螺旋千層酥）是來特城必嚐的歷史甜品。", "poetic": "隔著玻璃櫥窗，金黃酥脆的千層酥散發著甜蜜誘人的光芒。每一口，都是奧匈帝國宮廷甜點師流傳至今的手藝結晶。"}, {"id": 50, "filename": "827510306_29660884406835460_6401284475489727889_n.jpg", "chapter": "montegrisa", "chapter_name": "邊境巨構蒙特格里薩", "title": "通往斯洛維尼亞邊境山徑・喀斯特林道", "title_it": "Sentiero del Carso verso il Confine Sloveno", "fact": "蒙特格里薩教堂後方的喀斯特步道直接通往義大利與斯洛維尼亞的邊界森林（Strada Vicentina / Strada Napoleonica），兩國現同屬申根區，可自由步行穿梭跨界。", "poetic": "一條蜿蜒的碎石小徑，穿過翠綠的松林直達國境那端。曾經森嚴的冷戰邊界，如今已成了旅人漫步深呼吸的靜謐林道。"}, {"id": 51, "filename": "827774021_29660879740169260_5060361546725893029_n.jpg", "chapter": "cafes", "chapter_name": "百年沙龍與咖啡甜點", "title": "百年烘焙老鋪 La Bomboniera（創立於1836年）", "title_it": "Pasticceria La Bomboniera dal 1836 - Forno a Legna Originale", "fact": "Pasticceria La Bomboniera 創立於1836年（Via XXX Ottobre 3），是特里埃斯特現存最古老完整的猶太-中歐糕餅店，店內依然完整保留並使用1836年奧匈帝國時期的古董木柴烘焙爐（Forno a legna）。", "poetic": "推開這扇1836年的木門，空氣中飄散著肉桂、巧克力與木柴燃燒的溫暖香氣。在這裡吃一塊糕點，嚐到的就是特里埃斯特最純粹的歷史原味。"}, {"id": 52, "filename": "827855926_29660883290168905_3029909304413836046_n.jpg", "chapter": "castello", "chapter_name": "聖儒斯定城堡與敲鐘人", "title": "聖儒斯定大教堂・拜占庭金碧馬賽克聖堂", "title_it": "Mosaici Bizantini della Cattedrale di San Giusto", "fact": "城堡旁的聖儒斯定主教座堂（Cattedrale di San Giusto）半圓後殿鑲嵌著12至13世紀威尼斯-拜占庭大師手工製作的華麗黃金馬賽克《基督受冕與聖人圖》（Christus Regnat）。", "poetic": "千年來，無數信徒在這片金光璀璨的馬賽克下跪拜祈禱。那些深邃的聖者眼眸，在金箔折射的光芒中注視著這座港口的永恆滄桑。"}, {"id": 53, "filename": "828228307_29660879130169321_2931619623695417637_n.jpg", "chapter": "castello", "chapter_name": "聖儒斯定城堡與敲鐘人", "title": "歷史鐘樓齒輪機芯・銘刻「NATA 1750」", "title_it": "Meccanismo dell'Orologio Storico - NATA 1750", "fact": "聖儒斯定城堡博物館收藏的這座大型鍛鐵鐘樓齒輪機芯，機身上清晰鑄刻著「NATA 1750」（誕生於1750年），正值奧地利女皇瑪麗亞·泰瑞莎大力擴建自由港的黃金年代。", "poetic": "1750年的巨大齒輪依然咬合精準。它轉動的不是冰冷的秒針，而是瑪麗亞·泰瑞莎女皇時代自由港浩蕩奔騰的歲月。"}, {"id": 54, "filename": "828280530_29660882253502342_8491619730506851037_n.jpg", "chapter": "cafes", "chapter_name": "百年沙龍與咖啡甜點", "title": "百年老糕餅坊・古典拱窗與精緻糕點擺盤", "title_it": "Vetrine e Arredi Storici della Pasticceria", "fact": "特城老字號糕餅店保留了新藝術風格（Liberty）胡桃木櫃檯與手工打磨的水晶吊燈，是特里埃斯特沙龍社交文化的重要舞台。", "poetic": "優雅的古典木框將街景與甜點收納成一幅畫。在這裡，時間不是用鐘錶度量，而是用一口口甜美的回憶來計算。"}, {"id": 55, "filename": "828412983_29660881433502424_8672869224354400504_n.jpg", "chapter": "bora", "chapter_name": "狂風布拉與甜瓜飲水機", "title": "特里埃斯特著名的「甜瓜」飲水機・布拉風防護擋風板", "title_it": "Il \"Melone\" di Trieste - Fontanella con Paravento per la Bora", "fact": "特里埃斯特街頭最具傳奇色彩的公共飲水機被市民親切稱為「Il Melone di Trieste」（特里埃斯特甜瓜/西瓜）。由於特里埃斯特布拉風（Bora）極為猛烈，陣風時速可達200公里，公共飲水機必須加裝特殊的擋風金屬護板與導流罩，否則水流會直接被狂風吹飛吹散無法飲用。", "poetic": "連喝一口水都需要與時速兩百公里的布拉風鬥智！這座可愛的『甜瓜』飲水機與它的擋風盾牌，是特里埃斯特人幽默對抗大自然狂風的最生動見證。"}, {"id": 56, "filename": "828561954_29660881156835785_1126251332305441476_n.jpg", "chapter": "castello", "chapter_name": "聖儒斯定城堡與敲鐘人", "title": "城堡巨大厚重基石與城垛高牆", "title_it": "Mura Possenti e Basamento Medievale del Castello", "fact": "城堡基底採用了大量古羅馬與中世紀採石場的喀斯特石灰岩巨石砌築，歷經多次圍城戰役依然固若金湯。", "poetic": "斑駁厚重的巨石層層壘起，頂天立地。在經歷了數百年的風暴與戰火之後，這座城堡依舊堅毅如初。"}, {"id": 57, "filename": "828650083_29660887126835188_3006628065981354639_n.jpg", "chapter": "castello", "chapter_name": "聖儒斯定城堡與敲鐘人", "title": "城堡通往瞭望台的石板棧道", "title_it": "Rampa d'Accesso e Camminamenti di San Giusto", "fact": "城堡內部各個防禦稜堡之間由石板引橋與巡邏棧道串聯，為遊客提供了360度環視整座港灣與喀斯特丘陵的壯麗視野。", "poetic": "順著石坡緩步而上，每一次轉身，都是一幅令人驚嘆的城市海景全卷。海風迎面拂來，滿心舒暢。"}, {"id": 58, "filename": "828676210_29660878680169366_4955777563982523282_n.jpg", "chapter": "castello", "chapter_name": "聖儒斯定城堡與敲鐘人", "title": "聖儒斯定城堡正門地標銘牌與全貌", "title_it": "Targa Ufficiale del Castello di San Giusto", "fact": "聖儒斯定城堡（Castello di San Giusto）是特里埃斯特市最著名的市立博物館與歷史地標，正門吊橋旁立有官方大理石地標牌，內設武器館與古代石雕館。", "poetic": "『Castello di San Giusto』——這行字不僅是一個地名，更是特里埃斯特整部兩千年歷史與靈魂的總和。"}, {"id": 59, "filename": "828859543_29660887896835111_4893944921926985871_n.jpg", "chapter": "freeport", "chapter_name": "自由港與地緣印記", "title": "特里埃斯特自由領地歷史標語・「USA & UK COME BACK」", "title_it": "Adesivo Storico: Free Territory of Trieste - USA & UK Come Back", "fact": "二戰後的1947年巴黎和約中，聯合國成立了『特里埃斯特自由區』（Territorio Libero di Trieste, TLT），由美英軍事政府管轄A區（包含特城港口），直到1954年倫敦備忘錄才回歸義大利管轄。特城民間至今仍有部分運動支持恢復自由港與自由領地地位，街頭常見『Free Territory of Trieste - USA & UK Come Back』貼紙。", "poetic": "這張貼在街角燈柱上的標語，道出了這座邊境城市在冷戰鐵幕與大國博弈夾縫中，對自由港繁榮歲月最複雜也最深沉的歷史鄉愁。"}, {"id": 60, "filename": "828895983_29660878760169358_7799942181272418175_n.jpg", "chapter": "castello", "chapter_name": "聖儒斯定城堡與敲鐘人", "title": "城堡山坡俯瞰特城港口與市區紅瓦屋頂", "title_it": "Vista Panoramica sui Tetti e sul Porto dal Colle", "fact": "特里埃斯特市區房屋多採用亞得里亞海傳統的紅土瓦頂，與遠方自由港起重機及深藍色海灣相映成趣。", "poetic": "從高處望去，一棟棟典雅的宅邸如波浪般向海港綿延展開。那是一座在百年咖啡香與波光中沉睡又甦醒的優雅之城。"}, {"id": 61, "filename": "828939223_29660879363502631_5143717465260847983_n.jpg", "chapter": "montegrisa", "chapter_name": "邊境巨構蒙特格里薩", "title": "蒙特格里薩山巔蒼翠松林與晴空", "title_it": "Pineta e Rocce Carsiche sul Monte Grisa", "fact": "喀斯特高原由白堊紀石灰岩構成，經歷了百年的水土保持與松樹造林（Pineta Carsica），成為抵禦布拉狂風與水土流失的綠色生態屏障。", "poetic": "松針在陽光下閃爍著翡翠般的光芒，空氣中瀰漫著松脂與海鹽的清新香氣。山風吹過樹冠，奏起大自然最和諧的樂章。"}, {"id": 62, "filename": "829319781_29660881563502411_8406236013170173612_n.jpg", "chapter": "freeport", "chapter_name": "自由港與地緣印記", "title": "特里埃斯特自由領地標語貼紙近景", "title_it": "Dettaglio T.L.T. (Territorio Libero di Trieste)", "fact": "特里埃斯特自由區（TLT）擁有獨立發行的貨幣、郵票與保稅自由港法規。冷戰地緣政治讓這座城市成為東西方世界的樞紐，也奠定了今日特里埃斯特生豆免稅自由港的全球特權地位。", "poetic": "小小的貼紙，載著厚重的冷戰記憶。邊境人的身份認同，永遠流淌著一份超越國界、屬於海洋與自由的獨特自豪。"}, {"id": 63, "filename": "829711086_29660884170168817_6565889580225520782_n.jpg", "chapter": "literature", "chapter_name": "大運河與文學聖殿", "title": "聖安多尼堂門楣銘文・「DIVO ANTONIO THAVMATVRGO」", "title_it": "Iscrizione del Fregio di Sant'Antonio Taumaturgo", "fact": "天主教聖安多尼堂正立面大理石飾帶上鐫刻著拉丁文大字「DIVO ANTONIO THAVMATVRGO」（獻給顯靈聖人安多尼）。教堂於1849年祝聖，是大運河水景的壯麗端景。", "poetic": "巍峨的拉丁銘文在陽光下投下深邃的陰影。當大運河的浪花輕拍石岸，這座聖殿就像一尊永恆的燈塔，在波光粼粼中庇佑著這座海港之城。"}];
+    
+    let currentFilter = 'all';
+    let currentIndex = 0;
+    let filteredList = [...photosData];
+    let isZoomed = false;
+
+    // Initialize gallery
+    function renderGallery() {
+      const grid = document.getElementById('gallery-grid');
+      grid.innerHTML = '';
+      
+      filteredList = currentFilter === 'all' 
+        ? photosData 
+        : photosData.filter(p => p.chapter === currentFilter);
+
+      filteredList.forEach((photo, idx) => {
+        const card = document.createElement('div');
+        card.className = 'photo-card bg-[#18110a] border border-[#422e1e] rounded-2xl overflow-hidden flex flex-col justify-between shadow-xl';
+        
+        const badgeColors = {
+          castello: 'bg-[#4a2e18] text-[#ffd68a] border-[#e5b266]/40',
+          literature: 'bg-[#1b3240] text-[#90d5ff] border-[#4da8da]/40',
+          montegrisa: 'bg-[#3b2b4a] text-[#e0b0ff] border-[#b072d6]/40',
+          habsburg: 'bg-[#521b1b] text-[#ffb0b0] border-[#d9534f]/40',
+          cafes: 'bg-[#3d2e14] text-[#ffe194] border-[#e5b266]/40',
+          bora: 'bg-[#1a3835] text-[#80ffe8] border-[#38ada9]/40',
+          freeport: 'bg-[#2b3038] text-[#c9d1d9] border-[#8b949e]/40'
+        };
+
+        const badgeClass = badgeColors[photo.chapter] || 'bg-[#26180e] text-[#ffd68a] border-[#e5b266]/40';
+
+        card.innerHTML = `
+          <div>
+            <!-- Image Thumbnail with Zoom Overlay -->
+            <div class="relative h-64 sm:h-72 w-full overflow-hidden bg-black cursor-pointer group" onclick="openModalById(${photo.id})">
+              <img src="${photo.path}" alt="${photo.title}" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                <span class="text-xs font-bold text-[#ffd68a] bg-black/60 px-3 py-1.5 rounded-full border border-[#e5b266]/40 backdrop-blur-sm flex items-center gap-1">
+                  🔍 點擊檢視高清大圖與考據
+                </span>
+              </div>
+              <div class="absolute top-3 left-3">
+                <span class="text-[11px] font-black font-mono px-2.5 py-1 rounded-md bg-black/75 text-[#ffd68a] border border-[#e5b266]/50 shadow">
+                  #${String(photo.id).padStart(2, '0')}
+                </span>
+              </div>
+              <div class="absolute top-3 right-3">
+                <span class="text-[10px] font-bold px-2.5 py-1 rounded-full border ${badgeClass} backdrop-blur-md shadow">
+                  ${photo.chapter_name}
+                </span>
+              </div>
+            </div>
+
+            <!-- Content Area -->
+            <div class="p-5 space-y-3">
+              <div class="text-[11px] font-medium text-[#c49a5e] tracking-wide uppercase">
+                ${photo.title_it}
+              </div>
+              <h3 class="text-base sm:text-lg font-bold text-[#fff2dc] leading-snug">
+                ${photo.title}
+              </h3>
+
+              <!-- Historical Fact Box -->
+              <div class="p-3.5 rounded-xl bg-[#22160d]/80 border border-[#473220] text-xs text-[#e8d5c0] leading-relaxed">
+                <strong class="text-[#ffd68a] block mb-1 font-semibold flex items-center gap-1">
+                  <span>📜</span> 歷史考據：
+                </strong>
+                ${photo.fact}
+              </div>
+
+              <!-- Poetic Commentary Box -->
+              <div class="p-3.5 rounded-xl bg-[#1c1209]/90 border border-[#3b2716] text-xs text-[#cfbca8] italic leading-relaxed">
+                <strong class="text-[#e5b266] block mb-1 font-semibold not-italic flex items-center gap-1">
+                  <span>✍️</span> 感性旁白：
+                </strong>
+                「${photo.poetic}」
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Action Bar -->
+          <div class="p-4 pt-0">
+            <button onclick="openModalById(${photo.id})" class="w-full py-2.5 rounded-xl bg-[#2a1b10] border border-[#523927] hover:border-[#e5b266] text-xs font-bold text-[#ffd68a] hover:bg-[#e5b266] hover:text-black transition-all flex items-center justify-center gap-1.5 shadow">
+              <span>🔎</span> 深度聚焦賞析
+            </button>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    // Filter switching
+    function filterPhotos(chapter) {
+      currentFilter = chapter;
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      event.target.classList.add('active');
+      renderGallery();
+    }
+
+    // Open Lightbox by Photo ID
+    function openModalById(id) {
+      const index = photosData.findIndex(p => p.id === id);
+      if (index !== -1) {
+        currentIndex = index;
+        updateModalContent();
+        document.getElementById('lightbox-modal').classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function updateModalContent() {
+      const photo = photosData[currentIndex];
+      const modalImg = document.getElementById('modal-img');
+      modalImg.src = photo.path;
+      modalImg.alt = photo.title;
+      isZoomed = false;
+      modalImg.style.transform = 'scale(1)';
+
+      document.getElementById('modal-counter').textContent = `${String(currentIndex + 1).padStart(2, '0')} / ${photosData.length}`;
+      document.getElementById('modal-chapter-badge').textContent = photo.chapter_name;
+      document.getElementById('modal-title-it').textContent = photo.title_it;
+      document.getElementById('modal-title').textContent = photo.title;
+      document.getElementById('modal-fact').textContent = photo.fact;
+      document.getElementById('modal-poetic').textContent = `「${photo.poetic}」`;
+      document.getElementById('modal-filename').textContent = photo.filename;
+
+      renderThumbnails();
+    }
+
+    function renderThumbnails() {
+      const container = document.getElementById('modal-thumbnails');
+      container.innerHTML = '';
+      photosData.forEach((p, idx) => {
+        const thumb = document.createElement('img');
+        thumb.src = p.path;
+        thumb.alt = p.title;
+        thumb.className = `h-12 w-16 object-cover rounded cursor-pointer border-2 transition-all flex-shrink-0 ${
+          idx === currentIndex ? 'border-[#e5b266] scale-105 brightness-110' : 'border-transparent opacity-60 hover:opacity-100'
+        }`;
+        thumb.onclick = () => {
+          currentIndex = idx;
+          updateModalContent();
+        };
+        container.appendChild(thumb);
+      });
+
+      // Auto scroll active thumbnail into view
+      const activeThumb = container.children[currentIndex];
+      if (activeThumb) {
+        activeThumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      }
+    }
+
+    function closeModal() {
+      document.getElementById('lightbox-modal').classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    }
+
+    function prevPhoto() {
+      currentIndex = (currentIndex - 1 + photosData.length) % photosData.length;
+      updateModalContent();
+    }
+
+    function nextPhoto() {
+      currentIndex = (currentIndex + 1) % photosData.length;
+      updateModalContent();
+    }
+
+    function zoomModalImage() {
+      const img = document.getElementById('modal-img');
+      isZoomed = !isZoomed;
+      img.style.transform = isZoomed ? 'scale(1.5)' : 'scale(1)';
+      img.style.cursor = isZoomed ? 'zoom-out' : 'zoom-in';
+    }
+
+    // Keyboard controls
+    window.addEventListener('keydown', (e) => {
+      const modal = document.getElementById('lightbox-modal');
+      if (!modal.classList.contains('hidden')) {
+        if (e.key === 'ArrowLeft') prevPhoto();
+        if (e.key === 'ArrowRight') nextPhoto();
+        if (e.key === 'Escape') closeModal();
+      }
+    });
+
+    // Audio toggle
+    function toggleAudio() {
+      const audio = document.getElementById('gallery-audio');
+      const text = document.getElementById('audio-btn-text');
+      const icon = document.getElementById('audio-btn-icon');
+      if (audio.paused) {
+        audio.play();
+        text.textContent = '暫停音樂';
+        icon.textContent = '⏸️';
+      } else {
+        audio.pause();
+        text.textContent = '播放音樂';
+        icon.textContent = '🎵';
+      }
+    }
+
+    // Initial render
+    window.addEventListener('DOMContentLoaded', () => {
+      renderGallery();
+    });
+  </script>
+</body>
+</html>
