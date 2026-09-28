@@ -182,16 +182,16 @@
             🌟 全部旅拍 (63)
           </button>
           <button onclick="filterPhotos('castello')" class="filter-btn px-4 py-2 rounded-xl border border-[#523927] bg-[#22160d] text-xs sm:text-sm text-[#e0cfbb] hover:border-[#e5b266] whitespace-nowrap transition-all">
-            🏰 聖儒斯定城堡與敲鐘人 (17)
+            🏰 聖儒斯定城堡與敲鐘人 (15)
           </button>
           <button onclick="filterPhotos('literature')" class="filter-btn px-4 py-2 rounded-xl border border-[#523927] bg-[#22160d] text-xs sm:text-sm text-[#e0cfbb] hover:border-[#e5b266] whitespace-nowrap transition-all">
-            ⛪ 雙聖殿與文學大運河 (13)
+            ⛪ 雙聖殿與文學大運河 (14)
           </button>
           <button onclick="filterPhotos('montegrisa')" class="filter-btn px-4 py-2 rounded-xl border border-[#523927] bg-[#22160d] text-xs sm:text-sm text-[#e0cfbb] hover:border-[#e5b266] whitespace-nowrap transition-all">
             🔺 邊境巨構蒙特格里薩 (11)
           </button>
           <button onclick="filterPhotos('habsburg')" class="filter-btn px-4 py-2 rounded-xl border border-[#523927] bg-[#22160d] text-xs sm:text-sm text-[#e0cfbb] hover:border-[#e5b266] whitespace-nowrap transition-all">
-            🏛️ 哈布斯堡紅色門牌 (10)
+            🏛️ 哈布斯堡紅色門牌 (11)
           </button>
           <button onclick="filterPhotos('cafes')" class="filter-btn px-4 py-2 rounded-xl border border-[#523927] bg-[#22160d] text-xs sm:text-sm text-[#e0cfbb] hover:border-[#e5b266] whitespace-nowrap transition-all">
             ☕ 百年沙龍與咖啡甜點 (8)
@@ -329,7 +329,701 @@
 
   <!-- Scripts -->
   <script>
-    const photosData = [{"id": 1, "filename": "825266816_29661357583454809_1878958357790470250_n.jpg", "chapter": "castello", "chapter_name": "聖儒斯定城堡與敲鐘人", "title": "聖儒斯定山頂的凝望・青銅雕像與晴空", "title_it": "Statua e Panorama dal Colle di San Giusto", "fact": "聖儒斯定山（Colle di San Giusto）是特里埃斯特的歷史發源地，早在古羅馬時代便是名為 Tergeste 的堡壘要塞。山頂立有歷代歷史英雄與紀念雕像，背景襯著亞得里亞海無垠的藍天。", "poetic": "陽光在青銅的肌理上流淌，他靜靜佇立在山巔，替這座流轉於帝國與風暴間的城市，守望了數百個晴朗與孤寂的午後。", "path": "ivy_photos/825266816_29661357583454809_1878958357790470250_n.jpg"}, {"id": 2, "filename": "825267924_29660883300168904_7742806439811948533_n.jpg", "chapter": "castello", "chapter_name": "聖儒斯定城堡與敲鐘人", "title": "古城堡門廊與守護者石雕", "title_it": "Portale e Sculture del Castello di San Giusto", "fact": "聖儒斯定城堡（Castello di San Giusto）建於1470年至1630年間，由哈布斯堡王朝威尼斯與奧地利軍事工程師歷經百餘年擴建，城堡拱門與石牆融合了哥德式與文藝復興防禦工事特徵。", "poetic": "古老石拱下的斑駁雕像，彷彿穿越了幾百年的烽火與海風，在陰影中默默迎接著每一位踏足邊境的旅人。", "path": "ivy_photos/825267924_29660883300168904_7742806439811948533_n.jpg"}, {"id": 3, "filename": "825267949_29660885916835309_8048400389663776258_n.jpg", "chapter": "habsburg", "chapter_name": "帝國血脈與紅色門牌", "title": "哈布斯堡紅色門牌・庫克納塔廣場 6 號", "title_it": "Targa Asburgica Civico 6414 - Piazzetta Tor Cucherna", "fact": "特里埃斯特老城區（Città Vecchia）保留著奧匈帝國哈布斯堡時期特有的深紅色鐵鑄/琺瑯門牌，上方標記著帝國行政編號「Civ. 6414」及中世紀庫克納塔（Tor Cucherna，城牆遺構）廣場6號。", "poetic": "那一抹褪不去的紅，是哈布斯堡王朝烙印在石牆上的永恆指紋。時光已過百年，信差已逝，而紅牌依然為歷史指引著歸途。", "path": "ivy_photos/825267949_29660885916835309_8048400389663776258_n.jpg"}, {"id": 4, "filename": "825268036_29660884670168767_1350903887507912673_n.jpg", "chapter": "castello", "chapter_name": "聖儒斯定城堡與敲鐘人", "title": "城堡中庭與歷史石階步道", "title_it": "Cortile delle Milizie nel Castello", "fact": "聖儒斯定城堡內部的「民兵中庭」（Cortile delle Milizie）四周環繞著石造城垛與瞭望台，今日常作為夏季露天音樂會與戲劇表演的露天歷史劇場。", "poetic": "踏上磨光的石階，腳步聲在厚重城牆間輕輕迴盪。這裡曾有衛兵的巡視與號角，如今只剩下微風吹拂過樹梢的溫柔沙沙聲。", "path": "ivy_photos/825268036_29660884670168767_1350903887507912673_n.jpg"}, {"id": 5, "filename": "825268046_29660879176835983_583968251856442830_n.jpg", "chapter": "castello", "chapter_name": "聖儒斯定城堡與敲鐘人", "title": "城堡城垛拱廊與俯瞰海灣視野", "title_it": "Camminamento di Ronda e Arcate sul Golfo", "fact": "從城堡巡邏步道（Camminamento di Ronda）向外眺望，可俯瞰整個特里埃斯特市區、大運河出口及亞得里亞海灣，是歷代統治者掌控海上商路的戰略要點。", "poetic": "倚著粗獷的石拱放眼望去，城鎮的橘紅屋瓦與深邃的碧海在天際線相遇，歷史的壯闊在此刻化作眼底的一片寧靜。", "path": "ivy_photos/825268046_29660879176835983_583968251856442830_n.jpg"}, {"id": 6, "filename": "825268123_29660881966835704_1154059438245505916_n.jpg", "chapter": "cafes", "chapter_name": "百年沙龍與咖啡甜點", "title": "維也納薩赫咖啡 Trieste 分店・金色窗櫺", "title_it": "Caffè Sacher Trieste - Atmosfera Viennese", "fact": "2023年維也納著名奢華名店 Caffè Sacher 正式於特里埃斯特開設海外旗艦店（位於 Via Dante Alighieri），延續特城與維也納哈布斯堡王朝數百年的中歐甜點與咖啡血脈緣分。", "poetic": "玻璃上倒映著特里的街景，門內飄出醇厚的黑巧克力香與奶泡氣息。維也納的尊貴與海港的浪漫，在這一杯咖啡裡融為一體。", "path": "ivy_photos/825268123_29660881966835704_1154059438245505916_n.jpg"}, {"id": 7, "filename": "825268131_29660887110168523_4228890007283625531_n.jpg", "chapter": "literature", "chapter_name": "大運河與文學聖殿", "title": "廣場歷史雕像・藍天下的古典容顏", "title_it": "Monumento Storico e Cielo di Trieste", "fact": "特里埃斯特市內擁有數十座建於18至19世紀的紀念雕像與古典噴泉，呈現新古典主義、巴洛克與新文藝復興的多元雕塑風采。", "poetic": "雕像仰望著晴空，神情堅定而沈默。海風吹拂了百年，未曾吹褪石雕上銘刻的驕傲與優雅。", "path": "ivy_photos/825268131_29660887110168523_4228890007283625531_n.jpg"}, {"id": 8, "filename": "825268148_29660883946835506_3998653191740997363_n.jpg", "chapter": "habsburg", "chapter_name": "帝國血脈與紅色門牌", "title": "聖拉扎羅街「雙蛇之屋」・建築師波波利尼宅邸", "title_it": "Via S. Lazzaro 15 - Casa delle Bisse (Arch. Bobolini, 1770)", "fact": "位於特里埃斯特新城區（Borgo Teresiano）Via San Lazzaro 15號的著名古建築「Casa delle Bisse」（雙蛇之屋），由建築師 Antonio Bobolini 於1770年設計，立面飾有精美的古典鍛鐵陽台與蛇紋浮雕象徵長壽與商業繁榮。", "poetic": "1770年的陽台鐵花依舊細緻，紅色的街牌守著幽靜的街角。兩百多年前商賈與仕女走過的門廊，今天依然流淌著悠遠的典雅。", "path": "ivy_photos/825268148_29660883946835506_3998653191740997363_n.jpg"}, {"id": 9, "filename": "825268157_29660880853502482_6518991068475015129_n.jpg", "chapter": "cafes", "chapter_name": "百年沙龍與咖啡甜點", "title": "露天咖啡座隨影・午後悠閒的一隅", "title_it": "Tavolini all'Aperto e Relax nei Caffè", "fact": "特里埃斯特市民人均咖啡消費量是義大利全國平均的兩倍。在街頭點一杯 Capo in B（玻璃杯小卡布），在遮陽傘下靜讀報紙或暢談，是日常最不可或缺的靈魂儀式。", "poetic": "陽光穿透傘布灑下斑駁光影，杯中咖啡散發著濃郁堅果香。特里的時間走得特別慢，彷彿專門為發呆與沉思而留白。", "path": "ivy_photos/825268157_29660880853502482_6518991068475015129_n.jpg"}, {"id": 10, "filename": "825268162_29660886246835276_2884383243799367140_n.jpg", "chapter": "literature", "chapter_name": "大運河與文學聖殿", "title": "街頭紀念雕像的深邃剪影", "title_it": "Dettaglio Scultoreo nel Borgo Storico", "fact": "特里埃斯特是文學家與思想家的庇護所。喬伊斯、斯韋沃、薩巴、里爾克都曾在此漫步，街頭隨處可見紀念文學家與哲人的雕塑銘碑。", "poetic": "他在微風中側首沉思，彷彿正在字裡行間捕捉那句尚未寫就的絕美詩句。", "path": "ivy_photos/825268162_29660886246835276_2884383243799367140_n.jpg"}, {"id": 11, "filename": "825268168_29660883673502200_3128118360590076558_n.jpg", "chapter": "literature", "chapter_name": "大運河與文學聖殿", "title": "鄧南遮紀念雕像・「武裝船首，揚帆航向世界」", "title_it": "Statua di Gabriele D'Annunzio (1863-1938) - \"Arma la prora\"", "fact": "位於 Piazza Hortis 旁的著名義大利詩人、作家加布里埃爾·鄧南遮（Gabriele D'Annunzio, 1863-1938）青銅長椅雕像，底座鐫刻其經典悲劇詩作《La Nave》（船）名句：「Arma la prora e salpa verso il Mondo」（武裝船首，揚帆航向世界）。", "poetic": "坐在長椅上的詩人翹著腿、手執書卷，那句豪邁的『揚帆航向世界』，讓每位行經此處的旅人心中都泛起出海的雄心。", "path": "ivy_photos/825268168_29660883673502200_3128118360590076558_n.jpg"}, {"id": 12, "filename": "825268176_29660879773502590_7488822004382720393_n.jpg", "chapter": "literature", "chapter_name": "大運河與文學聖殿", "title": "鄧南遮雕像特寫・長椅上的文學沈思", "title_it": "Primo Piano della Statua di D'Annunzio", "fact": "這尊雕像由雕塑家 Alessandro Verdi 創作，展現鄧南遮身著西裝、輕鬆坐在公共長椅上閱卷沉思的姿態，遊客與市民常並肩坐在他身旁合影留念。", "poetic": "青銅鑄造的身軀依然帶著思緒的溫度。坐在他身旁，彷彿能聽見翻動書頁時與海風交融的低語。", "path": "ivy_photos/825268176_29660879773502590_7488822004382720393_n.jpg"}, {"id": 13, "filename": "825268184_29660886380168596_2710458473679409682_n.jpg", "chapter": "habsburg", "chapter_name": "帝國血脈與紅色門牌", "title": "歷史街區花壇與綠意點綴", "title_it": "Scorcio Fiorito nel Quartiere Storico", "fact": "特里埃斯特老城區在哈布斯堡時代由女皇瑪麗亞·泰瑞莎規劃出棋盤狀街道（Borgo Teresiano），街道兩旁整齊點綴著典雅的景觀盆栽與綠植。", "poetic": "古老石板路邊的一抹翠綠與鮮花，給這座滿是歷史沉澱的厚重城市，添上了幾分輕盈的生活詩意。", "path": "ivy_photos/825268184_29660886380168596_2710458473679409682_n.jpg"}, {"id": 14, "filename": "825268214_29660884326835468_7065973465657424444_n.jpg", "chapter": "literature", "chapter_name": "大運河與文學聖殿", "title": "塞爾維亞東正教堂・碧藍穹頂與拜占庭金飾", "title_it": "Cupola del Tempio Serbo-Ortodosso di San Spiridione", "fact": "塞爾維亞正教會聖斯皮里狄翁堂（Tempio Serbo-Ortodosso di San Spiridione）於1869年由建築師 Carlo Maciachini 設計落成，其壯麗的九座拜占庭式碧藍圓頂與外牆金色鑲嵌畫，展現特里埃斯特作為自由港對多元宗教民族的高度包容。", "poetic": "藍天襯托下的蔚藍穹頂，宛如亞得里亞海凝結的寶石。金色馬賽克在日光下熠熠生輝，訴說著東方教會在西方海港的安詳落腳。", "path": "ivy_photos/825268214_29660884326835468_7065973465657424444_n.jpg"}, {"id": 15, "filename": "825268234_29660880860169148_7370961659237975541_n.jpg", "chapter": "literature", "chapter_name": "大運河與文學聖殿", "title": "聖斯皮里狄翁堂內部・金碧輝煌的聖像屏風", "title_it": "Iconostasi e Affreschi di San Spiridione", "fact": "聖斯皮里狄翁堂內部飾有俄羅斯莫斯科畫派繪製的大型聖像屏風（Iconostasi）與整幅覆蓋著24K金箔的拜占庭馬賽克壁畫，是南歐最富麗堂皇的東正教聖殿之一。", "poetic": "步入教堂，光線穿透金箔穹頂灑落，幽暗中燭光搖曳。那一幅幅莊嚴的聖像，彷彿超越了時空的藩籬，洗滌了旅人的心塵。", "path": "ivy_photos/825268234_29660880860169148_7370961659237975541_n.jpg"}, {"id": 16, "filename": "825268235_29660884893502078_4308289871475579471_n.jpg", "chapter": "literature", "chapter_name": "大運河與文學聖殿", "title": "聖殿大理石壁龕與雕飾細節", "title_it": "Dettagli Architettonici e Nicchie in Marmo", "fact": "教堂採用產自卡拉拉的大理石與威尼斯手工玻璃馬賽克，將拜占庭拜占庭-拜占庭復興風格與倫巴底新古典工藝完美結合。", "poetic": "每一道大理石刻痕都刻劃著對至高的虔敬，冰冷石材在信仰與藝術的澆灌下，化作了永恆的讚美詩。", "path": "ivy_photos/825268235_29660884893502078_4308289871475579471_n.jpg"}, {"id": 17, "filename": "825268241_29660882903502277_2813542208151777359_n.jpg", "chapter": "literature", "chapter_name": "大運河與文學聖殿", "title": "聖堂彩繪玻璃與幽微天光", "title_it": "Vetrate Istoriate e Riflessi di Luce", "fact": "殿內高窗彩繪玻璃在午後投射出深邃的藍紫與金紅光暈，營造出東正教神秘神聖的靈修氛圍。", "poetic": "陽光穿透彩色玻璃，在古老的地面鋪上一張絢麗光毯。塵世的喧囂在這一刻完全隱沒。", "path": "ivy_photos/825268241_29660882903502277_2813542208151777359_n.jpg"}, {"id": 18, "filename": "825268245_29660888486835052_4487137365738001125_n.jpg", "chapter": "literature", "chapter_name": "大運河與文學聖殿", "title": "聖斯皮里狄翁堂鐘樓立面全景", "title_it": "Facciata e Campanile del Tempio Serbo-Ortodosso", "fact": "教堂正面面向特里埃斯特大運河，四座高聳的角塔鐘樓環抱中央主穹頂，呈現典雅均衡的新拜占庭建築比例。", "poetic": "鐘樓直插晴空，巍峨立於運河畔。它與隔壁的天主教堂鐘聲互應，交織成特里埃斯特最動人的信仰和聲。", "path": "ivy_photos/825268245_29660888486835052_4487137365738001125_n.jpg"}, {"id": 19, "filename": "825268294_29660881140169120_4059363019677375823_n.jpg", "chapter": "cafes", "chapter_name": "百年沙龍與咖啡甜點", "title": "巷弄人氣餐廳 Miscusi・現代特城滋味", "title_it": "Ristorante Miscusi - Sapori e Convivialità", "fact": "特里埃斯特老城區聚集了多元傳統與現代意式餐廳，手工新鮮現做義大利麵（Superpasta）與當地特產海鮮、亞得里亞海白酒成為饕客最愛。", "poetic": "餐盤間熱氣氤氳，橄欖油與羅勒香氣四溢。在充滿歡聲笑語的餐廳裡，感受義大利人對食物最熾熱的熱愛。", "path": "ivy_photos/825268294_29660881140169120_4059363019677375823_n.jpg"}, {"id": 20, "filename": "825268294_29660884936835407_4479999497651746439_n.jpg", "chapter": "castello", "chapter_name": "聖儒斯定城堡與敲鐘人", "title": "聖儒斯定城堡・歷史機械鐘樓人像（Michez / Jachez）", "title_it": "Automi Michez e Jachez - Castello di San Giusto", "fact": "安置在聖儒斯定城堡內的這尊19世紀青銅/鋅合金機械自動敲鐘人（Michez 麥克茲），原置於統一廣場市政廳鐘樓，每逢整點自動揮動鐵槌敲響大鐘。", "poetic": "他曾站在特里埃斯特的心臟頂端，為整座城市的生老病死、日出日落報時。退隱城堡深處後，依舊帶著令人肅然起敬的威嚴。", "path": "ivy_photos/825268294_29660884936835407_4479999497651746439_n.jpg"}, {"id": 21, "filename": "825268298_29660880080169226_7598825165565124912_n.jpg", "chapter": "literature", "chapter_name": "大運河與文學聖殿", "title": "聖安多尼堂天頂壁畫・天使聖詠", "title_it": "Affreschi della Chiesa di Sant'Antonio Taumaturgo", "fact": "大運河盡頭的新古典主義天主教聖安多尼堂（Sant'Antonio Taumaturgo），天花板飾有19世紀威尼斯派畫家 Sebastiano Santi 等人的大幅宗教濕壁畫。", "poetic": "抬頭仰望，穹頂上的天使彷彿正從金雲間降臨，溫柔的目光穿越了百年，撫慰著每一個仰望的靈魂。", "path": "ivy_photos/825268298_29660880080169226_7598825165565124912_n.jpg"}, {"id": 22, "filename": "825268320_29660885190168715_855921693731922586_n.jpg", "chapter": "castello", "chapter_name": "聖儒斯定城堡與敲鐘人", "title": "敲鐘機械人 Jachez（雅克茲）立像", "title_it": "Automa Jachez - Museo del Castello di San Giusto", "fact": "另一尊敲鐘機器人名為 Jachez（雅克茲）。Michez 與 Jachez 這對兄弟雕像是特里埃斯特市民集體記憶中最親切的城市象徵，名字源自特城斯拉夫方言與義大利語的親暱縮寫。", "poetic": "他和兄弟 Michez 一起，用鋼鐵手臂敲響了統一廣場數十年的清晨與深夜。那是特里埃斯特最真實的歷史心跳。", "path": "ivy_photos/825268320_29660885190168715_855921693731922586_n.jpg"}, {"id": 23, "filename": "825268332_29660883930168841_9175412770641311132_n.jpg", "chapter": "montegrisa", "chapter_name": "邊境巨構蒙特格里薩", "title": "蒙特格里薩聖母堂・喀斯特山崖上的粗獷幾何三角", "title_it": "Santuario Nazionale di Monte Grisa - Geometrie Brutaliste", "fact": "蒙特格里薩國家朝聖所（Santuario Nazionale a Maria Madre e Regina di Monte Grisa）坐落於特里埃斯特喀斯特高原山巔（海拔330公尺），1966年由建築師 Antonio Guacci 設計，通體採用三角形模組鋼筋混凝土建成，結構大膽前衛。", "poetic": "像是一艘擱淺在山巔的巨型幾何方舟，尖銳的三角稜角直指蒼穹，在懸崖之上傲然對抗著來自內陸的狂暴布拉風。", "path": "ivy_photos/825268332_29660883930168841_9175412770641311132_n.jpg"}, {"id": 24, "filename": "825268343_29660886653501902_8969009369078396386_n.jpg", "chapter": "montegrisa", "chapter_name": "邊境巨構蒙特格里薩", "title": "蒙特格里薩立面・粗獷混凝土與蜂巢菱格窗", "title_it": "Facciata e Struttura Modulare di Monte Grisa", "fact": "教堂立面由等邊三角形混凝土構件交織成獨特的蜂巢菱形窗格，象徵字母『M』（聖母瑪利亞 Maria）與三位一體神聖符號，後方山丘即為斯洛維尼亞國境線。", "poetic": "粗糙的混凝土沒有多餘的粉飾，純粹的幾何線條在藍天映襯下展現出冷峻而神聖的力量感。這裡，是冷戰鐵幕邊緣的和平燈塔。", "path": "ivy_photos/825268343_29660886653501902_8969009369078396386_n.jpg"}, {"id": 25, "filename": "825268353_29660888396835061_6585406867588701604_n.jpg", "chapter": "montegrisa", "chapter_name": "邊境巨構蒙特格里薩", "title": "蒙特格里薩聖殿內部・宏偉三角空間與祭壇", "title_it": "Interno del Santuario di Monte Grisa - Navata e Altare", "fact": "教堂內部上下分為兩層，上層主堂挑高逾40米，陽光透過無數三角形菱形蜂巢窗格灑入，形成極富未來感與神聖感的立體光影交織。", "poetic": "站在這座巨大的幾何殿堂中，光線從頭頂傾瀉而下，空靈的寂靜讓人屏息。鋼筋與光影在此處完成了最深邃的神聖對話。", "path": "ivy_photos/825268353_29660888396835061_6585406867588701604_n.jpg"}, {"id": 26, "filename": "825268373_29660886600168574_6770595938757011963_n.jpg", "chapter": "cafes", "chapter_name": "百年沙龍與咖啡甜點", "title": "Caffè Sacher 外觀與綠植街景", "title_it": "Ingresso del Caffè Sacher Trieste", "fact": "薩赫咖啡 Trieste 店選址於市中心著名的歷史建築內，外觀保留典雅的拱形門窗與精美店招，成為連接奧地利維也納與義大利特里埃斯特的新地標。", "poetic": "推開門的那一剎那，彷彿能聽見圓舞曲的旋律。歷史的邊界在此消融，留下的只有唇齒間香醇綿密的滋味。", "path": "ivy_photos/825268373_29660886600168574_6770595938757011963_n.jpg"}, {"id": 27, "filename": "825268432_29660886206835280_6798351171193056732_n.jpg", "chapter": "cafes", "chapter_name": "百年沙龍與咖啡甜點", "title": "提拉米蘇之源・義大利經典手作甜點牌", "title_it": "Tiramisù - Una storia italiana dal 1960", "fact": "義大利弗留利-威尼斯朱利亞大區（FVG，特里埃斯特所在大區）與威尼託大區是提拉米蘇（Tiramisù）的官方認證發源地。標牌展示了經典原味、開心果、榛果、焦糖海鹽等風味傳承。", "poetic": "手指餅乾浸潤著濃縮咖啡與馬斯卡彭乳酪的甜美，這道風靡全球的甜點，最正統的滋味始終藏在這片靠近大海的大區裡。", "path": "ivy_photos/825268432_29660886206835280_6798351171193056732_n.jpg"}, {"id": 28, "filename": "825268440_29660882560168978_1086684828729349516_n.jpg", "chapter": "literature", "chapter_name": "大運河與文學聖殿", "title": "教堂祭壇聖像畫與華麗拱門", "title_it": "Altare e Icone Sacre nel Borgo Teresiano", "fact": "特城教堂內部融合了巴洛克與拜占庭裝飾元素，鍍金裝飾與細膩油畫展現出港口富商家族對宗教藝術的慷慨贊助。", "poetic": "金碧輝煌的拱門後，是數百年來水手與商賈在出海前祈求平安的虔誠祈禱。", "path": "ivy_photos/825268440_29660882560168978_1086684828729349516_n.jpg"}, {"id": 29, "filename": "825268469_29660885323502035_5251095677022138606_n.jpg", "chapter": "castello", "chapter_name": "聖儒斯定城堡與敲鐘人", "title": "城堡露天觀景台與亞得里亞海波光", "title_it": "Bastioni del Castello e Vista sul Mare", "fact": "聖儒斯定城堡由三個角形堡壘（Bastione Rotondo, Bastione Fiorito, Bastione Pomis）構成，居高臨下可一覽無遺亞得里亞海北部灣流。", "poetic": "靠在溫熱的石牆上眺望，蔚藍的海面上白帆點點。遠方的地平線，是自由港繁華夢想起航的地方。", "path": "ivy_photos/825268469_29660885323502035_5251095677022138606_n.jpg"}, {"id": 30, "filename": "825268474_29660884603502107_4259074506344466216_n.jpg", "chapter": "montegrisa", "chapter_name": "邊境巨構蒙特格里薩", "title": "蒙特格里薩山頂步道與步道欄杆", "title_it": "Camminamento Panoramico di Monte Grisa", "fact": "朝聖所周邊設有環山景觀步道，設有堅固的金屬安全護欄以抵禦喀斯特山頂極速肆虐的布拉強風（Bora）。", "poetic": "山頂的風從不曾停歇，吹動著衣角，也吹散了旅途的疲憊。沿著步道前行，每一步都踏在天地壯闊的節奏上。", "path": "ivy_photos/825268474_29660884603502107_4259074506344466216_n.jpg"}, {"id": 31, "filename": "825268475_29660885680168666_8274982780959622476_n.jpg", "chapter": "montegrisa", "chapter_name": "邊境巨構蒙特格里薩", "title": "蒙特格里薩地下聖堂・三角混凝土穹頂與吊燈", "title_it": "Cripta Inferiore del Santuario di Monte Grisa", "fact": "蒙特格里薩下層地下堂（Cripta）呈低矮莊嚴的三角幾何交錯格局，牆面銘刻著1945年特里埃斯特主教發願建造朝聖所的誓詞歷史碑銘。", "poetic": "地下的空間沉靜如夜，幾何光束自縫隙切入。這裡封存著冷戰最前線那份祈求浩劫消弭的深沉誓願。", "path": "ivy_photos/825268475_29660885680168666_8274982780959622476_n.jpg"}, {"id": 32, "filename": "825268489_29660885633502004_6863702305171418563_n.jpg", "chapter": "montegrisa", "chapter_name": "邊境巨構蒙特格里薩", "title": "蒙特格里薩朝聖所全景・斯洛維尼亞邊界守望", "title_it": "Veduta Completa del Santuario di Monte Grisa", "fact": "教堂主體巍然聳立於喀斯特山脊頂端，背倚斯洛維尼亞喀斯特高原，前俯特里埃斯特全港，是南歐戰後最壯觀的現代宗教建築地標。", "poetic": "它像一座堅不可摧的石雕皇冠，高高加冕在喀斯特山頭。山的那一邊就是斯洛維尼亞，地理的邊界在這裡化為虔敬的共融。", "path": "ivy_photos/825268489_29660885633502004_6863702305171418563_n.jpg"}, {"id": 33, "filename": "825268495_29660886433501924_5370745172379679574_n.jpg", "chapter": "literature", "chapter_name": "大運河與文學聖殿", "title": "天主教聖安多尼堂正立面・新古典六根宏偉石柱", "title_it": "Chiesa di Sant'Antonio Taumaturgo (Divo Antonio)", "fact": "位於大運河盡頭的 Sant'Antonio Taumaturgo（聖安多尼堂）建於1825-1849年，由新古典主義大師 Pietro Nobile 設計，正面仿古羅馬萬神殿擁有六根巨大的愛奧尼亞式石柱與三角形山牆。", "poetic": "雄偉的古典廊柱倒映在大運河碧水之中，莊嚴而優雅。當午後陽光灑在門楣上，整座廣場都沉浸在一種聖潔的靜謐裡。", "path": "ivy_photos/825268495_29660886433501924_5370745172379679574_n.jpg"}, {"id": 34, "filename": "825268519_29660887450168489_4478023399401586944_n.jpg", "chapter": "literature", "chapter_name": "大運河與文學聖殿", "title": "大運河紅橋旁・詹姆斯·喬伊斯雕像", "title_it": "Statua di James Joyce sul Canale Grande (Ponte Rosso)", "fact": "愛爾蘭大文豪詹姆斯·喬伊斯（James Joyce）於1904至1920年間旅居特里埃斯特十餘年，在此完成了《青年藝術家的畫像》並構思了世紀巨著《尤利西斯》。大運河紅橋（Ponte Rosso）上的銅像由雕塑家 Nino Spagnoli 於2004年立像紀念。", "poetic": "夾著手杖的喬伊斯正快步穿過紅橋。他曾說『我的靈魂留在特里埃斯特』，海風掠過橋頭，彷彿尤利西斯的吟詠仍在波光中迴響。", "path": "ivy_photos/825268519_29660887450168489_4478023399401586944_n.jpg"}, {"id": 35, "filename": "825268514_29661357236788177_132581821589237639_n.jpg", "chapter": "castello", "chapter_name": "聖儒斯定城堡與敲鐘人", "title": "城堡外圍護城石牆與綠林坡道", "title_it": "Mura di Cinta e Salita al Castello", "fact": "通往聖儒斯定城堡的斜坡步道沿途保留了古羅馬集會場（Foro Romano）殘柱與中世紀防禦外牆，林木蔥鬱，是特城居民晨昏散步的首選勝地。", "poetic": "漫步在樹影斑駁的城牆邊，古老的石磚散發著歲月的清香。每一步，都是與這座兩千年古城溫柔對話的痕跡。", "path": "ivy_photos/825268514_29661357236788177_132581821589237639_n.jpg"}, {"id": 36, "filename": "825268610_29661357503454817_1208356178658386238_n.jpg", "chapter": "castello", "chapter_name": "聖儒斯定城堡與敲鐘人", "title": "聖儒斯定山頂紀念廣場雕塑", "title_it": "Monumento ai Caduti sul Colle di San Giusto", "fact": "山頂廣場上立有一戰陣亡將士紀念雕像群（Monumento ai Caduti），由著名雕塑家 Attilio Selva 於1935年雕刻完成，展現五位健壯戰士扶持護佑祖國的雄偉姿態。", "poetic": "健美的身軀在山風中昂首挺立，青銅凝結了昔日的壯烈與豪情，在蔚藍晴空下化作守護和平的永恆哨兵。", "path": "ivy_photos/825268610_29661357503454817_1208356178658386238_n.jpg"}, {"id": 37, "filename": "825328383_29661357243454843_1369296991250458897_n.jpg", "chapter": "habsburg", "chapter_name": "帝國血脈與紅色門牌", "title": "特里埃斯特街角復古鑄鐵街燈", "title_it": "Lampione Storico in Ferro Battuto", "fact": "特里埃斯特保留了大量奧匈帝國晚期與19世紀末期製造的鑄鐵工藝街燈，造型優雅細膩，見證了特城早期採用瓦斯燈與電氣化照明的自由港輝煌歲月。", "poetic": "孤獨佇立在晴空下的老路燈，每當夜幕低垂，便會亮起溫暖的橘黃光芒，替每一位夜歸的旅人點亮回家的石板路。", "path": "ivy_photos/825328383_29661357243454843_1369296991250458897_n.jpg"}, {"id": 38, "filename": "825340733_29660873156836585_5889062842273856005_n.jpg", "chapter": "montegrisa", "chapter_name": "邊境巨構蒙特格里薩", "title": "特里埃斯特全景全景・亞得里亞海咽喉與喀斯特高原", "title_it": "Panorama Mozzafiato del Golfo di Trieste", "fact": "從蒙特格里薩山頂向西南方向俯瞰，整座特里埃斯特海灣、舊自由港防波堤、米拉馬雷城堡岬角與伊斯特拉半島海岸線一覽無餘，是極東義大利最震撼的全景視角。", "poetic": "海天一色，無邊無際。在山巔極目遠眺，整座城市的悲歡離合都縮成了眼底的一抹蔚藍。這就是特里埃斯特，孤獨而絕美的世界盡頭。", "path": "ivy_photos/825340733_29660873156836585_5889062842273856005_n.jpg"}, {"id": 39, "filename": "825352872_29660883680168866_3063210773687329233_n.jpg", "chapter": "habsburg", "chapter_name": "帝國血脈與紅色門牌", "title": "老城古老石窗櫺與綠百葉窗", "title_it": "Finestre con Scuri e Architettura Tradizionale", "fact": "特城老街住宅廣泛採用耐風抗鹽的實木百葉窗（Scuri），在布拉狂風呼嘯的冬季可完全閉鎖保溫，夏季則能阻擋烈日通風。", "poetic": "斑駁的綠百葉窗半開半掩，窗台上的微風悄悄探入。屋裡藏著多少代人的老故事，只有這堵石牆最清楚。", "path": "ivy_photos/825352872_29660883680168866_3063210773687329233_n.jpg"}, {"id": 40, "filename": "825352911_29660879490169285_3584940179234782326_n.jpg", "chapter": "habsburg", "chapter_name": "帝國血脈與紅色門牌", "title": "熱鬧街區步行道・精品街角的古典立面", "title_it": "Corso Italia e Scorcio dello Shopping", "fact": "特里埃斯特的商業心臟 Corso Italia 與 Via San Nicolò 是著名的優雅步行街，兩側林立著19世紀折衷主義與新藝術風格建築。", "poetic": "漫步在光潔的石板街上，櫥窗倒映著藍天與古典雕花。悠閒的行人步調，正是海港城市最迷人的慢活節奏。", "path": "ivy_photos/825352911_29660879490169285_3584940179234782326_n.jpg"}, {"id": 41, "filename": "825352919_29660886870168547_3760145400650793831_n.jpg", "chapter": "habsburg", "chapter_name": "帝國血脈與紅色門牌", "title": "紅磚老牆與拱形石砌窗孔", "title_it": "Mura in Mattoni e Archeggiature Storiche", "fact": "老城區的古老磚石結構展現了文藝復興與中世紀防禦民居的厚重砌築工藝，能承受沿海潮濕鹽霧與百年歲月侵蝕。", "poetic": "每一塊紅磚都經過烈火的淬鍊，歷經風霜依舊堅實溫暖。它們是這座城市最沉默也最忠誠的基石。", "path": "ivy_photos/825352919_29660886870168547_3760145400650793831_n.jpg"}, {"id": 42, "filename": "825353084_29660886893501878_939148702933323219_n.jpg", "chapter": "castello", "chapter_name": "聖儒斯定城堡與敲鐘人", "title": "城堡通往後山古道的幽靜石拱", "title_it": "Passaggio ad Arco nel Castello di San Giusto", "fact": "城堡後方設有直通山下舊港與羅馬劇院的秘密坑道與石階步道，古代用於緊急撤退與兵力調動。", "poetic": "穿過幽深的石拱，前方豁然開朗。綠樹與遠山在光影交界處迎候，彷彿一步踏入了時光的幽靜隧道。", "path": "ivy_photos/825353084_29660886893501878_939148702933323219_n.jpg"}, {"id": 43, "filename": "825353109_29660884123502155_985794369644262819_n.jpg", "chapter": "habsburg", "chapter_name": "帝國血脈與紅色門牌", "title": "老街屋頂山牆與優雅煙囪", "title_it": "Tetti e Comignoli Tradizionali Triestini", "fact": "特里埃斯特傳統民居的屋頂煙囪與斜頂設計需考慮布拉風導流，外型古樸而實用，構成特城錯落有致的天際線輪廓。", "poetic": "磚紅色的屋瓦層層疊疊，煙囪在藍天畫布上勾勒出童話般的剪影。那是千家萬戶最溫暖的煙火人間。", "path": "ivy_photos/825353109_29660884123502155_985794369644262819_n.jpg"}, {"id": 44, "filename": "825353169_29660887706835130_7416546038463224688_n.jpg", "chapter": "montegrisa", "chapter_name": "邊境巨構蒙特格里薩", "title": "蒙特格里薩朝聖所吊燈與混凝土交錯穹頂", "title_it": "Lampadario e Soffitto Geometrico a Monte Grisa", "fact": "朝聖所內部懸掛的現代金屬造型吊燈與清水混凝土三角形幾何肋樑結構相呼應，營造出20世紀中葉極具開創性的宗教空間美學。", "poetic": "冰冷的鋼筋混凝土在幾何秩序中昇華，一盞盞懸掛的吊燈宛如夜空中的繁星，照亮了祈禱者內心深處的安寧。", "path": "ivy_photos/825353169_29660887706835130_7416546038463224688_n.jpg"}, {"id": 45, "filename": "825353187_29660882326835668_2266239327982007334_n.jpg", "chapter": "habsburg", "chapter_name": "帝國血脈與紅色門牌", "title": "塔樓街 3 號・哈布斯堡紅色街名牌與典雅小館", "title_it": "Targa Civica Asburgica - Via delle Torri 3", "fact": "位於特里埃斯特老城 Via delle Torri 3號的哈布斯堡紅色街牌，周圍匯聚了百年咖啡小館與在地熟食小鋪（Buffet），是品嚐特城傳統煮豬肉三明治（Porcina）與咖啡的經典街區。", "poetic": "紅色的木框門廊、老舊的銅牌、街角飄來的咖啡香。特里埃斯特的時光，就凝固在這一條條靜謐的小巷深處。", "path": "ivy_photos/825353187_29660882326835668_2266239327982007334_n.jpg"}, {"id": 46, "filename": "825909903_29660885966835304_5114250214552634996_n.jpg", "chapter": "bora", "chapter_name": "狂風布拉與甜瓜飲水機", "title": "喀斯特山崖觀景台・防風重型鐵欄與白色波拉風（Bora Chiara）", "title_it": "Ringhiere Frangivento e Veduta della Bora Chiara sul Golfo", "fact": "特里埃斯特布拉風（Bora）是中歐冷高壓受喀斯特高原與波斯托伊納隘口（Postojna Gate）狹管效應（Venturi Effect）加速的重力下降風（Katabatic Wind）。晴天吹拂時稱為『Bora Chiara（白色波拉風）』，天空澄澈碧藍但陣風（Refoli）時速可達150-200公里以上。沿海崖壁步道必須配備重型金屬安全防風欄杆與錨固基座，防止行人被強勁下坡氣流推倒。", "poetic": "冷冽的重力瀑布從高原傾瀉而下，吹得大海翻起層層白浪。握著冰涼的防風鐵欄，那是特里埃斯特狂風之神最桀驁不馴的咆哮與心跳。", "path": "ivy_photos/825909903_29660885966835304_5114250214552634996_n.jpg"}, {"id": 47, "filename": "826272053_29660880366835864_1971535174442779682_n.jpg", "chapter": "montegrisa", "chapter_name": "邊境巨構蒙特格里薩", "title": "蒙特格里薩山頂十字架與蔚藍晴空", "title_it": "Croce Monumentale sul Monte Grisa", "fact": "朝聖所外圍廣場立有一座高聳的金屬十字架，象徵守望東西方和平、跨越意識形態對立的信仰燈塔。", "poetic": "十字架直直刺入萬里無雲的晴空，在喀斯特高原的強風中屹立不搖。它守護著山腳下的海港，也守護著每一個渴望和平的願望。", "path": "ivy_photos/826272053_29660880366835864_1971535174442779682_n.jpg"}, {"id": 48, "filename": "826989481_29660888053501762_4850500161151402316_n.jpg", "chapter": "castello", "chapter_name": "聖儒斯定城堡與敲鐘人", "title": "羅馬石刻露天碑林・帝國千年銘文", "title_it": "Lapidario Tergestino nel Castello di San Giusto", "fact": "聖儒斯定城堡地下與中庭設有著名的特里埃斯特羅馬石刻館（Lapidario Tergestino），保存著公元前1世紀至公元4世紀羅馬古城 Tergeste 的石棺、墓碑與榮譽銘文。", "poetic": "手指輕輕摩挲著兩千年前羅馬石匠鑿下的拉丁文字，歲月雖已風化了石面，但那些屬於帝國與榮耀的記憶，依然刻骨銘心。", "path": "ivy_photos/826989481_29660888053501762_4850500161151402316_n.jpg"}, {"id": 49, "filename": "827281873_29660880073502560_1698319457446454503_n.jpg", "chapter": "cafes", "chapter_name": "百年沙龍與咖啡甜點", "title": "百年甜點櫥窗・普齊茶點與傳統點心", "title_it": "Pasticceria Tradizionale Triestina - Putizza e Presnitz", "fact": "特里埃斯特特色甜點深受中歐與哈布斯堡傳統影響，著名的普齊蛋糕（Putizza，內夾胡桃果乾）與普雷斯尼茨（Presnitz，獻給茜茜公主的螺旋千層酥）是來特城必嚐的歷史甜品。", "poetic": "隔著玻璃櫥窗，金黃酥脆的千層酥散發著甜蜜誘人的光芒。每一口，都是奧匈帝國宮廷甜點師流傳至今的手藝結晶。", "path": "ivy_photos/827281873_29660880073502560_1698319457446454503_n.jpg"}, {"id": 50, "filename": "827510306_29660884406835460_6401284475489727889_n.jpg", "chapter": "montegrisa", "chapter_name": "邊境巨構蒙特格里薩", "title": "通往斯洛維尼亞邊境山徑・喀斯特林道", "title_it": "Sentiero del Carso verso il Confine Sloveno", "fact": "蒙特格里薩教堂後方的喀斯特步道直接通往義大利與斯洛維尼亞的邊界森林（Strada Vicentina / Strada Napoleonica），兩國現同屬申根區，可自由步行穿梭跨界。", "poetic": "一條蜿蜒的碎石小徑，穿過翠綠的松林直達國境那端。曾經森嚴的冷戰邊界，如今已成了旅人漫步深呼吸的靜謐林道。", "path": "ivy_photos/827510306_29660884406835460_6401284475489727889_n.jpg"}, {"id": 51, "filename": "827774021_29660879740169260_5060361546725893029_n.jpg", "chapter": "cafes", "chapter_name": "百年沙龍與咖啡甜點", "title": "百年烘焙老鋪 La Bomboniera（創立於1836年）", "title_it": "Pasticceria La Bomboniera dal 1836 - Forno a Legna Originale", "fact": "Pasticceria La Bomboniera 創立於1836年（Via XXX Ottobre 3），是特里埃斯特現存最古老完整的猶太-中歐糕餅店，店內依然完整保留並使用1836年奧匈帝國時期的古董木柴烘焙爐（Forno a legna）。", "poetic": "推開這扇1836年的木門，空氣中飄散著肉桂、巧克力與木柴燃燒的溫暖香氣。在這裡吃一塊糕點，嚐到的就是特里埃斯特最純粹的歷史原味。", "path": "ivy_photos/827774021_29660879740169260_5060361546725893029_n.jpg"}, {"id": 52, "filename": "827855926_29660883290168905_3029909304413836046_n.jpg", "chapter": "castello", "chapter_name": "聖儒斯定城堡與敲鐘人", "title": "聖儒斯定大教堂・拜占庭金碧馬賽克聖堂", "title_it": "Mosaici Bizantini della Cattedrale di San Giusto", "fact": "城堡旁的聖儒斯定主教座堂（Cattedrale di San Giusto）半圓後殿鑲嵌著12至13世紀威尼斯-拜占庭大師手工製作的華麗黃金馬賽克《基督受冕與聖人圖》（Christus Regnat）。", "poetic": "千年來，無數信徒在這片金光璀璨的馬賽克下跪拜祈禱。那些深邃的聖者眼眸，在金箔折射的光芒中注視著這座港口的永恆滄桑。", "path": "ivy_photos/827855926_29660883290168905_3029909304413836046_n.jpg"}, {"id": 53, "filename": "828228307_29660879130169321_2931619623695417637_n.jpg", "chapter": "castello", "chapter_name": "聖儒斯定城堡與敲鐘人", "title": "歷史鐘樓齒輪機芯・銘刻「NATA 1750」", "title_it": "Meccanismo dell'Orologio Storico - NATA 1750", "fact": "聖儒斯定城堡博物館收藏的這座大型鍛鐵鐘樓齒輪機芯，機身上清晰鑄刻著「NATA 1750」（誕生於1750年），正值奧地利女皇瑪麗亞·泰瑞莎大力擴建自由港的黃金年代。", "poetic": "1750年的巨大齒輪依然咬合精準。它轉動的不是冰冷的秒針，而是瑪麗亞·泰瑞莎女皇時代自由港浩蕩奔騰的歲月。", "path": "ivy_photos/828228307_29660879130169321_2931619623695417637_n.jpg"}, {"id": 54, "filename": "828280530_29660882253502342_8491619730506851037_n.jpg", "chapter": "cafes", "chapter_name": "百年沙龍與咖啡甜點", "title": "百年老糕餅坊・古典拱窗與精緻糕點擺盤", "title_it": "Vetrine e Arredi Storici della Pasticceria", "fact": "特城老字號糕餅店保留了新藝術風格（Liberty）胡桃木櫃檯與手工打磨的水晶吊燈，是特里埃斯特沙龍社交文化的重要舞台。", "poetic": "優雅的古典木框將街景與甜點收納成一幅畫。在這裡，時間不是用鐘錶度量，而是用一口口甜美的回憶來計算。", "path": "ivy_photos/828280530_29660882253502342_8491619730506851037_n.jpg"}, {"id": 55, "filename": "828412983_29660881433502424_8672869224354400504_n.jpg", "chapter": "bora", "chapter_name": "狂風布拉與甜瓜飲水機", "title": "特城傳奇「甜瓜」飲水機（Il Melone）・抗時速200公里布拉風特製擋風板", "title_it": "Il \"Melone\" di Trieste - Fontanella Storica con Paravento per la Bora", "fact": "特里埃斯特街頭最具傳奇色彩的公共飲水機被市民暱稱為『Il Melone di Trieste』（特里埃斯特甜瓜/西瓜）。由於布拉狂風（Bora）陣風時速常超越200 km/h，水柱一出水口就會被強風吹飛吹散，因此市府特製了專屬的金屬抗風擋板（Paravento）與導流護罩。特城歷史上還有街道鐵鍊扶手（Corrimano con catene）與屋頂壓石等獨特防風建築人文。", "poetic": "連喝一口水都需要與大自然的狂暴風神鬥智！這座圓滾滾的『甜瓜』飲水機和它堅固的擋風盾牌，是特里埃斯特人幽默又頑強適應極端氣候的最佳生活縮影。", "path": "ivy_photos/828412983_29660881433502424_8672869224354400504_n.jpg"}, {"id": 56, "filename": "828561954_29660881156835785_1126251332305441476_n.jpg", "chapter": "castello", "chapter_name": "聖儒斯定城堡與敲鐘人", "title": "城堡巨大厚重基石與城垛高牆", "title_it": "Mura Possenti e Basamento Medievale del Castello", "fact": "城堡基底採用了大量古羅馬與中世紀採石場的喀斯特石灰岩巨石砌築，歷經多次圍城戰役依然固若金湯。", "poetic": "斑駁厚重的巨石層層壘起，頂天立地。在經歷了數百年的風暴與戰火之後，這座城堡依舊堅毅如初。", "path": "ivy_photos/828561954_29660881156835785_1126251332305441476_n.jpg"}, {"id": 57, "filename": "828650083_29660887126835188_3006628065981354639_n.jpg", "chapter": "castello", "chapter_name": "聖儒斯定城堡與敲鐘人", "title": "城堡通往瞭望台的石板棧道", "title_it": "Rampa d'Accesso e Camminamenti di San Giusto", "fact": "城堡內部各個防禦稜堡之間由石板引橋與巡邏棧道串聯，為遊客提供了360度環視整座港灣與喀斯特丘陵的壯麗視野。", "poetic": "順著石坡緩步而上，每一次轉身，都是一幅令人驚嘆的城市海景全卷。海風迎面拂來，滿心舒暢。", "path": "ivy_photos/828650083_29660887126835188_3006628065981354639_n.jpg"}, {"id": 58, "filename": "828676210_29660878680169366_4955777563982523282_n.jpg", "chapter": "castello", "chapter_name": "聖儒斯定城堡與敲鐘人", "title": "聖儒斯定城堡正門地標銘牌與全貌", "title_it": "Targa Ufficiale del Castello di San Giusto", "fact": "聖儒斯定城堡（Castello di San Giusto）是特里埃斯特市最著名的市立博物館與歷史地標，正門吊橋旁立有官方大理石地標牌，內設武器館與古代石雕館。", "poetic": "『Castello di San Giusto』——這行字不僅是一個地名，更是特里埃斯特整部兩千年歷史與靈魂的總和。", "path": "ivy_photos/828676210_29660878680169366_4955777563982523282_n.jpg"}, {"id": 59, "filename": "828859543_29660887896835111_4893944921926985871_n.jpg", "chapter": "freeport", "chapter_name": "自由港與地緣印記", "title": "特里埃斯特自由領地歷史標語・「USA & UK COME BACK」", "title_it": "Adesivo Storico: Free Territory of Trieste - USA & UK Come Back", "fact": "二戰後的1947年巴黎和約中，聯合國成立了『特里埃斯特自由區』（Territorio Libero di Trieste, TLT），由美英軍事政府管轄A區（包含特城港口），直到1954年倫敦備忘錄才回歸義大利管轄。特城民間至今仍有部分運動支持恢復自由港與自由領地地位，街頭常見『Free Territory of Trieste - USA & UK Come Back』貼紙。", "poetic": "這張貼在街角燈柱上的標語，道出了這座邊境城市在冷戰鐵幕與大國博弈夾縫中，對自由港繁榮歲月最複雜也最深沉的歷史鄉愁。", "path": "ivy_photos/828859543_29660887896835111_4893944921926985871_n.jpg"}, {"id": 60, "filename": "828895983_29660878760169358_7799942181272418175_n.jpg", "chapter": "castello", "chapter_name": "聖儒斯定城堡與敲鐘人", "title": "城堡山坡俯瞰特城港口與市區紅瓦屋頂", "title_it": "Vista Panoramica sui Tetti e sul Porto dal Colle", "fact": "特里埃斯特市區房屋多採用亞得里亞海傳統的紅土瓦頂，與遠方自由港起重機及深藍色海灣相映成趣。", "poetic": "從高處望去，一棟棟典雅的宅邸如波浪般向海港綿延展開。那是一座在百年咖啡香與波光中沉睡又甦醒的優雅之城。", "path": "ivy_photos/828895983_29660878760169358_7799942181272418175_n.jpg"}, {"id": 61, "filename": "828939223_29660879363502631_5143717465260847983_n.jpg", "chapter": "montegrisa", "chapter_name": "邊境巨構蒙特格里薩", "title": "蒙特格里薩山巔蒼翠松林與晴空", "title_it": "Pineta e Rocce Carsiche sul Monte Grisa", "fact": "喀斯特高原由白堊紀石灰岩構成，經歷了百年的水土保持與松樹造林（Pineta Carsica），成為抵禦布拉狂風與水土流失的綠色生態屏障。", "poetic": "松針在陽光下閃爍著翡翠般的光芒，空氣中瀰漫著松脂與海鹽的清新香氣。山風吹過樹冠，奏起大自然最和諧的樂章。", "path": "ivy_photos/828939223_29660879363502631_5143717465260847983_n.jpg"}, {"id": 62, "filename": "829319781_29660881563502411_8406236013170173612_n.jpg", "chapter": "freeport", "chapter_name": "自由港與地緣印記", "title": "特里埃斯特自由領地標語貼紙近景", "title_it": "Dettaglio T.L.T. (Territorio Libero di Trieste)", "fact": "特里埃斯特自由區（TLT）擁有獨立發行的貨幣、郵票與保稅自由港法規。冷戰地緣政治讓這座城市成為東西方世界的樞紐，也奠定了今日特里埃斯特生豆免稅自由港的全球特權地位。", "poetic": "小小的貼紙，載著厚重的冷戰記憶。邊境人的身份認同，永遠流淌著一份超越國界、屬於海洋與自由的獨特自豪。", "path": "ivy_photos/829319781_29660881563502411_8406236013170173612_n.jpg"}, {"id": 63, "filename": "829711086_29660884170168817_6565889580225520782_n.jpg", "chapter": "literature", "chapter_name": "大運河與文學聖殿", "title": "聖安多尼堂門楣銘文・「DIVO ANTONIO THAVMATVRGO」", "title_it": "Iscrizione del Fregio di Sant'Antonio Taumaturgo", "fact": "天主教聖安多尼堂正立面大理石飾帶上鐫刻著拉丁文大字「DIVO ANTONIO THAVMATVRGO」（獻給顯靈聖人安多尼）。教堂於1849年祝聖，是大運河水景的壯麗端景。", "poetic": "巍峨的拉丁銘文在陽光下投下深邃的陰影。當大運河的浪花輕拍石岸，這座聖殿就像一尊永恆的燈塔，在波光粼粼中庇佑著這座海港之城。", "path": "ivy_photos/829711086_29660884170168817_6565889580225520782_n.jpg"}];
+    const photosData = [
+  {
+    "id": 1,
+    "filename": "825266816_29661357583454809_1878958357790470250_n.jpg",
+    "chapter": "castello",
+    "chapter_name": "聖儒斯定城堡與敲鐘人",
+    "title": "聖儒斯定山頂的凝望・青銅紀念雕像與晴空",
+    "title_it": "Monumento e Statua sul Colle di San Giusto",
+    "fact": "聖儒斯定山（Colle di San Giusto）是特里埃斯特的歷史發源地，早在公元前1世紀古羅馬時期即為重要要塞 Tergeste。山頂紀念園區立有青銅雕像，襯著亞得里亞海無垠的晴空。",
+    "poetic": "陽光在青銅的肌理上流淌，雕像靜靜佇立在山巔，替這座流轉於帝國與風暴間的港城，守望了數百個晴朗與孤寂的午後。",
+    "path": "ivy_photos/825266816_29661357583454809_1878958357790470250_n.jpg"
+  },
+  {
+    "id": 2,
+    "filename": "825267924_29660883300168904_7742806439811948533_n.jpg",
+    "chapter": "habsburg",
+    "chapter_name": "帝國血脈與紅色門牌",
+    "title": "巴巴坎小廣場與羅馬石柱基座・老城巷弄光影",
+    "title_it": "Piazzetta Barbacan e Vestigia Romane",
+    "fact": "位於特里埃斯特老城區（Città Vecchia）的 Piazzetta Barbacan 緊鄰里卡多拱門，保留了古羅馬帝國時期的石柱基座與中世紀石牆，是特城最古老的歷史沉澱點。",
+    "poetic": "午後陽光斜斜穿過古老石柱，光影在石板路與藤蔓間斑駁搖曳。千百年前的帝國殘片，如今成了市民悠閒穿行的巷弄日常。",
+    "path": "ivy_photos/825267924_29660883300168904_7742806439811948533_n.jpg"
+  },
+  {
+    "id": 3,
+    "filename": "825267949_29660885916835309_8048400389663776258_n.jpg",
+    "chapter": "habsburg",
+    "chapter_name": "帝國血脈與紅色門牌",
+    "title": "哈布斯堡深紅門牌・庫克納塔廣場 6 號（Civ. 6414）",
+    "title_it": "Targa Asburgica Civico 6414 - Piazzetta Tor Cucherna",
+    "fact": "特里埃斯特老城區（Città Vecchia）保留著奧匈帝國哈布斯堡時期特有的深紅色鐵鑄/琺瑯門牌，上方標記著帝國行政門牌號「Civ. 6414」及中世紀庫克納塔（Tor Cucherna，14世紀城防殘塔）廣場6號。",
+    "poetic": "那一抹歷經百年風雨而不褪的深紅，是哈布斯堡王朝烙印在石牆上的永恆指紋。信差已逝，帝國已遠，而紅牌依然為時光指引著歸途。",
+    "path": "ivy_photos/825267949_29660885916835309_8048400389663776258_n.jpg"
+  },
+  {
+    "id": 4,
+    "filename": "825268036_29660884670168767_1350903887507912673_n.jpg",
+    "chapter": "castello",
+    "chapter_name": "聖儒斯定城堡與敲鐘人",
+    "title": "古羅馬劇院・兩千年的半圓看台與階梯（Teatro Romano）",
+    "title_it": "Teatro Romano di Trieste - I Secolo d.C.",
+    "fact": "特里埃斯特古羅馬劇院（Teatro Romano）建於公元1世紀末（圖拉真皇帝時期擴建），依聖儒斯定山坡自然地形而建，可容納約3,500名觀眾，當年面朝大海，現今保存完好的半圓形看台（Cavea）與舞台基座直面市中心街道。",
+    "poetic": "斑駁的石階一層層環繞，海風拂過兩千年前的看台。曾經的歡呼、悲劇與詩歌散落在風裡，只剩下陽光靜靜照耀著永恆的石塊。",
+    "path": "ivy_photos/825268036_29660884670168767_1350903887507912673_n.jpg"
+  },
+  {
+    "id": 5,
+    "filename": "825268046_29660879176835983_583968251856442830_n.jpg",
+    "chapter": "habsburg",
+    "chapter_name": "帝國血脈與紅色門牌",
+    "title": "里卡多拱門・古羅馬凱旋城門與中世紀民居交融",
+    "title_it": "Arco di Riccardo - Porta Romana del I Secolo a.C.",
+    "fact": "里卡多拱門（Arco di Riccardo）建於公元前1世紀（奧古斯都統治時期），高達7.2公尺，是古羅馬 Tergeste 城牆的東城門或通往聖所的凱旋拱門。中世紀後兩側直接與居民住宅渾然一體，形成羅馬古蹟與民房共生的奇景。相傳英王「理查一世（獅心王理查）」十字軍東征歸途曾在此被囚，因而得名。",
+    "poetic": "拱門一側是兩千年的羅馬雕花石柱，另一側是掛著曬衣繩的市民窗台。古羅馬的榮耀與尋常巷陌的煙火氣，在這一道拱門下達成了不可思議的共生。",
+    "path": "ivy_photos/825268046_29660879176835983_583968251856442830_n.jpg"
+  },
+  {
+    "id": 6,
+    "filename": "825268123_29660881966835704_1154059438245505916_n.jpg",
+    "chapter": "cafes",
+    "chapter_name": "百年沙龍與咖啡甜點",
+    "title": "維也納薩赫咖啡 Trieste 旗艦店・金色蕾絲窗幔",
+    "title_it": "Caffè Sacher Trieste - Vetrina Storica",
+    "fact": "維也納頂級名店 Caffè Sacher 於2023年在特里埃斯特開設海外旗艦店（位於 Via Dante Alighieri 1號），續寫哈布斯堡王朝時期維也納與特里埃斯特緊密相連的咖啡沙龍與皇室甜點傳奇。",
+    "poetic": "精緻的金絲蕾絲窗幔半掩著內部的琥珀色燈火，窗玻璃倒映著特里的街景。維也納的尊貴甜意與海港的浪漫，在此交融成最誘人的微醺滋味。",
+    "path": "ivy_photos/825268123_29660881966835704_1154059438245505916_n.jpg"
+  },
+  {
+    "id": 7,
+    "filename": "825268131_29660887110168523_4228890007283625531_n.jpg",
+    "chapter": "literature",
+    "chapter_name": "雙聖殿與文學大運河",
+    "title": "文學家漫步街頭像・作家之城的深邃回眸",
+    "title_it": "Statua Letteraria nei Borghi di Trieste",
+    "fact": "特里埃斯特是中歐著名的文學之都，市中心街道與花園設立了多座等身文學家銅像（包含翁貝托·薩巴 Umberto Saba、伊塔洛·斯韋沃 Italo Svevo 等），讓文豪們以「行走於市民之間」的姿態永遠陪伴這座城市。",
+    "poetic": "他穿著風衣、夾著帽子，彷彿剛從轉角的咖啡館走出來。海風掀動了衣襬，也吹翻了他心中那一頁未完成的手稿。",
+    "path": "ivy_photos/825268131_29660887110168523_4228890007283625531_n.jpg"
+  },
+  {
+    "id": 8,
+    "filename": "825268148_29660883946835506_3998653191740997363_n.jpg",
+    "chapter": "habsburg",
+    "chapter_name": "帝國血脈與紅色門牌",
+    "title": "聖拉扎羅街「雙蛇之屋」・波波利尼建築師宅邸（1770年）",
+    "title_it": "Via S. Lazzaro 15 - Casa delle Bisse (Arch. Bobolini, 1770)",
+    "fact": "位於特里埃斯特泰瑞莎新城區（Borgo Teresiano）Via S. Lazzaro 15號的「Casa delle Bisse」（雙蛇之屋），由著名建築師 Antonio Bobolini 於1770年設計興建。紅底白字的門牌刻有『15 • VIA S. LAZZARO • CASA DELLE BISSE • Arch. Bobolini A.D. 1770』，立面鍛鐵雕花極為考究。",
+    "poetic": "1770年的陽台鍛鐵依舊蜿蜒如詩，雙蛇浮雕象徵著哈布斯堡自由港商賈的繁榮。紅色街牌下的老屋，靜靜守候了兩個半世紀的日升月落。",
+    "path": "ivy_photos/825268148_29660883946835506_3998653191740997363_n.jpg"
+  },
+  {
+    "id": 9,
+    "filename": "825268157_29660880853502482_6518991068475015129_n.jpg",
+    "chapter": "cafes",
+    "chapter_name": "百年沙龍與咖啡甜點",
+    "title": "大運河畔露天咖啡座・特里埃斯特的慢活儀式",
+    "title_it": "Tavolini all'Aperto lungo il Canale Grande",
+    "fact": "特里埃斯特人均咖啡消費量是全義大利的兩倍。市民習慣在紅橋廣場與大運河畔點一杯特有稱呼的「Capo in B」（玻璃小杯卡布奇諾）或「Nero」（特濃濃縮），在遮陽傘下閱讀報紙與交談。",
+    "poetic": "遮陽傘在微風中輕輕搖曳，咖啡匙敲擊玻璃杯發出清脆的叮噹聲。在特里埃斯特，時間不是用來追趕的，而是用來在咖啡香裡慢慢消磨的。",
+    "path": "ivy_photos/825268157_29660880853502482_6518991068475015129_n.jpg"
+  },
+  {
+    "id": 10,
+    "filename": "825268162_29660886246835276_2884383243799367140_n.jpg",
+    "chapter": "literature",
+    "chapter_name": "雙聖殿與文學大運河",
+    "title": "伊塔洛·斯韋沃雕像・手持書卷的意識流先驅（Piazza Hortis）",
+    "title_it": "Statua di Italo Svevo in Piazza Hortis",
+    "fact": "位於奧爾蒂斯廣場（Piazza Hortis）的伊塔洛·斯韋沃（Italo Svevo, 1861-1928）青銅全身像，由雕塑家 Nino Spagnoli 創作。斯韋沃頭戴呢帽、身穿長大衣、夾著書籍昂首闊步。他是喬伊斯的摯友與學生，代表作《謝諾的自白》（La coscienza di Zeno）奠定了20世紀現代心理小說的里程碑。",
+    "poetic": "手裡夾著未讀完的書卷，帽簷下藏著銳利又帶著一絲自嘲的眼神。斯韋沃走在廣場綠蔭下，彷彿仍在構思謝諾那戒不掉的最後一支菸。",
+    "path": "ivy_photos/825268162_29660886246835276_2884383243799367140_n.jpg"
+  },
+  {
+    "id": 11,
+    "filename": "825268168_29660883673502200_3128118360590076558_n.jpg",
+    "chapter": "literature",
+    "chapter_name": "雙聖殿與文學大運河",
+    "title": "加布里埃爾·鄧南遮長椅銅像・「武裝船首，揚帆航向世界」",
+    "title_it": "Monumento a Gabriele D'Annunzio - \"Arma la prora\"",
+    "fact": "位於 Piazza Hortis 的義大利傳奇詩人加布里埃爾·鄧南遮（Gabriele D'Annunzio, 1863-1938）雕像，展現他翹腿悠閒坐在公共長椅上閱卷的姿態。長椅靠背刻有其1908年悲劇詩作《La Nave》（船）中的千古名句：『Arma la prora e salpa verso il Mondo』（武裝船首，揚帆航向世界）。",
+    "poetic": "詩人坐在長椅一角，神態自若地翻閱著書頁。那句『武裝船首，揚帆航向世界』，至今依然激盪著每一個踏上這座海港的冒險靈魂。",
+    "path": "ivy_photos/825268168_29660883673502200_3128118360590076558_n.jpg"
+  },
+  {
+    "id": 12,
+    "filename": "825268176_29660879773502590_7488822004382720393_n.jpg",
+    "chapter": "literature",
+    "chapter_name": "雙聖殿與文學大運河",
+    "title": "鄧南遮雕像肖像特寫・詩人與戰士的側影",
+    "title_it": "Dettaglio del Volto di Gabriele D'Annunzio",
+    "fact": "這尊雕像由雕塑家 Alessandro Verdi 創作，細膩刻劃了鄧南遮標誌性的光頭輪廓、銳利眼神與貴族氣質西服剪裁，吸引無數遊客前來與詩人並肩坐在長椅上合影。",
+    "poetic": "青銅的面容在陽光下泛著金屬微光，眼神穿過公園樹影望向遠方的大海。那是屬於狂飆世代的驕傲與不羈。",
+    "path": "ivy_photos/825268176_29660879773502590_7488822004382720393_n.jpg"
+  },
+  {
+    "id": 13,
+    "filename": "825268184_29660886380168596_2710458473679409682_n.jpg",
+    "chapter": "habsburg",
+    "chapter_name": "帝國血脈與紅色門牌",
+    "title": "聖尼可洛街步行區景觀・綠意與古典街廓",
+    "title_it": "Via San Nicolò - Salotto Pedonale di Trieste",
+    "fact": "Via San Nicolò 是泰瑞莎城區最繁華典雅的步行街，兩側排列著18至19世紀新古典主義與哈布斯堡風格建築，街道中央設有成排的綠植花盆與戶外咖啡座。",
+    "poetic": "乾淨石板路兩旁的盆栽吐露著綠意，微風在古典立面之間穿梭。漫步其間，每一步都是特城最愜意的優雅日常。",
+    "path": "ivy_photos/825268184_29660886380168596_2710458473679409682_n.jpg"
+  },
+  {
+    "id": 14,
+    "filename": "825268214_29660884326835468_7065973465657424444_n.jpg",
+    "chapter": "literature",
+    "chapter_name": "雙聖殿與文學大運河",
+    "title": "塞爾維亞東正教堂・碧藍穹頂與拜占庭金十字（San Spiridione）",
+    "title_it": "Cupola e Mosaici del Tempio Serbo-Ortodosso di San Spiridione",
+    "fact": "塞爾維亞正教會聖斯皮里狄翁堂（Tempio Serbo-Ortodosso di San Spiridione）於1869年由米蘭大教堂修復建築師 Carlo Maciachini 設計落成。其九座拜占庭式碧藍圓頂與外牆金箔馬賽克鑲嵌畫，見證了特里埃斯特自由港對多元宗教與塞爾維亞商賈社群的包容。",
+    "poetic": "天藍色的穹頂與亞得里亞海的晴空融為一體，金色十字架在陽光下閃耀。這座東方聖殿，在西方海港靜靜守護著漂泊商賈的心靈港灣。",
+    "path": "ivy_photos/825268214_29660884326835468_7065973465657424444_n.jpg"
+  },
+  {
+    "id": 15,
+    "filename": "825268234_29660880860169148_7370961659237975541_n.jpg",
+    "chapter": "literature",
+    "chapter_name": "雙聖殿與文學大運河",
+    "title": "聖斯皮里狄翁堂內部・24K金箔聖像屏風（Iconostasi）",
+    "title_it": "Iconostasi Dorata e Interni di San Spiridione",
+    "fact": "教堂內部擁有全南歐最奢華的聖像屏風（Iconostasi），由俄羅斯莫斯科宮廷畫師繪製，通體覆蓋24K金箔與珍貴油彩，呈現拜占庭禮儀莊嚴神聖的神秘主義氛圍。",
+    "poetic": "步入幽暗的聖殿，金色聖像在燭光與香爐青煙中隱隱浮現。那是跨越千年的東正教神聖光芒，讓人不由得肅穆凝神。",
+    "path": "ivy_photos/825268234_29660880860169148_7370961659237975541_n.jpg"
+  },
+  {
+    "id": 16,
+    "filename": "825268235_29660884893502078_4308289871475579471_n.jpg",
+    "chapter": "literature",
+    "chapter_name": "雙聖殿與文學大運河",
+    "title": "卡拉拉大理石柱廊與拜占庭拱券結構",
+    "title_it": "Colonne in Marmo di Carrara e Archi Bizantini",
+    "fact": "教堂內部立柱均由一整塊頂級卡拉拉純白大理石雕琢而成，柱頭飾有精美的新拜占庭浮雕花紋，支撐著上方沉重的中央穹頂。",
+    "poetic": "冰涼純淨的大理石承載著穹頂的重量，精雕細琢的紋飾在光影中流轉，將物質的厚重轉化為信仰的昇華。",
+    "path": "ivy_photos/825268235_29660884893502078_4308289871475579471_n.jpg"
+  },
+  {
+    "id": 17,
+    "filename": "825268241_29660882903502277_2813542208151777359_n.jpg",
+    "chapter": "literature",
+    "chapter_name": "雙聖殿與文學大運河",
+    "title": "聖殿彩繪玻璃高窗與天光灑落",
+    "title_it": "Vetrata Istoriata e Luce Mistica",
+    "fact": "教堂側壁高窗嵌有19世紀彩色玻璃，陽光透過幾何與聖徒圖紋折射出紫藍與金黃的光暈，營造出寧靜深邃的靈修空間感。",
+    "poetic": "一縷天光穿透彩色玻璃，在古老石板地上織出一道五彩光斑。塵世的喧鬧被隔絕在厚重大門之外，唯有平安長存。",
+    "path": "ivy_photos/825268241_29660882903502277_2813542208151777359_n.jpg"
+  },
+  {
+    "id": 18,
+    "filename": "825268245_29660888486835052_4487137365738001125_n.jpg",
+    "chapter": "literature",
+    "chapter_name": "雙聖殿與文學大運河",
+    "title": "大運河畔東正教堂正立面全景與四座角塔",
+    "title_it": "Facciata Monumentale del Tempio Serbo-Ortodosso",
+    "fact": "聖斯皮里狄翁堂主立面面向大運河，四座高聳的八角形角塔鐘樓簇擁著中央巨大的半球形碧藍穹頂，是特里埃斯特天際線最具辨識度的地標之一。",
+    "poetic": "巍峨的四座塔樓直指晴空，與旁邊的天主教聖安多尼堂隔運河相望。鐘聲在水波上交織迴響，那是自由港最寬容的歷史樂章。",
+    "path": "ivy_photos/825268245_29660888486835052_4487137365738001125_n.jpg"
+  },
+  {
+    "id": 19,
+    "filename": "825268294_29660881140169120_4059363019677375823_n.jpg",
+    "chapter": "cafes",
+    "chapter_name": "百年沙龍與咖啡甜點",
+    "title": "人氣手工義大利麵館 Miscusi・溫馨餐酒氛圍",
+    "title_it": "Ristorante Miscusi - Superpasta e Tradizione",
+    "fact": "位於市中心的知名手作義大利麵館 Miscusi（Superpasta），以每日新鮮現壓多種形狀杜蘭小麥麵條與在地起司、橄欖油著稱，展現當代義大利美食在特里埃斯特的活力。",
+    "poetic": "木質餐桌上擺滿熱騰騰的現做義大利麵，空氣中飄散著羅勒、番茄與帕瑪森起司的香氣。旅行中最撫慰人心的，莫過於這一碗地道溫熱的滋味。",
+    "path": "ivy_photos/825268294_29660881140169120_4059363019677375823_n.jpg"
+  },
+  {
+    "id": 20,
+    "filename": "825268294_29660884936835407_4479999497651746439_n.jpg",
+    "chapter": "castello",
+    "chapter_name": "聖儒斯定城堡與敲鐘人",
+    "title": "自動敲鐘機器人雕像 Michez（麥克茲）・19世紀市政廳報時者",
+    "title_it": "Automa Battiore Michez - Museo del Castello di San Giusto",
+    "fact": "珍藏在聖儒斯定城堡博物館內的兩尊19世紀自動敲鐘機器人雕像之一——Michez（麥克茲）。由雕塑家 Fausto Asteo 於1875年鑄造，原本安裝在義大利統一廣場（Piazza Unità）市政廳鐘樓頂部，每到整點由機械連桿驅動揮舞大鐵槌敲響大鐘。",
+    "poetic": "他曾站在特里埃斯特心臟的最頂端，在無數風暴與戰火中，為這座城市的生老病死與帝國興衰敲響了數十萬次鐘聲。如今卸甲退隱於古堡深處，神情依舊威嚴沉著。",
+    "path": "ivy_photos/825268294_29660884936835407_4479999497651746439_n.jpg"
+  },
+  {
+    "id": 21,
+    "filename": "825268298_29660880080169226_7598825165565124912_n.jpg",
+    "chapter": "literature",
+    "chapter_name": "雙聖殿與文學大運河",
+    "title": "聖安多尼堂半圓後殿壁畫・天使聖詠與天國榮光",
+    "title_it": "Affreschi dell'Abside - Chiesa di Sant'Antonio Taumaturgo",
+    "fact": "大運河盡頭天主教聖安多尼堂（Sant'Antonio Taumaturgo）後殿半球形穹頂，繪有19世紀著名威尼斯學院派大師 Sebastiano Santi 創作的巨幅濕壁畫《基督進入耶路撒冷》與天使榮耀聖詠。",
+    "poetic": "仰望穹頂，金色雲彩間天使振翅歌唱。柔和的色調將天國的祥和灑落在每位駐足仰望的旅人肩上。",
+    "path": "ivy_photos/825268298_29660880080169226_7598825165565124912_n.jpg"
+  },
+  {
+    "id": 22,
+    "filename": "825268320_29660885190168715_855921693731922586_n.jpg",
+    "chapter": "castello",
+    "chapter_name": "聖儒斯定城堡與敲鐘人",
+    "title": "自動敲鐘機器人雕像 Jachez（雅克茲）・城市記憶的守護者",
+    "title_it": "Automa Battiore Jachez - Museo del Castello di San Giusto",
+    "fact": "另一尊敲鐘機器人兄弟名為 Jachez（雅克茲）。Michez 與 Jachez 名字源自特里埃斯特方言與斯洛維尼亞語名字 Miha 與 Jaka，象徵特城多民族文化的深度融合。2006年市政廳鐘樓安置複製品，原件移至城堡博物館妥善典藏。",
+    "poetic": "他和兄弟 Michez 一左一右，用鋼鐵手臂敲響了整座港城半個多世紀的日出與黃昏。那是特里埃斯特最深情、最不可磨滅的歷史脈動。",
+    "path": "ivy_photos/825268320_29660885190168715_855921693731922586_n.jpg"
+  },
+  {
+    "id": 23,
+    "filename": "825268332_29660883930168841_9175412770641311132_n.jpg",
+    "chapter": "montegrisa",
+    "chapter_name": "邊境巨構蒙特格里薩",
+    "title": "蒙特格里薩聖母堂・喀斯特懸崖上的粗獷主義幾何巨構",
+    "title_it": "Santuario Nazionale di Monte Grisa - Geometrie Brutaliste",
+    "fact": "蒙特格里薩國家朝聖所（Santuario Nazionale a Maria Madre e Regina di Monte Grisa）坐落於特里埃斯特北部喀斯特高原山巔（海拔330米），由建築師 Antonio Guacci 設計，於1966年落成。通體採用等邊三角形模組清水混凝土興建，造型如巨型幾何金字塔。",
+    "poetic": "宛如一艘停泊在懸崖山巔的未來方舟，鋒利的幾何稜角直指蒼穹。它在冷戰最前線巍然聳立，傲迎著從內陸呼嘯而來的狂暴布拉風。",
+    "path": "ivy_photos/825268332_29660883930168841_9175412770641311132_n.jpg"
+  },
+  {
+    "id": 24,
+    "filename": "825268343_29660886653501902_8969009369078396386_n.jpg",
+    "chapter": "montegrisa",
+    "chapter_name": "邊境巨構蒙特格里薩",
+    "title": "蒙特格里薩立面・粗獷混凝土蜂巢菱格窗與聖母『M』意象",
+    "title_it": "Struttura Modulare e Simbologia Mariana a Monte Grisa",
+    "fact": "教堂外部幾何模組由無數三角形預鑄混凝土構件拼接而成，巧妙構成字母『M』（象徵聖母瑪利亞 Maria）與三位一體的幾何象徵，身後數百公尺即為斯洛維尼亞國界。",
+    "poetic": "未加修飾的清水混凝土呈現出純粹的力量感。幾何網格在藍天白雲下變幻著光影，是冷戰鐵幕邊緣最莊嚴的和平燈塔。",
+    "path": "ivy_photos/825268343_29660886653501902_8969009369078396386_n.jpg"
+  },
+  {
+    "id": 25,
+    "filename": "825268353_29660888396835061_6585406867588701604_n.jpg",
+    "chapter": "montegrisa",
+    "chapter_name": "邊境巨構蒙特格里薩",
+    "title": "蒙特格里薩主聖堂內部・挑高40米的震撼三角中殿與祭壇",
+    "title_it": "Interno della Navata Superiore e Altare Maggiore",
+    "fact": "教堂內部上層主堂擁有挑高達40公尺的巨大三角形幾何空間，蜂巢窗格將自然天光細膩過濾導入，營造出極具未來感與神聖力量的空間氛圍。",
+    "poetic": "走進這座巨大的水泥幾何聖殿，日光從四面八方的三角窗櫺傾瀉而下。光影在空靈的寂靜中流淌，讓人深感人類與宇宙對話的渺小與宏大。",
+    "path": "ivy_photos/825268353_29660888396835061_6585406867588701604_n.jpg"
+  },
+  {
+    "id": 26,
+    "filename": "825268373_29660886600168574_6770595938757011963_n.jpg",
+    "chapter": "cafes",
+    "chapter_name": "百年沙龍與咖啡甜點",
+    "title": "薩赫咖啡 Trieste 店外觀・古典拱形櫥窗與露天座",
+    "title_it": "Ingresso e Tavolini Esterni del Caffè Sacher",
+    "fact": "Caffè Sacher Trieste 位於市中心 Dante 街，深色木質拱門與金色招牌完美融入老城新古典建築，店外設有典雅的綠植圍欄與露天雅座。",
+    "poetic": "推開雕花玻璃門，維也納的皇室優雅與特里埃斯特的自由海風撞個滿懷。在街角點一杯Melange，時光彷彿倒流回哈布斯堡的黃金歲月。",
+    "path": "ivy_photos/825268373_29660886600168574_6770595938757011963_n.jpg"
+  },
+  {
+    "id": 27,
+    "filename": "825268432_29660886206835280_6798351171193056732_n.jpg",
+    "chapter": "cafes",
+    "chapter_name": "百年沙龍與咖啡甜點",
+    "title": "提拉米蘇之源・義大利正統手作甜點看板（1960年起）",
+    "title_it": "TIRAMISÙ - Una storia italiana dal 1960",
+    "fact": "義大利弗留利-威尼斯朱利亞大區（FVG，特里埃斯特所在大區）是義大利農業部官方認證的提拉米蘇發源地之一。街頭甜品店黑板標列經典原味（Classico）、草莓（Fragola）、開心果（Pistacchio）、榛果（Nocciola）及香蕉巧克力等傳承口味。",
+    "poetic": "手指餅乾浸透了醇厚的特濃咖啡與馬斯卡彭乳酪，撒上一層厚厚的苦甜可可粉。每一口濃郁絲滑，都是對這片咖啡之鄉最甜蜜的致敬。",
+    "path": "ivy_photos/825268432_29660886206835280_6798351171193056732_n.jpg"
+  },
+  {
+    "id": 28,
+    "filename": "825268440_29660882560168978_1086684828729349516_n.jpg",
+    "chapter": "literature",
+    "chapter_name": "雙聖殿與文學大運河",
+    "title": "教堂側祭壇油畫與大理石雕飾・虔誠的藝術贊助",
+    "title_it": "Altare Laterale e Dipinti Storici",
+    "fact": "特里埃斯特教堂內部側祭壇多由18-19世紀繁榮的各國商會與航海家族捐資建立，祭壇畫描繪聖母與守護聖徒，融合了威尼斯派色彩與中歐古典風格。",
+    "poetic": "燭光在華麗的大理石祭壇前靜靜跳動，畫中聖徒的目光慈悲而寧靜。數百年來，多少水手在出海前曾在此默默許下平安歸航的誓言。",
+    "path": "ivy_photos/825268440_29660882560168978_1086684828729349516_n.jpg"
+  },
+  {
+    "id": 29,
+    "filename": "825268469_29660885323502035_5251095677022138606_n.jpg",
+    "chapter": "castello",
+    "chapter_name": "聖儒斯定城堡與敲鐘人",
+    "title": "城堡瞭望台石拱與亞得里亞海遠眺",
+    "title_it": "Arcata Panoramica del Castello sul Golfo",
+    "fact": "從聖儒斯定城堡圓形堡壘（Bastione Rotondo）的厚重石拱向外眺望，特里埃斯特灣的海水波光粼粼，視野直達遠方的伊斯特拉半島海岸線。",
+    "poetic": "倚著古老石拱極目遠眺，海面上帆影點點。海風拂過兩百年前衛兵駐守的射口，帶來的依舊是亞得里亞海那抹鹹甜的氣息。",
+    "path": "ivy_photos/825268469_29660885323502035_5251095677022138606_n.jpg"
+  },
+  {
+    "id": 30,
+    "filename": "825268474_29660884603502107_4259074506344466216_n.jpg",
+    "chapter": "montegrisa",
+    "chapter_name": "邊境巨構蒙特格里薩",
+    "title": "蒙特格里薩山頂全景步道與防風安全護欄",
+    "title_it": "Sentiero Panoramico e Ringhiere di Monte Grisa",
+    "fact": "蒙特格里薩朝聖所周邊建有環山觀景步道與車道分流標示（Autoveicoli / Pedonale），步道外側安裝有加固金屬防風安全護欄，防止遊客被高達數百公里的山頂布拉陣風吹落。",
+    "poetic": "沿著崖邊步道前行，山風在耳畔呼嘯作響。腳下是浩瀚無垠的特里埃斯特灣，每一步都彷彿漫步在雲端與懸崖的邊界。",
+    "path": "ivy_photos/825268474_29660884603502107_4259074506344466216_n.jpg"
+  },
+  {
+    "id": 31,
+    "filename": "825268475_29660885680168666_8274982780959622476_n.jpg",
+    "chapter": "montegrisa",
+    "chapter_name": "邊境巨構蒙特格里薩",
+    "title": "蒙特格里薩地下聖堂・三角混凝土穹頂與誓詞歷史碑銘",
+    "title_it": "Cripta Inferiore del Santuario di Monte Grisa",
+    "fact": "蒙特格里薩下層地下堂（Cripta）呈低矮莊嚴的三角幾何交錯格局，牆面銘刻著1945年4月30日二戰末期特里埃斯特主教 Antonio Santin 發願建造聖母朝聖所、祈求城市免遭戰火毀滅的歷史誓詞碑銘（...ANNO XI...）。",
+    "poetic": "走入地下聖堂，光線自三角幾何縫隙中幽微灑入。冰冷的混凝土上銘刻著二戰浩劫時的虔誠發願，寂靜中迴盪著對和平最深沉的祈求。",
+    "path": "ivy_photos/825268475_29660885680168666_8274982780959622476_n.jpg"
+  },
+  {
+    "id": 32,
+    "filename": "825268489_29660885633502004_6863702305171418563_n.jpg",
+    "chapter": "montegrisa",
+    "chapter_name": "邊境巨構蒙特格里薩",
+    "title": "蒙特格里薩朝聖所全貌 profile・喀斯特山脊上的幾何地標",
+    "title_it": "Profilo Architettonico del Tempio Nazionale a Monte Grisa",
+    "fact": "從喀斯特山坡遠觀，蒙特格里薩聖母堂猶如一座巨大的現代幾何雕塑冠冕，矗立於懸崖制高點，從特里埃斯特灣全海域乃至數十公里外的海上皆能清晰辨識。",
+    "poetic": "它像一座堅不可摧的幾何燈塔，孤傲地加冕在荒涼的喀斯特山頭。山的那一邊就是斯洛維尼亞，地理的邊界在這裡化為純粹的敬畏。",
+    "path": "ivy_photos/825268489_29660885633502004_6863702305171418563_n.jpg"
+  },
+  {
+    "id": 33,
+    "filename": "825268495_29660886433501924_5370745172379679574_n.jpg",
+    "chapter": "literature",
+    "chapter_name": "雙聖殿與文學大運河",
+    "title": "天主教聖安多尼堂正立面・新古典六根宏偉愛奧尼亞石柱",
+    "title_it": "Chiesa di Sant'Antonio Taumaturgo (Divo Antonio)",
+    "fact": "位於大運河盡頭的新古典主義巨構天主教聖安多尼堂（Sant'Antonio Taumaturgo），由建築師 Pietro Nobile 於1825-1849年間建造。正面仿羅馬萬神殿擁有六根巨大的愛奧尼亞石柱與三角形山牆，門楣銘刻『DIVO ANTONIO THAVMATVRGO』。",
+    "poetic": "六根巨型石柱頂天立地，倒映在大運河的碧水之中。宏偉的新古典山牆在夕陽下泛著金黃，為特里埃斯特的大運河畫下了最莊嚴的休止符。",
+    "path": "ivy_photos/825268495_29660886433501924_5370745172379679574_n.jpg"
+  },
+  {
+    "id": 34,
+    "filename": "825268519_29660887450168489_4478023399401586944_n.jpg",
+    "chapter": "literature",
+    "chapter_name": "雙聖殿與文學大運河",
+    "title": "大運河紅橋畔・詹姆斯·喬伊斯漫步銅像（James Joyce）",
+    "title_it": "Statua di James Joyce sul Ponte Rosso (Canale Grande)",
+    "fact": "愛爾蘭20世紀文學巨擘詹姆斯·喬伊斯（James Joyce）於1904至1920年間旅居特里埃斯特十餘年，在此教授英語、結識斯韋沃並完成了《青年藝術家的畫像》與世紀名著《尤利西斯》的多個章節。2004年特城在喬伊斯每日必經的大運河紅橋（Ponte Rosso）上豎立其手持手杖快步漫步的青銅像。",
+    "poetic": "夾著手杖的喬伊斯正快步穿過紅橋，大衣隨風微揚。他曾說『我的靈魂留在了特里埃斯特』。海風掠過橋欄，彷彿仍能聽見尤利西斯跨越時空的獨白。",
+    "path": "ivy_photos/825268519_29660887450168489_4478023399401586944_n.jpg"
+  },
+  {
+    "id": 35,
+    "filename": "825286514_29661357236788177_132581821589237639_n.jpg",
+    "chapter": "castello",
+    "chapter_name": "聖儒斯定城堡與敲鐘人",
+    "title": "聖儒斯定城堡外圍防禦工事・厚重城牆與林蔭斜坡",
+    "title_it": "Bastioni e Muraglioni del Castello di San Giusto",
+    "fact": "聖儒斯定城堡的外牆厚度達數米，由哈布斯堡皇帝腓特烈三世於1470年下令始建，經由歷代軍事建築師加固，環繞山頂的斜坡林道是俯瞰特里埃斯特全景的最佳步道。",
+    "poetic": "古老的石磚長滿了青苔與歲月的痕跡，林蔭灑下斑駁的光斑。踏上這條衛兵曾走過百年的斜坡，每一步都是穿梭時光的沉思。",
+    "path": "ivy_photos/825286514_29661357236788177_132581821589237639_n.jpg"
+  },
+  {
+    "id": 36,
+    "filename": "825286610_29661357503454817_1208356178658386238_n.jpg",
+    "chapter": "castello",
+    "chapter_name": "聖儒斯定城堡與敲鐘人",
+    "title": "聖儒斯定山頂紀念廣場・阿蒂利奧·塞爾瓦戰士雕像群",
+    "title_it": "Monumento ai Caduti di Attilio Selva (1935)",
+    "fact": "位於聖儒斯定山頂廣場的著名一戰陣亡將士紀念碑（Monumento ai Caduti），由雕塑家 Attilio Selva 於1935年創作。雕像由五位健壯男子組成，展現守衛家園與扶持負傷戰友的雄壯英雄群像。",
+    "poetic": "青銅鑄造的魁梧軀體在山巔昂首迎風，陽光勾勒出肌肉的剛毅線條。昔日的烽火與悲壯，在特里埃斯特的晴空下化作守護和平的永恆哨兵。",
+    "path": "ivy_photos/825286610_29661357503454817_1208356178658386238_n.jpg"
+  },
+  {
+    "id": 37,
+    "filename": "825328383_29661357243454843_1369296991250458897_n.jpg",
+    "chapter": "habsburg",
+    "chapter_name": "帝國血脈與紅色門牌",
+    "title": "老城經典鍛鐵古典街燈・蔚藍晴空下的剪影",
+    "title_it": "Lampione Storico in Ferro Battuto",
+    "fact": "特里埃斯特保留了大量19世紀奧匈帝國時期的古典鍛鐵街燈，造型優雅細膩，見證了特里埃斯特作為奧匈帝國唯一海港率先推行煤氣與電氣照明的輝煌歲月。",
+    "poetic": "孤獨佇立在晴空下的老街燈，黑色的鍛鐵勾勒出浪漫的弧線。當夜幕低垂，它便點亮一盞暖黃，陪伴每一位夜歸的旅人走過石板小徑。",
+    "path": "ivy_photos/825328383_29661357243454843_1369296991250458897_n.jpg"
+  },
+  {
+    "id": 38,
+    "filename": "825340733_29660873156836585_5889062842273856005_n.jpg",
+    "chapter": "montegrisa",
+    "chapter_name": "邊境巨構蒙特格里薩",
+    "title": "特里埃斯特全景無垠寬幅・亞得里亞海咽喉與紅頂海港",
+    "title_it": "Veduta Panoramica del Golfo di Trieste",
+    "fact": "從喀斯特山頂向西南方向俯瞰，整座特里埃斯特海灣、舊自由港防波堤、米拉馬雷城堡岬角與伊斯特拉半島海岸線一覽無餘，是極東義大利最震撼的寬幅全景視角。",
+    "poetic": "海天一色，碧波浩渺。在山巔極目遠眺，整座城市的歷史滄桑與繁華風雲都縮成了眼底的一抹蔚藍。這就是特里埃斯特，孤獨而絕美的歐洲盡頭。",
+    "path": "ivy_photos/825340733_29660873156836585_5889062842273856005_n.jpg"
+  },
+  {
+    "id": 39,
+    "filename": "825352872_29660883680168866_3063210773687329233_n.jpg",
+    "chapter": "habsburg",
+    "chapter_name": "帝國血脈與紅色門牌",
+    "title": "老城傳統實木綠百葉窗（Scuri）・抵禦布拉狂風的建築智慧",
+    "title_it": "Finestre con Scuri in Legno Tradizionali",
+    "fact": "特城老街民居廣泛採用耐風抗鹽的厚重實木綠色百葉窗（Scuri），在布拉強風（Bora）肆虐的冬季可完全閉鎖保溫防震，夏季則半開通風遮陽，是特城標誌性的民居景觀。",
+    "poetic": "斑駁的墨綠百葉窗半掩著老屋的私語，窗台石沿上落滿了海風的痕跡。屋裡藏著幾代特里人的柴米油鹽，安詳而溫馨。",
+    "path": "ivy_photos/825352872_29660883680168866_3063210773687329233_n.jpg"
+  },
+  {
+    "id": 40,
+    "filename": "825352911_29660879490169285_3584940179234782326_n.jpg",
+    "chapter": "habsburg",
+    "chapter_name": "帝國血脈與紅色門牌",
+    "title": "義大利大道步行街・新古典商廈與現代櫥窗",
+    "title_it": "Corso Italia - Asse Commerciale di Trieste",
+    "fact": "Corso Italia（義大利大道）與周邊街廓是特里埃斯特最重要的商業心臟，街道兩旁林立著19世紀末折衷主義與新文藝復興風格的華麗大樓，底層為精緻品牌名店。",
+    "poetic": "光潔的石板街上映著藍天，行人步調悠閒從容。在百年古典大廈的陰影下喝一杯咖啡、逛一逛街，是特城最迷人的都會生活切片。",
+    "path": "ivy_photos/825352911_29660879490169285_3584940179234782326_n.jpg"
+  },
+  {
+    "id": 41,
+    "filename": "825352919_29660886870168547_3760145400650793831_n.jpg",
+    "chapter": "habsburg",
+    "chapter_name": "帝國血脈與紅色門牌",
+    "title": "古老紅磚砌牆與中世紀拱形窗洞",
+    "title_it": "Muratura Storica in Mattoni e Archi",
+    "fact": "特里埃斯特老城老建築保留了大量文藝復興與中世紀防禦民居的厚重紅磚砌築結構，磚石交錯，能承受亞得里亞海沿岸潮濕鹽霧與狂風侵蝕。",
+    "poetic": "每一塊斑駁的紅磚都經歷了數百年的風霜。陽光撫摸著粗糙的磚紋，像是歷史在掌心留下的溫暖餘溫。",
+    "path": "ivy_photos/825352919_29660886870168547_3760145400650793831_n.jpg"
+  },
+  {
+    "id": 42,
+    "filename": "825353084_29660886893501878_939148702933323219_n.jpg",
+    "chapter": "castello",
+    "chapter_name": "聖儒斯定城堡與敲鐘人",
+    "title": "通往聖儒斯定山古道石拱・時光穿梭的幽靜巷弄",
+    "title_it": "Passaggio ad Arco verso il Colle di San Giusto",
+    "fact": "老城通往聖儒斯定山頂的斜坡古道（Salita al Castello / Androna）穿過多座石造拱廊與中世紀民宅，是古羅馬時代通往衛城的防禦石階路線。",
+    "poetic": "穿過幽深的石拱，前方豁然開朗。陽光在古老的石階上鋪就一道金黃，彷彿一步踏入了幾個世紀前的幽靜時光。",
+    "path": "ivy_photos/825353084_29660886893501878_939148702933323219_n.jpg"
+  },
+  {
+    "id": 43,
+    "filename": "825353109_29660884123502155_985794369644262819_n.jpg",
+    "chapter": "habsburg",
+    "chapter_name": "帝國血脈與紅色門牌",
+    "title": "老城紅瓦屋頂與傳統特色煙囪・特城天際線",
+    "title_it": "Tetti in Cotto e Comignoli Triestini",
+    "fact": "特里埃斯特老城屋頂以傳統紅陶瓦鋪設，其特製的磚石煙囪具備防風阻倒灌功能，能抵禦時速破兩百公里的強烈布拉風，構成特城獨特的天際線風貌。",
+    "poetic": "橘紅色的瓦片層層疊疊，煙囪在晴空中勾勒出溫暖的幾何線條。那是這座邊境海港最溫馨、最樸實的千家萬戶。",
+    "path": "ivy_photos/825353109_29660884123502155_985794369644262819_n.jpg"
+  },
+  {
+    "id": 44,
+    "filename": "825353169_29660887706835130_7416546038463224688_n.jpg",
+    "chapter": "montegrisa",
+    "chapter_name": "邊境巨構蒙特格里薩",
+    "title": "蒙特格里薩粗獷混凝土交錯幾何頂棚與吊燈",
+    "title_it": "Soffitto Geometrico e Lampadari a Monte Grisa",
+    "fact": "蒙特格里薩朝聖所內部屋頂採用極具力學美感的三角形預力混凝土肋樑結構，懸掛著現代幾何造型金屬吊燈，展現20世紀粗獷主義建築的極致魅力。",
+    "poetic": "冰冷的鋼筋混凝土在幾何秩序中化作純粹的雕塑藝術，一盞盞懸掛的吊燈如星芒垂落，為莊嚴的空間灑下柔和的光明。",
+    "path": "ivy_photos/825353169_29660887706835130_7416546038463224688_n.jpg"
+  },
+  {
+    "id": 45,
+    "filename": "825353187_29660882326835668_2266239327982007334_n.jpg",
+    "chapter": "habsburg",
+    "chapter_name": "帝國血脈與紅色門牌",
+    "title": "塔樓街 3 號・哈布斯堡深紅街牌與街角咖啡小座",
+    "title_it": "Targa Civica Asburgica - Via delle Torri 3",
+    "fact": "位於特里埃斯特老城 Via delle Torri 3號的哈布斯堡紅色街牌『3 • VIA DELLE TORRI』，門前擺放著典雅的咖啡座椅。該街區是特里埃斯特傳統熟食小館（Buffet）與咖啡館密集的歷史核心。",
+    "poetic": "紅色的木框門廊、老舊的銅牌、街角飄來的咖啡香。特里埃斯特的時光，就凝固在這一條條靜謐的小巷深處。",
+    "path": "ivy_photos/825353187_29660882326835668_2266239327982007334_n.jpg"
+  },
+  {
+    "id": 46,
+    "filename": "825909903_29660885966835304_5114250214552634996_n.jpg",
+    "chapter": "bora",
+    "chapter_name": "狂風布拉與甜瓜飲水機",
+    "title": "拿破崙步道崖壁觀景台・防風鋼鐵護欄與白色布拉風（Bora Chiara）",
+    "title_it": "Ringhiere Frangivento sulla Strada Napoleonica e Bora",
+    "fact": "特里埃斯特布拉風（Bora）是中歐冷高壓受喀斯特高原與波斯托伊納隘口狹管效應加速的重力下降風（Katabatic Wind）。晴天吹拂時稱為『Bora Chiara（白色波拉風）』，天空澄澈碧藍但陣風（Refoli）時速常超150-200公里。拿破崙步道（Strada Napoleonica）懸崖觀景台必須安裝重型錨固鋼鐵防風欄杆，確保行人安全。",
+    "poetic": "冷冽的重力瀑布從高原傾瀉而下，吹得大海翻起層層白浪。握著冰涼的防風鐵欄，那是特里埃斯特狂風之神最桀驁不馴的咆哮與心跳。",
+    "path": "ivy_photos/825909903_29660885966835304_5114250214552634996_n.jpg"
+  },
+  {
+    "id": 47,
+    "filename": "826272053_29660880366835864_1971535174442779682_n.jpg",
+    "chapter": "montegrisa",
+    "chapter_name": "邊境巨構蒙特格里薩",
+    "title": "蒙特格里薩山頂紀念鋼鐵十字架・晴空下的和平地標",
+    "title_it": "Croce Monumentale sul Colle di Monte Grisa",
+    "fact": "蒙特格里薩朝聖所外圍制高點立有一座高聳的鋼鐵十字架，在喀斯特高原強烈布拉風中屹立不搖，象徵跨越冷戰陣營對峙的和平燈塔。",
+    "poetic": "鋼鐵十字架直直刺入萬里無雲的碧空，在狂風呼嘯中傲然屹立。它守望著山腳下繁忙的自由港，也守護著每一個渴望和平的旅人願望。",
+    "path": "ivy_photos/826272053_29660880366835864_1971535174442779682_n.jpg"
+  },
+  {
+    "id": 48,
+    "filename": "826989481_29660888053501762_4850500161151402316_n.jpg",
+    "chapter": "castello",
+    "chapter_name": "聖儒斯定城堡與敲鐘人",
+    "title": "古羅馬石刻碑林（Lapidario Tergestino）・兩千年前帝國銘文",
+    "title_it": "Lapidario Tergestino nel Castello di San Giusto",
+    "fact": "聖儒斯定城堡內設有著名的特里埃斯特古羅馬石刻館（Lapidario Tergestino），保存著公元前1世紀至公元4世紀古羅馬城市 Tergeste 的墓碑、獻祭石碑與市政榮譽拉丁銘文石板。",
+    "poetic": "手指輕輕摩挲著兩千年前羅馬石匠鑿下的拉丁字母，歲月風化了石面邊緣，但那份屬於古帝國的榮耀與記憶，依舊在石碑上清晰如初。",
+    "path": "ivy_photos/826989481_29660888053501762_4850500161151402316_n.jpg"
+  },
+  {
+    "id": 49,
+    "filename": "827281873_29660880073502560_1698319457446454503_n.jpg",
+    "chapter": "cafes",
+    "chapter_name": "百年沙龍與咖啡甜點",
+    "title": "傳統糕餅櫥窗・普雷斯尼茨（Presnitz）與奧匈甜點饗宴",
+    "title_it": "Dolci Tipici Triestini - Presnitz e Croissant",
+    "fact": "特里埃斯特糕餅深受奧匈帝國與斯洛維尼亞傳統影響，招牌甜點包括為奧地利茜茜公主訪問而創製的乾果肉桂蝸牛卷 Presnitz、核桃酵母蛋糕 Putizza，以及鬆脆的牛角可頌。",
+    "poetic": "玻璃櫥窗裡金黃酥脆的糕點散發著奶油與肉桂的濃香。在特里埃斯特的清晨，一份熱可頌配一杯香濃Capo in B，便是最純粹的幸福。",
+    "path": "ivy_photos/827281873_29660880073502560_1698319457446454503_n.jpg"
+  },
+  {
+    "id": 50,
+    "filename": "827510306_29660884406835460_6401284475489727889_n.jpg",
+    "chapter": "montegrisa",
+    "chapter_name": "邊境巨構蒙特格里薩",
+    "title": "喀斯特高原步道（Strada Napoleonica）・通往斯洛維尼亞邊界",
+    "title_it": "Strada Napoleonica sull'Altopiano Carsico",
+    "fact": "拿破崙步道（Strada Napoleonica，又稱 Strada Vicentina）連接著奧皮契納（Opicina）與普羅塞克（Prosecco），沿著喀斯特石灰岩崖壁蜿蜒，背靠斯洛維尼亞邊境森林，是歐洲最著名的景觀徒步路線之一。",
+    "poetic": "碎石步道在高原樹影間向前延伸，微風吹來地中海松樹的清香。沿著這條古道漫步，每一步都踏在地理與歷史的國界邊緣。",
+    "path": "ivy_photos/827510306_29660884406835460_6401284475489727889_n.jpg"
+  },
+  {
+    "id": 51,
+    "filename": "827774021_29660879740169260_5060361546725893029_n.jpg",
+    "chapter": "cafes",
+    "chapter_name": "百年沙龍與咖啡甜點",
+    "title": "百年甜點老鋪 La Bomboniera（創立於1836年）・奧匈木造櫃台",
+    "title_it": "Pasticceria La Bomboniera dal 1836 - Bancone Storico",
+    "fact": "位於 Via San Nicolò 3號的 Pasticceria La Bomboniera 創立於1836年（奧匈帝國時期），是特里埃斯特唯一保留19世紀原始燃木烤爐的活歷史糕餅店，其深色木製收銀台與玻璃展示櫃完整保留至今。",
+    "poetic": "推開百年木門，空氣中飄蕩著將近兩百年的香草與杏仁香氣。光滑深沉的木櫃台上記錄了無數世代特里人的甜蜜微笑。",
+    "path": "ivy_photos/827774021_29660879740169260_5060361546725893029_n.jpg"
+  },
+  {
+    "id": 52,
+    "filename": "827855926_29660883290168905_3029909304413836046_n.jpg",
+    "chapter": "castello",
+    "chapter_name": "聖儒斯定城堡與敲鐘人",
+    "title": "聖儒斯定主教座堂・12世紀拜占庭金箔馬賽克（SCS IVSTVS / SCS SERGIVS）",
+    "title_it": "Mosaici Bizantini del XII Secolo - Cattedrale di San Giusto",
+    "fact": "特里埃斯特聖儒斯定主教座堂（Cattedrale di San Giusto）半圓後殿，保存著12至13世紀威尼斯-拜占庭大師創作的金箔鑲嵌馬賽克，中央為耶穌基督，兩側為特里埃斯特守護聖人聖儒斯定（SCS IVSTVS）與聖塞爾吉烏斯（SCS SERGIVS），銘刻拉丁文『ET HINC REGNARE PER EVVM』。",
+    "poetic": "金箔馬賽克在穹頂上散發著永恆的神聖微光，守護聖人的雙眸穿越千年的烽煙與海浪，默默護佑著這座歷經滄桑的邊境海港。",
+    "path": "ivy_photos/827855926_29660883290168905_3029909304413836046_n.jpg"
+  },
+  {
+    "id": 53,
+    "filename": "828228307_29660879130169321_2931619623695417637_n.jpg",
+    "chapter": "castello",
+    "chapter_name": "聖儒斯定城堡與敲鐘人",
+    "title": "18世紀市政鐘樓龐大齒輪機芯・『NATA 1750』時間巨構",
+    "title_it": "Meccanismo dell'Orologio Storico - NATA 1750",
+    "fact": "聖儒斯定城堡博物館收藏的特里埃斯特古鐘樓原始巨大機械齒輪機芯，鑄鐵底座銘刻著『NATA 1750』，由哈布斯堡皇家鐘錶匠精工打造，運轉了兩個多世紀的精準鐘擺連動敲鐘人 Michez 與 Jachez。",
+    "poetic": "沉重黃銅與鋼鐵齒輪靜止在展台中央，『NATA 1750』見證了女皇瑪麗亞·泰瑞莎時代的繁華起點。歲月雖已靜止，但機械的靈魂依然低語著時間的奧秘。",
+    "path": "ivy_photos/828228307_29660879130169321_2931619623695417637_n.jpg"
+  },
+  {
+    "id": 54,
+    "filename": "828280530_29660882253502342_8491619730506851037_n.jpg",
+    "chapter": "cafes",
+    "chapter_name": "百年沙龍與咖啡甜點",
+    "title": "百年甜點名鋪拱形蝕刻玻璃大門（PASTICCERIA）",
+    "title_it": "Ingresso Storico in Vetro Smerigliato - PASTICCERIA",
+    "fact": "特里埃斯特老城區歷史糕餅鋪（如 La Bomboniera、Pirona）保留了19世紀末新藝術運動（Liberty Style）風格的圓拱形實木大門，門上鑲嵌著優雅的毛玻璃酸蝕字樣『PASTICCERIA』。",
+    "poetic": "推開那扇帶著霧面蝕刻花紋的百年玻璃門，木質門軸發出溫柔的吱呀聲。那是通往哈布斯堡老維也納甜蜜時光的時空入口。",
+    "path": "ivy_photos/828280530_29660882253502342_8491619730506851037_n.jpg"
+  },
+  {
+    "id": 55,
+    "filename": "828412983_29660881433502424_8672869224354400504_n.jpg",
+    "chapter": "bora",
+    "chapter_name": "狂風布拉與甜瓜飲水機",
+    "title": "特里埃斯特歷史象徵石雕『特里甜瓜』（Il \"Melone\" di Trieste）",
+    "title_it": "Scultura Storica Il \"Melone\" di Trieste - Simbolo Civico",
+    "fact": "珍藏在聖儒斯定城堡博物館內的『Il \"Melone\" di Trieste』（特里甜瓜石雕），是特里埃斯特最古老的城市徽記與頂石雕塑（原立於中世紀鐘樓頂端）。該造型啟發了特里埃斯特街頭著名的『甜瓜防風飲水機（Fontanella del Melone）』——特製的甜瓜形出水口與擋風板能在時速200公里的布拉強風下防止水花四濺。",
+    "poetic": "這顆刻滿歲月風霜的石造甜瓜，是特里埃斯特最親切的守護圖騰。它在鐘樓頂端看盡風雨，化作街頭在狂風中依然汩汩流淌的清甜泉水。",
+    "path": "ivy_photos/828412983_29660881433502424_8672869224354400504_n.jpg"
+  },
+  {
+    "id": 56,
+    "filename": "828561954_29660881156835785_1126251332305441476_n.jpg",
+    "chapter": "castello",
+    "chapter_name": "聖儒斯定城堡與敲鐘人",
+    "title": "城堡巨大古羅馬與中世紀基石・兩千年的堅固地基",
+    "title_it": "Massicce Fondamenta Romane e Medievali del Castello",
+    "fact": "聖儒斯定城堡地基直接疊砌在古羅馬帝國集會場（Foro Romano）與巴西利卡巨石基座之上，巨大的方形砂岩與石灰岩石塊展現了歷代要塞堅不可摧的營造工藝。",
+    "poetic": "巨大的石塊層層相扣，承受了兩千年海風與戰火的洗禮。它們是特里埃斯特最深沉厚重的脊樑，沉穩地托舉著整座城市的歷史記憶。",
+    "path": "ivy_photos/828561954_29660881156835785_1126251332305441476_n.jpg"
+  },
+  {
+    "id": 57,
+    "filename": "828650083_29660887126835188_3006628065981354639_n.jpg",
+    "chapter": "castello",
+    "chapter_name": "聖儒斯定城堡與敲鐘人",
+    "title": "城堡巡邏走道與文藝復興防禦城垛",
+    "title_it": "Camminamento di Ronda e Merlature Rinascimentali",
+    "fact": "聖儒斯定城堡城垛通道（Camminamento di Ronda）連接三大堡壘，寬闊的石砌走道供守軍快速移動，今日遊客可沿著走道360度環視特里埃斯特全景與喀斯特山脈。",
+    "poetic": "漫步在開闊的城垛步道上，山風獵獵作響。一側是巍峨的古堡石牆，另一側是碧藍的亞得里亞海，歷史的壯闊在此刻化為無比的開闊。",
+    "path": "ivy_photos/828650083_29660887126835188_3006628065981354639_n.jpg"
+  },
+  {
+    "id": 58,
+    "filename": "828676210_29660878680169366_4955777563982523282_n.jpg",
+    "chapter": "castello",
+    "chapter_name": "聖儒斯定城堡與敲鐘人",
+    "title": "聖儒斯定城堡正門大理石銘牌（Castello di San Giusto）",
+    "title_it": "Targa d'Ingresso del Castello di San Giusto",
+    "fact": "位於城堡吊橋入口處的大理石銘牌，簡潔鐫刻著『Castello di San Giusto』，標誌著這座自1368年威尼斯佔領時期到哈布斯堡王朝數百年間的要塞核心。",
+    "poetic": "穿過古老的木吊橋與石拱門，撫摸著這塊溫潤的大理石牌。特里埃斯特數百年的榮辱興衰，就此在眼前徐徐展開。",
+    "path": "ivy_photos/828676210_29660878680169366_4955777563982523282_n.jpg"
+  },
+  {
+    "id": 59,
+    "filename": "828859543_29660887896835111_4893944921926985871_n.jpg",
+    "chapter": "freeport",
+    "chapter_name": "自由領地歷史印記",
+    "title": "街頭路燈標貼・『FREE TERRITORY OF TRIESTE - USA & UK COME BACK』",
+    "title_it": "Adesivo Storico-Politico: Territorio Libero di Trieste (TLT)",
+    "fact": "特里埃斯特市中心街燈上的政治標貼『FREE TERRITORY OF TRIESTE - USA & UK COME BACK』，訴說著二戰後1947至1954年間根據《巴黎和平條約》設立的『特里埃斯特自由領地（Territorio Libero di Trieste, TLT）』歷史，當時由英美軍政府共同管轄A區（英美管轄區），至今仍有部分本土運動呼籲恢復自由港中立國際地位。",
+    "poetic": "一張小小的街頭貼紙，折射出冷戰地緣政治在邊境居民心中留下的深刻烙印。特里埃斯特對自由與獨立的執著，從未隨風消逝。",
+    "path": "ivy_photos/828859543_29660887896835111_4893944921926985871_n.jpg"
+  },
+  {
+    "id": 60,
+    "filename": "828895983_29660878760169358_7799942181272418175_n.jpg",
+    "chapter": "castello",
+    "chapter_name": "聖儒斯定城堡與敲鐘人",
+    "title": "聖儒斯定山頂俯瞰・特里埃斯特紅頂老城與大運河出海口",
+    "title_it": "Panoramica della Città e del Canale Grande dal Colle",
+    "fact": "從聖儒斯定山俯瞰，特里埃斯特泰瑞莎新城（Borgo Teresiano）整齊的棋盤狀街廓、新古典圓頂、大運河入海口以及遠方蔚藍的港口防波堤盡收眼底。",
+    "poetic": "層層橘紅屋頂如浪潮般向海邊蔓延，大運河如同一道蔚藍的手臂伸入市中心。海風拂面，這座海港的壯麗與深邃盡在不言中。",
+    "path": "ivy_photos/828895983_29660878760169358_7799942181272418175_n.jpg"
+  },
+  {
+    "id": 61,
+    "filename": "828939223_29660879363502631_5143717465260847983_n.jpg",
+    "chapter": "montegrisa",
+    "chapter_name": "邊境巨構蒙特格里薩",
+    "title": "喀斯特黑松林（Pineta Carsica）與白石山脊・邊境原野生態",
+    "title_it": "Vegetazione Carsica e Pineta verso il Confine",
+    "fact": "特里埃斯特背後的喀斯特高原由多孔石灰岩構成，19世紀哈布斯堡王朝在此進行了大規模黑松（Pinus nigra）造林工程，以涵養水源並抵禦布拉強風侵蝕土壤。",
+    "poetic": "黑松在白色的石灰岩岩隙中頑強扎根，針葉在狂風吹拂下沙沙作響。這是喀斯特大自然最堅韌的生命讚歌。",
+    "path": "ivy_photos/828939223_29660879363502631_5143717465260847983_n.jpg"
+  },
+  {
+    "id": 62,
+    "filename": "829319781_29660881563502411_8406236013170173612_n.jpg",
+    "chapter": "freeport",
+    "chapter_name": "自由領地歷史印記",
+    "title": "老宅落水管上的歷史標貼・自由領地的冷戰記憶回聲",
+    "title_it": "Tracce della Memoria del Territorio Libero di Trieste",
+    "fact": "特城老街的排水管與牆角隨處可見『FREE TERRITORY OF TRIESTE』貼紙，展現特里埃斯特人在經歷奧匈帝國崩解、義大利兼併、二戰戰火與英美盟軍軍政府（AMG-VG）託管後的獨特身份認同感。",
+    "poetic": "鐵管斑駁，字跡鮮明。在這些看似微小的街頭角落裡，隱藏著這座邊境城市對昔日世界性大港自由榮光的無盡追憶。",
+    "path": "ivy_photos/829319781_29660881563502411_8406236013170173612_n.jpg"
+  },
+  {
+    "id": 63,
+    "filename": "829711086_29660884170168817_6565889580225520782_n.jpg",
+    "chapter": "literature",
+    "chapter_name": "雙聖殿與文學大運河",
+    "title": "天主教聖安多尼堂門楣拉丁銘文・『DIVO ANTONIO THAVMATVRGO』",
+    "title_it": "Iscrizione Latina sul Fregio: DIVO ANTONIO THAVMATVRGO",
+    "fact": "聖安多尼堂正門新古典主義愛奧尼亞柱廊上方的楣樑，以宏偉的古羅馬字體鐫刻著拉丁銘文『DIVO: ANTONIO: THAVMATVRGO』（奉獻給行奇蹟者聖安多尼），展現特里埃斯特新古典建築對羅馬帝國古典莊嚴風格的崇高致敬。",
+    "poetic": "深鑿在白色石樑上的拉丁文字在陽光下投射出沉穩的陰影。歷經近兩百年的潮起潮落，神聖的誓約依然在運河盡頭莊嚴宣告。",
+    "path": "ivy_photos/829711086_29660884170168817_6565889580225520782_n.jpg"
+  }
+];
     
     let currentFilter = 'all';
     let currentIndex = 0;
