@@ -90,7 +90,12 @@
     ::-webkit-scrollbar-thumb:hover {
       background: #a47648;
     }
-  </style>
+  
+    /* Leaflet OSM Custom Styling & Attribution rule */
+    .leaflet-control-attribution {
+      display: none !important;
+    }
+</style>
   <!-- Leaflet CSS & JS for Interactive High-Precision Cartography -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
@@ -408,7 +413,7 @@
   <div class="p-6 bg-[#1f150d] border-b border-[#3d2a1b] flex flex-col md:flex-row md:items-center justify-between gap-4">
     <div>
       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#352213] border border-[#e5b266]/50 text-xs text-[#ffd68a] font-bold uppercase tracking-wider mb-2">
-        <span>🗺️ 互動地理深旅</span> • <span>高精度衛星航路</span>
+        <span>🗺️ Leaflet.js + OpenStreetMap (OSM) 互動地圖系統</span> • <span>歐洲咖啡傳入航程圖</span>
       </div>
       <h3 class="text-2xl sm:text-3xl font-black text-white">咖啡傳入歐洲與義大利之航程地圖</h3>
       <p class="text-xs sm:text-sm text-[#d8be9f] mt-1 font-medium">
@@ -1148,18 +1153,18 @@
       const mapContainer = document.getElementById('coffee-trade-map');
       if (!mapContainer) return;
 
-      // Dark, elegant vintage CartoDB tiles
+      // Leaflet.js + OpenStreetMap (OSM) 互動地圖系統
       map = L.map('coffee-trade-map', {
         center: [34.0, 24.0],
         zoom: 4,
         minZoom: 3,
-        maxZoom: 9,
-        scrollWheelZoom: false
+        maxZoom: 18,
+        scrollWheelZoom: false,
+        attributionControl: false
       });
 
-      L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
-        subdomains: 'abcd',
+      // 標準純淨 OpenStreetMap (OSM) 圖層
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19
       }).addTo(map);
 
